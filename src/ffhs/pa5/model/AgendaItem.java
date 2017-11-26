@@ -1,6 +1,15 @@
 package ffhs.pa5.model;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class AgendaItem {
+
     private String id;
     private String title;
     private String data;

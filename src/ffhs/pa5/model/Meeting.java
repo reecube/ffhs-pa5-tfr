@@ -3,7 +3,16 @@ package ffhs.pa5.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class Meeting {
+
     private String title;
     private String location;
     private Date date;

@@ -8,7 +8,16 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class CustomDateSerializer implements JsonSerializer<Date> {
+
     /**
      * {@inheritDoc}
      */

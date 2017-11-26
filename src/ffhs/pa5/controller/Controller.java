@@ -23,6 +23,7 @@ import java.util.*;
  * @version 1.0
  */
 public class Controller implements Observer, Initializable {
+
     // view stuff
     private Stage stage;
 

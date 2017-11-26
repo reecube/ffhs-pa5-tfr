@@ -7,7 +7,16 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class CustomDateDeserializer implements JsonDeserializer<Date> {
+
     /**
      * {@inheritDoc}
      */

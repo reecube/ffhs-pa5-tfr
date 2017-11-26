@@ -2,7 +2,16 @@ package ffhs.pa5.model;
 
 import java.util.ArrayList;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class DataFile {
+
     private Metadata metadata;
     private Meeting meeting;
     private ArrayList<Change> changes;

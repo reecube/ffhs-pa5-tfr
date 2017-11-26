@@ -19,11 +19,10 @@ import java.io.IOException;
 public class View extends Stage {
 
     /**
-     * loads the first scene (Menu) into the stage.
+     * Loads the first scene (Menu) into the stage.
      */
     public View() {
         try {
-
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
             fxmlLoader.setController(new Controller());
 
@@ -37,12 +36,8 @@ public class View extends Stage {
             setResizable(false);
             sizeToScene();
             show();
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 }

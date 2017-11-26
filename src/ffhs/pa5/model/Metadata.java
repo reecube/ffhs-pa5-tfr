@@ -3,7 +3,16 @@ package ffhs.pa5.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public class Metadata {
+
     private int appVersion;
     private String id;
     private Date saveDate;

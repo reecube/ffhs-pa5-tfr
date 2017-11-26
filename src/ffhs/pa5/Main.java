@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
- * this is the main class
+ * This is the main class
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     /**
-     * this is the main function
+     * This is the main function
      *
      * @param args the arguments
      */
