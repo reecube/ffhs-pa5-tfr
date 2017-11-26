@@ -12,13 +12,13 @@ public class AgendaItem {
 
     private String id;
     private String title;
-    private String data;
+    private String content;
     private Boolean deleted;
 
-    public AgendaItem(String id, String title, String data, Boolean deleted) {
+    public AgendaItem(String id, String title, String content, Boolean deleted) {
         this.id = id;
         this.title = title;
-        this.data = data;
+        this.content = content;
         this.deleted = deleted;
     }
 
@@ -38,12 +38,12 @@ public class AgendaItem {
         this.title = title;
     }
 
-    public String getData() {
-        return data;
+    public String getContent() {
+        return content;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Boolean getDeleted() {
