@@ -1,6 +1,6 @@
 package ffhs.pa5.util;
 
-import ffhs.pa5.model.ArchiveEntry;
+import ffhs.pa5.model.util.ArchiveFactoryEntry;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,7 +32,7 @@ public class ArchiveFactory {
      *
      * @return TODO
      */
-    public ArchiveEntry[] read() {
+    public ArchiveFactoryEntry[] read() {
         return read(true);
     }
 
@@ -41,11 +41,11 @@ public class ArchiveFactory {
      *
      * @return TODO
      */
-    public ArchiveEntry[] read(boolean printStackTrace) {
+    public ArchiveFactoryEntry[] read(boolean printStackTrace) {
         try {
             final ZipFile zipFile = new ZipFile(path);
             final Enumeration<? extends ZipEntry> enu = zipFile.entries();
-            final ArrayList<ArchiveEntry> entries = new ArrayList<>();
+            final ArrayList<ArchiveFactoryEntry> entries = new ArrayList<>();
             while (enu.hasMoreElements()) {
                 final ZipEntry ze = enu.nextElement();
 
@@ -59,7 +59,7 @@ public class ArchiveFactory {
                         continue;
                     }
 
-                    entries.add(new ArchiveEntry(ze, new String(data)));
+                    entries.add(new ArchiveFactoryEntry(ze, new String(data)));
                 } catch (Exception ex) {
                     if (printStackTrace) {
                         ex.printStackTrace();
@@ -67,13 +67,13 @@ public class ArchiveFactory {
                 }
             }
 
-            return entries.toArray(new ArchiveEntry[0]);
+            return entries.toArray(new ArchiveFactoryEntry[0]);
         } catch (Exception ex) {
             if (printStackTrace) {
                 ex.printStackTrace();
             }
 
-            return new ArchiveEntry[0];
+            return new ArchiveFactoryEntry[0];
         }
     }
 
@@ -83,7 +83,7 @@ public class ArchiveFactory {
      * @param entries TODO
      * @return true on success, false on error
      */
-    public boolean write(ArchiveEntry[] entries) {
+    public boolean write(ArchiveFactoryEntry[] entries) {
         return write(entries, true);
     }
 
@@ -94,12 +94,12 @@ public class ArchiveFactory {
      * @param printStackTrace TODO
      * @return true on success, false on error
      */
-    public boolean write(ArchiveEntry[] entries, boolean printStackTrace) {
+    public boolean write(ArchiveFactoryEntry[] entries, boolean printStackTrace) {
         try {
             final File f = new File(path);
             final ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(f));
 
-            for (ArchiveEntry entry : entries) {
+            for (ArchiveFactoryEntry entry : entries) {
                 final ZipEntry ze = new ZipEntry(entry.getPath());
                 zos.putNextEntry(ze);
                 zos.write(entry.getContent().getBytes());

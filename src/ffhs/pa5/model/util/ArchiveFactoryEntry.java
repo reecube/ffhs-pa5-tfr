@@ -1,4 +1,4 @@
-package ffhs.pa5.model;
+package ffhs.pa5.model.util;
 
 import java.io.File;
 import java.util.zip.ZipEntry;
@@ -11,13 +11,13 @@ import java.util.zip.ZipEntry;
  * @author Yves Riedener
  * @version 1.0
  */
-public class ArchiveEntry {
+public class ArchiveFactoryEntry {
 
     private String directory;
     private String file;
     private String content;
 
-    public ArchiveEntry(ZipEntry entry, String content) {
+    public ArchiveFactoryEntry(ZipEntry entry, String content) {
         final String path = entry.getName();
         final int lastIndex = path.lastIndexOf(File.separatorChar);
         if (lastIndex < 0) {
@@ -30,7 +30,7 @@ public class ArchiveEntry {
         this.content = content;
     }
 
-    public ArchiveEntry(String directory, String file, String content) {
+    public ArchiveFactoryEntry(String directory, String file, String content) {
         this.directory = directory;
         this.file = file;
         this.content = content;

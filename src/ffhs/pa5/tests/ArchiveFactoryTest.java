@@ -1,6 +1,6 @@
 package ffhs.pa5.tests;
 
-import ffhs.pa5.model.ArchiveEntry;
+import ffhs.pa5.model.util.ArchiveFactoryEntry;
 import ffhs.pa5.util.ArchiveFactory;
 import org.junit.Test;
 
@@ -25,15 +25,15 @@ public class ArchiveFactoryTest {
     public void testEverything() throws Exception {
         // TODO: improve this
         ArchiveFactory archiveFactory = new ArchiveFactory("test.zip");
-        ArrayList<ArchiveEntry> entries = new ArrayList<>();
+        ArrayList<ArchiveFactoryEntry> entries = new ArrayList<>();
 
-        entries.add(new ArchiveEntry("dir1", "file1.txt", "Test"));
+        entries.add(new ArchiveFactoryEntry("dir1", "file1.txt", "Test"));
 
-        archiveFactory.write(entries.toArray(new ArchiveEntry[0]), true);
+        archiveFactory.write(entries.toArray(new ArchiveFactoryEntry[0]), true);
 
-        ArchiveEntry[] result = archiveFactory.read(true);
+        ArchiveFactoryEntry[] result = archiveFactory.read(true);
 
-        for (ArchiveEntry entry:result) {
+        for (ArchiveFactoryEntry entry:result) {
             System.out.println(entry);
         }
     }
