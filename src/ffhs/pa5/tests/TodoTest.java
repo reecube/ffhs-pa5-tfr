@@ -5,7 +5,8 @@ import org.junit.Test;
 /**
  * TODO
  *
- * @author Tamara Burri
+ * @author Murat Tokmak
+ * @author Barbara Fauth
  * @author Yves Riedener
  * @version 1.0
  */

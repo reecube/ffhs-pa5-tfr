@@ -3,7 +3,8 @@ package ffhs.pa5;
 /**
  * This class contains all constants.
  *
- * @author Tamara Burri
+ * @author Murat Tokmak
+ * @author Barbara Fauth
  * @author Yves Riedener
  * @version 1.0
  */

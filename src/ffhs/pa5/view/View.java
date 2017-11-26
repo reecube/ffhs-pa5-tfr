@@ -11,7 +11,8 @@ import java.io.IOException;
 /**
  * The View class. Shows the stage and the first scene.
  *
- * @author Tamara Burri
+ * @author Murat Tokmak
+ * @author Barbara Fauth
  * @author Yves Riedener
  * @version 1.0
  */

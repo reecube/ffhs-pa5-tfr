@@ -7,7 +7,8 @@ import javafx.stage.Stage;
 /**
  * this is the main class
  *
- * @author Tamara Burri
+ * @author Murat Tokmak
+ * @author Barbara Fauth
  * @author Yves Riedener
  * @version 1.0
  */

@@ -17,7 +17,8 @@ import java.util.*;
 /**
  * This is the main controller class.
  *
- * @author Tamara Burri
+ * @author Murat Tokmak
+ * @author Barbara Fauth
  * @author Yves Riedener
  * @version 1.0
  */
