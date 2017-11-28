@@ -56,6 +56,8 @@ public class Controller implements Observer, Initializable {
 
             // TODO
 
+            // fancy new line of code as an example
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
