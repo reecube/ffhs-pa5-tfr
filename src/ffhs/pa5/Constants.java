@@ -13,6 +13,10 @@ public abstract class Constants {
     // app
     public static final int APP_VERSION = 1;
 
+    // data file
+    public static final String DATA_FILE_LOCK_EXTENSION = ".lock";
+    public static final String DATA_FILE_PATH = "data.json";
+
     // path
     private static final String PATH_RESOURCES = "/ffhs/pa5/resources";
 

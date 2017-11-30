@@ -1,5 +1,6 @@
 package ffhs.pa5.tests;
 
+import ffhs.pa5.model.util.FileStorageFactoryResult;
 import ffhs.pa5.util.FileStorageFactory;
 import org.junit.Test;
 
@@ -34,15 +35,17 @@ public class FileStorageFactoryTest extends TestingBase {
 
         logTestCase("Create new File");
         fileStorageFactory = new FileStorageFactory();
-        fileStorageFactory.newFile();
+        assertTrue(fileStorageFactory.open());
 
         logTestCase("Write file");
         fileStorageFactory = new FileStorageFactory();
-        assertTrue(fileStorageFactory.writeFile(storageFile));
+        assertTrue(fileStorageFactory.close(storageFile, true) == FileStorageFactoryResult.SUCCESS);
 
         logTestCase("Open file");
         fileStorageFactory = new FileStorageFactory();
-        assertTrue(fileStorageFactory.writeFile(storageFile));
+        assertTrue(fileStorageFactory.open(storageFile) == FileStorageFactoryResult.SUCCESS);
+
+        fileStorageFactory.close(storageFile, false);
 
         // Clean test files
         Files.deleteIfExists(new File(storageFile).toPath());
