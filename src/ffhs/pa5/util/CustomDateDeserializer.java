@@ -23,8 +23,9 @@ public class CustomDateDeserializer implements JsonDeserializer<Date> {
     public Date deserialize(JsonElement dateElement, Type typeOfSrc, JsonDeserializationContext context) {
         try {
             return new Date(dateElement.getAsLong());
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
         }
         return null;
     }

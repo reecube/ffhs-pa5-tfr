@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import ffhs.pa5.util.Logger;
+
 import java.net.InetAddress;
 
 /**
@@ -15,15 +17,21 @@ public class User {
     private static final String HOSTNAME_UNKNOWN = "Unknown";
     private static final String USERNAME_UNKNOWN = "Unknown";
 
+    private static User instance = null;
+
     private String hostName;
     private String username;
 
-    public User() {
+    /**
+     * Initializes the object with the hostname and with the username.
+     */
+    private User() {
         try {
             InetAddress addr = InetAddress.getLocalHost();
             this.hostName = addr.getHostName();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
 
             this.hostName = HOSTNAME_UNKNOWN;
         }
@@ -34,6 +42,19 @@ public class User {
 
             this.username = USERNAME_UNKNOWN;
         }
+    }
+
+    /**
+     * Singleton
+     *
+     * @return new instance or the existing one if one is existing
+     */
+    public static User getInstance() {
+        if (instance == null) {
+            instance = new User();
+        }
+
+        return instance;
     }
 
     @Override

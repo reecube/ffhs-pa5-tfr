@@ -2,11 +2,10 @@ package ffhs.pa5.view;
 
 import ffhs.pa5.Constants;
 import ffhs.pa5.controller.Controller;
+import ffhs.pa5.util.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * The View class. Shows the stage and the first scene.
@@ -36,8 +35,9 @@ public class View extends Stage {
             setResizable(false);
             sizeToScene();
             show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
         }
     }
 }

@@ -33,15 +33,6 @@ public class ArchiveFactory {
      * @return TODO
      */
     public ArchiveFactoryEntry[] read() {
-        return read(true);
-    }
-
-    /**
-     * TODO
-     *
-     * @return TODO
-     */
-    public ArchiveFactoryEntry[] read(boolean printStackTrace) {
         try {
             final ZipFile zipFile = new ZipFile(path);
             final Enumeration<? extends ZipEntry> enu = zipFile.entries();
@@ -61,17 +52,15 @@ public class ArchiveFactory {
 
                     entries.add(new ArchiveFactoryEntry(ze, new String(data)));
                 } catch (Exception ex) {
-                    if (printStackTrace) {
-                        ex.printStackTrace();
-                    }
+                    Logger logger = Logger.getInstance();
+                    logger.handleException(ex);
                 }
             }
 
             return entries.toArray(new ArchiveFactoryEntry[0]);
         } catch (Exception ex) {
-            if (printStackTrace) {
-                ex.printStackTrace();
-            }
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
 
             return new ArchiveFactoryEntry[0];
         }
@@ -80,21 +69,10 @@ public class ArchiveFactory {
     /**
      * TODO
      *
-     * @param entries TODO
+     * @param entries         TODO
      * @return true on success, false on error
      */
     public boolean write(ArchiveFactoryEntry[] entries) {
-        return write(entries, true);
-    }
-
-    /**
-     * TODO
-     *
-     * @param entries         TODO
-     * @param printStackTrace TODO
-     * @return true on success, false on error
-     */
-    public boolean write(ArchiveFactoryEntry[] entries, boolean printStackTrace) {
         try {
             final File f = new File(path);
             final ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(f));
@@ -110,9 +88,8 @@ public class ArchiveFactory {
 
             return true;
         } catch (Exception ex) {
-            if (printStackTrace) {
-                ex.printStackTrace();
-            }
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
 
             return false;
         }

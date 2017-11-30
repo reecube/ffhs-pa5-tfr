@@ -1,6 +1,7 @@
 package ffhs.pa5.controller;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,8 +60,9 @@ public class Controller implements Observer, Initializable {
             // fancy new line of code as an example
 
             stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
         }
     }
 
