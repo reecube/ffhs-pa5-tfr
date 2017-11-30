@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
  * @author Yves Riedener
  * @version 1.0
  */
-public class FileFileStorageFactoryTest extends TestingBase {
+public class FileStorageFactoryTest extends TestingBase {
 
     /**
      * Tests the FileStorageFactory lifecycle of an file.
