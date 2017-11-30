@@ -74,11 +74,11 @@ public class ArchiveFactoryTest extends TestingBase {
 
         logTestCase("Write file");
         archiveFactory = new ArchiveFactory(archiveFile);
-        assertTrue(archiveFactory.write(content, true));
+        assertTrue(archiveFactory.write(content));
 
         logTestCase("Read file");
         archiveFactory = new ArchiveFactory(archiveFile);
-        result = archiveFactory.read(true);
+        result = archiveFactory.read();
         assertEquals(result.length, content.length);
         for (int i = 0; i < result.length; i++) {
             assertEquals(result[i].getPath(), content[i].getPath());
