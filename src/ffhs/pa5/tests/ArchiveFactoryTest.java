@@ -65,6 +65,9 @@ public class ArchiveFactoryTest extends TestingBase {
         entries.add(new ArchiveFactoryEntry("dir2", "file1.txt", "Test21"));
         final ArchiveFactoryEntry[] content = entries.toArray(new ArchiveFactoryEntry[0]);
 
+        // Clean test files
+        Files.deleteIfExists(new File(archiveFile).toPath());
+
         // Variable declaration
         ArchiveFactory archiveFactory;
         ArchiveFactoryEntry[] result;
@@ -81,8 +84,5 @@ public class ArchiveFactoryTest extends TestingBase {
             assertEquals(result[i].getPath(), content[i].getPath());
             assertEquals(result[i].getContent(), content[i].getContent());
         }
-
-        // Clean test files
-        Files.deleteIfExists(new File(archiveFile).toPath());
     }
 }
