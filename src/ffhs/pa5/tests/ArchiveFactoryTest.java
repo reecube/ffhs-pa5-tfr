@@ -5,6 +5,8 @@ import ffhs.pa5.util.ArchiveFactory;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 
@@ -49,9 +51,11 @@ public class ArchiveFactoryTest extends TestingBase {
 
     /**
      * Tests the ArchiveFactory lifecycle of an archive file.
+     *
+     * @throws IOException the exception
      */
     @Test
-    public void testLifecycle() {
+    public void testLifecycle() throws IOException {
 
         // Config variables
         final String archiveFile = "test.zip";
@@ -77,5 +81,8 @@ public class ArchiveFactoryTest extends TestingBase {
             assertEquals(result[i].getPath(), content[i].getPath());
             assertEquals(result[i].getContent(), content[i].getContent());
         }
+
+        // Clean test files
+        Files.deleteIfExists(new File(archiveFile).toPath());
     }
 }
