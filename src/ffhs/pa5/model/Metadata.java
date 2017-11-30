@@ -1,7 +1,10 @@
 package ffhs.pa5.model;
 
+import ffhs.pa5.Constants;
+
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * TODO
@@ -19,12 +22,24 @@ public class Metadata {
     private String password;
     private ArrayList<String> attachments;
 
+    public Metadata(String password) {
+        this.appVersion = Constants.APP_VERSION;
+        this.id = generateId();
+        this.saveDate = null;
+        this.password = password;
+        this.attachments = new ArrayList<>();
+    }
+
     public Metadata(int appVersion, String id, Date saveDate, String password, ArrayList<String> attachments) {
         this.appVersion = appVersion;
         this.id = id;
         this.saveDate = saveDate;
         this.password = password;
         this.attachments = attachments;
+    }
+
+    public static String generateId() {
+        return UUID.randomUUID().toString();
     }
 
     public int getAppVersion() {

@@ -21,6 +21,16 @@ public class Meeting {
     private Date nextMeeting;
     private ArrayList<AgendaItem> agendaItems;
 
+    public Meeting() {
+        this.title = "";
+        this.location = "";
+        this.date = null;
+        this.participants = new ArrayList<>();
+        this.state = State.PREPARATION;
+        this.nextMeeting = null;
+        this.agendaItems = new ArrayList<>();
+    }
+
     public Meeting(String title, String location, Date date, ArrayList<Participant> participants, State state, Date nextMeeting, ArrayList<AgendaItem> agendaItems) {
         this.title = title;
         this.location = location;

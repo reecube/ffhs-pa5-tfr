@@ -10,6 +10,9 @@ package ffhs.pa5;
  */
 public abstract class Constants {
 
+    // app
+    public static final int APP_VERSION = 1;
+
     // path
     private static final String PATH_RESOURCES = "/ffhs/pa5/resources";
 

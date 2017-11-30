@@ -16,6 +16,18 @@ public class DataFile {
     private Meeting meeting;
     private ArrayList<Change> changes;
 
+    public DataFile() {
+        this.metadata = new Metadata("");
+        this.meeting = new Meeting();
+        this.changes = new ArrayList<>();
+    }
+
+    public DataFile(String password) {
+        this.metadata = new Metadata(password);
+        this.meeting = new Meeting();
+        this.changes = new ArrayList<>();
+    }
+
     public DataFile(Metadata metadata, Meeting meeting, ArrayList<Change> changes) {
         this.metadata = metadata;
         this.meeting = meeting;
