@@ -84,5 +84,8 @@ public class ArchiveFactoryTest extends TestingBase {
             assertEquals(expectedResult[i].getPath(), result[i].getPath());
             assertEquals(expectedResult[i].getContent(), result[i].getContent());
         }
+
+        // Clean test files
+        Files.deleteIfExists(new File(archiveFile).toPath());
     }
 }
