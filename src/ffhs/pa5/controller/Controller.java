@@ -61,7 +61,7 @@ public class Controller implements Observer, Initializable {
 
             stage.show();
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
         }
     }

@@ -98,7 +98,7 @@ public class FileStorageFactory {
 
             return parseArchiveFactoryEntriesToFile(entries);
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return FileStorageFactoryResult.ERROR_UNKNOWN;

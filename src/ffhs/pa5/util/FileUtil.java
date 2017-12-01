@@ -53,7 +53,7 @@ public abstract class FileUtil {
 
             return new String(Files.readAllBytes(filePath));
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return null;
@@ -75,7 +75,7 @@ public abstract class FileUtil {
 
             return true;
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return false;
@@ -96,7 +96,7 @@ public abstract class FileUtil {
 
             return true;
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return false;

@@ -52,14 +52,14 @@ public class ArchiveFactory {
 
                     entries.add(new ArchiveFactoryEntry(ze, new String(data)));
                 } catch (Exception ex) {
-                    Logger logger = Logger.getInstance();
+                    final Logger logger = Logger.getInstance();
                     logger.handleException(ex);
                 }
             }
 
             return entries.toArray(new ArchiveFactoryEntry[0]);
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return new ArchiveFactoryEntry[0];
@@ -88,7 +88,7 @@ public class ArchiveFactory {
 
             return true;
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             return false;

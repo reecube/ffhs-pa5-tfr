@@ -36,7 +36,7 @@ public class View extends Stage {
             sizeToScene();
             show();
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
         }
     }

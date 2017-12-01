@@ -30,7 +30,7 @@ public class User {
             InetAddress addr = InetAddress.getLocalHost();
             this.hostName = addr.getHostName();
         } catch (Exception ex) {
-            Logger logger = Logger.getInstance();
+            final Logger logger = Logger.getInstance();
             logger.handleException(ex);
 
             this.hostName = HOSTNAME_UNKNOWN;
