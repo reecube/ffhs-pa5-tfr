@@ -29,24 +29,24 @@ public class ArchiveFactoryTest extends TestingBase {
     public void testArchiveFactoryEntry() {
 
         // Config variables
-        final String directory = "sample-dir";
-        final String file = "sample.zip";
-        final String content = "lorem ipsum";
-        final String path = directory + File.separatorChar + file;
+        final String expectedDirectory = "sample-dir";
+        final String expectedFile = "sample.zip";
+        final String expectedContent = "lorem ipsum";
+        final String expectedPath = expectedDirectory + File.separatorChar + expectedFile;
 
         // Variable declaration
         ArchiveFactoryEntry archiveFactoryEntry;
 
         logTestCase("String input only");
-        archiveFactoryEntry = new ArchiveFactoryEntry(directory, file, content);
-        assertEquals(archiveFactoryEntry.getPath(), path);
-        assertEquals(archiveFactoryEntry.getContent(), content);
+        archiveFactoryEntry = new ArchiveFactoryEntry(expectedDirectory, expectedFile, expectedContent);
+        assertEquals(expectedPath, archiveFactoryEntry.getPath());
+        assertEquals(expectedContent, archiveFactoryEntry.getContent());
 
         logTestCase("ZipEntry and String input");
-        ZipEntry zipEntry = new ZipEntry(path);
-        archiveFactoryEntry = new ArchiveFactoryEntry(zipEntry, content);
-        assertEquals(archiveFactoryEntry.getPath(), path);
-        assertEquals(archiveFactoryEntry.getContent(), content);
+        ZipEntry zipEntry = new ZipEntry(expectedPath);
+        archiveFactoryEntry = new ArchiveFactoryEntry(zipEntry, expectedContent);
+        assertEquals(expectedPath, archiveFactoryEntry.getPath());
+        assertEquals(expectedContent, archiveFactoryEntry.getContent());
     }
 
     /**
@@ -63,7 +63,7 @@ public class ArchiveFactoryTest extends TestingBase {
         entries.add(new ArchiveFactoryEntry("dir1", "file1.txt", "Test11"));
         entries.add(new ArchiveFactoryEntry("dir1", "file2.txt", "Test12"));
         entries.add(new ArchiveFactoryEntry("dir2", "file1.txt", "Test21"));
-        final ArchiveFactoryEntry[] content = entries.toArray(new ArchiveFactoryEntry[0]);
+        final ArchiveFactoryEntry[] expectedResult = entries.toArray(new ArchiveFactoryEntry[0]);
 
         // Clean test files
         Files.deleteIfExists(new File(archiveFile).toPath());
@@ -74,15 +74,15 @@ public class ArchiveFactoryTest extends TestingBase {
 
         logTestCase("Write file");
         archiveFactory = new ArchiveFactory(archiveFile);
-        assertTrue(archiveFactory.write(content));
+        assertTrue(archiveFactory.write(expectedResult));
 
         logTestCase("Read file");
         archiveFactory = new ArchiveFactory(archiveFile);
         result = archiveFactory.read();
-        assertEquals(result.length, content.length);
+        assertEquals(expectedResult.length, result.length);
         for (int i = 0; i < result.length; i++) {
-            assertEquals(result[i].getPath(), content[i].getPath());
-            assertEquals(result[i].getContent(), content[i].getContent());
+            assertEquals(expectedResult[i].getPath(), result[i].getPath());
+            assertEquals(expectedResult[i].getContent(), result[i].getContent());
         }
     }
 }

@@ -71,6 +71,6 @@ public class JsonUtilTest extends TestingBase {
         logTestCase("Parse");
         final TestObject result = JsonUtil.parse(json, TestObject.class);
         assertNotNull(result);
-        assertEquals(result, expectedResult);
+        assertEquals(expectedResult, result);
     }
 }

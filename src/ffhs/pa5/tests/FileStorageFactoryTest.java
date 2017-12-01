@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.io.File;
 import java.nio.file.Files;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests for the FileStorageFactory class.
@@ -31,23 +31,28 @@ public class FileStorageFactoryTest extends TestingBase {
         Files.deleteIfExists(new File(storageFile).toPath());
 
         // Variable declaration
-        FileStorageFactory fileStorageFactory;
+        final FileStorageFactory fileStorageFactory = new FileStorageFactory();
+
+        logTestCase("Open file (not found)");
+        assertEquals(FileStorageFactoryResult.ERROR_FILE_NOT_FOUND, fileStorageFactory.open(storageFile));
 
         logTestCase("Create new File");
-        fileStorageFactory = new FileStorageFactory();
-        assertTrue(fileStorageFactory.open());
+        assertEquals(FileStorageFactoryResult.SUCCESS, fileStorageFactory.open());
 
-        logTestCase("Write file");
-        fileStorageFactory = new FileStorageFactory();
-        assertTrue(fileStorageFactory.close(storageFile, true) == FileStorageFactoryResult.SUCCESS);
+        logTestCase("Save file");
+        assertEquals(FileStorageFactoryResult.SUCCESS, fileStorageFactory.save(storageFile));
 
-        logTestCase("Open file");
-        fileStorageFactory = new FileStorageFactory();
-        assertTrue(fileStorageFactory.open(storageFile) == FileStorageFactoryResult.SUCCESS);
+        logTestCase("Close file");
+        assertEquals(FileStorageFactoryResult.SUCCESS, fileStorageFactory.close(storageFile, false));
 
-        fileStorageFactory.close(storageFile, false);
+        logTestCase("Open file (unlocked)");
+        assertEquals(FileStorageFactoryResult.SUCCESS, fileStorageFactory.open(storageFile));
+
+        logTestCase("Open file (locked)");
+        assertEquals(FileStorageFactoryResult.ERROR_FILE_LOCKED, fileStorageFactory.open(storageFile));
 
         // Clean test files
+        fileStorageFactory.close(storageFile, false);
         Files.deleteIfExists(new File(storageFile).toPath());
     }
 }

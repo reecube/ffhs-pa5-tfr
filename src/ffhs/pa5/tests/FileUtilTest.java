@@ -43,7 +43,7 @@ public class FileUtilTest extends TestingBase {
         logTestCase("Read");
         final String content = FileUtil.read(fileName);
         assertNotNull(content);
-        assertEquals(content, expectedContent);
+        assertEquals(expectedContent, content);
 
         logTestCase("Delete");
         assertTrue(FileUtil.delete(fileName));
