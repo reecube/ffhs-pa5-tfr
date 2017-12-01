@@ -26,7 +26,7 @@ public class FileStorageFactory {
     }
 
     private boolean isInitialized() {
-        return files == null || file == null;
+        return files != null && file != null;
     }
 
     private boolean isLocked(String path) {
