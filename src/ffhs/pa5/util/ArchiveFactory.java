@@ -4,6 +4,7 @@ import ffhs.pa5.model.util.ArchiveFactoryEntry;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -33,8 +34,10 @@ public class ArchiveFactory {
      * @return TODO
      */
     public ArchiveFactoryEntry[] read() {
+        ZipFile zipFile = null;
+
         try {
-            final ZipFile zipFile = new ZipFile(path);
+            zipFile = new ZipFile(path);
             final Enumeration<? extends ZipEntry> enu = zipFile.entries();
             final ArrayList<ArchiveFactoryEntry> entries = new ArrayList<>();
             while (enu.hasMoreElements()) {
@@ -57,10 +60,20 @@ public class ArchiveFactory {
                 }
             }
 
+            zipFile.close();
+
             return entries.toArray(new ArchiveFactoryEntry[0]);
         } catch (Exception ex) {
             final Logger logger = Logger.getInstance();
             logger.handleException(ex);
+
+            if (zipFile != null) {
+                try {
+                    zipFile.close();
+                } catch (Exception exZipClose) {
+                    logger.handleException(exZipClose);
+                }
+            }
 
             return new ArchiveFactoryEntry[0];
         }
