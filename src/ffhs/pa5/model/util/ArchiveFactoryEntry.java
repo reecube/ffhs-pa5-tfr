@@ -37,6 +37,10 @@ public class ArchiveFactoryEntry {
     }
 
     public String getPath() {
+        if (directory == null) {
+            return file;
+        }
+
         return directory + File.separatorChar + file;
     }
 
