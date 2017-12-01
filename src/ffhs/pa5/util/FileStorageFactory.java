@@ -105,14 +105,40 @@ public class FileStorageFactory {
         }
     }
 
-    public FileStorageFactoryResult close(String path, boolean write) throws Exception {
+    public FileStorageFactoryResult save(String path) throws Exception {
         if (!isInitialized()) {
             throw new Exception("The file has not been initialized yet!");
         }
 
-        if (write) {
-            // TODO: implement this
-            throw new Exception("Not implemented yet!");
+        String jsonContent = JsonUtil.stringify(file);
+        ArchiveFactoryEntry dataEntry = new ArchiveFactoryEntry(null, Constants.DATA_FILE_PATH, jsonContent);
+
+        if (files.containsKey(dataEntry.getPath())) {
+            return FileStorageFactoryResult.ERROR_UNEXPECTED_BEHAVIOR;
+        }
+
+        files.put(dataEntry.getPath(), dataEntry);
+
+        ArchiveFactory archiveFactory = new ArchiveFactory(path);
+
+        if (!archiveFactory.write(files.values().toArray(new ArchiveFactoryEntry[0]))) {
+            return FileStorageFactoryResult.ERROR_BUILD_ARCHIVE;
+        }
+
+        return FileStorageFactoryResult.SUCCESS;
+    }
+
+    public FileStorageFactoryResult close(String path, boolean save) throws Exception {
+        if (!isInitialized()) {
+            throw new Exception("The file has not been initialized yet!");
+        }
+
+        if (save) {
+            FileStorageFactoryResult saveResult = save(path);
+
+            if (saveResult != FileStorageFactoryResult.SUCCESS) {
+                return saveResult;
+            }
         }
 
         if (!setLocked(path, false)) {
