@@ -88,7 +88,7 @@ public abstract class FileUtil {
      * @param path the file path
      * @return true on successfull delete, false on error
      */
-    public static boolean delete(String path) {
+    public static boolean deleteIfExists(String path) {
         try {
             Path filePath = getPath(path);
 

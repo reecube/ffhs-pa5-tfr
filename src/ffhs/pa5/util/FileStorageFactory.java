@@ -35,7 +35,7 @@ public class FileStorageFactory {
 
     private boolean setLocked(String path, boolean newStateLocked) {
         if (!newStateLocked) {
-            return FileUtil.delete(path + Constants.DATA_FILE_LOCK_EXTENSION);
+            return FileUtil.deleteIfExists(path + Constants.DATA_FILE_LOCK_EXTENSION);
         }
 
         User user = User.getInstance();

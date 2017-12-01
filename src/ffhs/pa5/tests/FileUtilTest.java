@@ -46,7 +46,7 @@ public class FileUtilTest extends TestingBase {
         assertEquals(expectedContent, content);
 
         logTestCase("Delete");
-        assertTrue(FileUtil.delete(fileName));
+        assertTrue(FileUtil.deleteIfExists(fileName));
 
         logTestCase("Exists (false)");
         assertFalse(FileUtil.exists(fileName));
