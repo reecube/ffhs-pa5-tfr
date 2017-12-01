@@ -29,18 +29,31 @@ public class FileStorageFactory {
         return files != null && file != null;
     }
 
+    private String getLockFilePath(String path) {
+        return path + Constants.DATA_FILE_LOCK_EXTENSION;
+    }
+
     private boolean isLocked(String path) {
-        return FileUtil.exists(path + Constants.DATA_FILE_LOCK_EXTENSION);
+        return FileUtil.exists(getLockFilePath(path));
     }
 
     private boolean setLocked(String path, boolean newStateLocked) {
+        final String lockFilePath = getLockFilePath(path);
+
+        // Check if the the locked state is already correct
+        if (newStateLocked == isLocked(path)) {
+            return true;
+        }
+
+        // Delete the lock file if it should not be locked anymore
         if (!newStateLocked) {
-            return FileUtil.deleteIfExists(path + Constants.DATA_FILE_LOCK_EXTENSION);
+            return FileUtil.deleteIfExists(lockFilePath);
         }
 
         User user = User.getInstance();
 
-        return FileUtil.write(path + Constants.DATA_FILE_LOCK_EXTENSION, user.toString());
+        // Write the current user to the lock file if it should be locked
+        return FileUtil.write(lockFilePath, user.toString());
     }
 
     public FileStorageFactoryResult open() {
@@ -108,6 +121,10 @@ public class FileStorageFactory {
     public FileStorageFactoryResult save(String path) throws Exception {
         if (!isInitialized()) {
             throw new Exception("The file has not been initialized yet!");
+        }
+
+        if (!setLocked(path, true)) {
+            return FileStorageFactoryResult.ERROR_LOCKSTATE_FAILED;
         }
 
         String jsonContent = JsonUtil.stringify(file);
