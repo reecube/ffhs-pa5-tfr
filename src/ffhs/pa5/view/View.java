@@ -7,6 +7,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * The View class. Shows the stage and the first scene.
  *
@@ -15,7 +18,7 @@ import javafx.stage.Stage;
  * @author Yves Riedener
  * @version 1.0
  */
-public class View extends Stage {
+public class View extends Stage implements Observer {
 
     /**
      * Loads the first scene (Menu) into the stage.
@@ -23,10 +26,9 @@ public class View extends Stage {
     public View() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
-            fxmlLoader.setController(new Controller());
+            fxmlLoader.setController(new Controller(this));
 
             Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
-
 
             primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
 
@@ -39,5 +41,10 @@ public class View extends Stage {
             final Logger logger = Logger.getInstance();
             logger.handleException(ex);
         }
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        // TODO: implement this
     }
 }

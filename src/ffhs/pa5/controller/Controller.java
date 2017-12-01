@@ -23,7 +23,9 @@ import java.util.*;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Controller implements Observer, Initializable {
+public class Controller implements Initializable {
+
+    private Observer viewObserver;
 
     // view stuff
     private Stage stage;
@@ -74,13 +76,10 @@ public class Controller implements Observer, Initializable {
     /**
      * The constructor of the controller.
      */
-    public Controller() {
-        // TODO: game.addObserver(this);
-    }
+    public Controller(Observer viewObserver) {
+        this.viewObserver = viewObserver;
 
-    @Override
-    public void update(Observable o, Object arg) {
-        // TODO
+        // TODO: model.addObserver(viewObserver)
     }
 
     @Override
