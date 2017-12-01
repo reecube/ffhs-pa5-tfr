@@ -43,10 +43,11 @@ public class FileStorageFactory {
         return FileUtil.write(path + Constants.DATA_FILE_LOCK_EXTENSION, user.toString());
     }
 
-    public boolean open() {
+    public FileStorageFactoryResult open() {
         this.file = new DataFile();
+        this.files = new HashMap<>();
 
-        return true;
+        return FileStorageFactoryResult.SUCCESS;
     }
 
     private static HashMap<String, ArchiveFactoryEntry> getArchiveFactoryEntryMap(ArchiveFactoryEntry[] entries) {
