@@ -14,7 +14,7 @@ import java.util.UUID;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Metadata {
+public class Metadata extends ViewObservable {
 
     private int appVersion;
     private String id;
@@ -48,6 +48,8 @@ public class Metadata {
 
     public void setAppVersion(int appVersion) {
         this.appVersion = appVersion;
+
+        updateView();
     }
 
     public String getId() {
@@ -56,6 +58,8 @@ public class Metadata {
 
     public void setId(String id) {
         this.id = id;
+
+        updateView();
     }
 
     public Date getSaveDate() {
@@ -64,6 +68,8 @@ public class Metadata {
 
     public void setSaveDate(Date saveDate) {
         this.saveDate = saveDate;
+
+        updateView();
     }
 
     public String getPassword() {
@@ -72,6 +78,8 @@ public class Metadata {
 
     public void setPassword(String password) {
         this.password = password;
+
+        updateView();
     }
 
     public ArrayList<String> getAttachments() {
@@ -80,5 +88,7 @@ public class Metadata {
 
     public void setAttachments(ArrayList<String> attachments) {
         this.attachments = attachments;
+
+        updateView();
     }
 }

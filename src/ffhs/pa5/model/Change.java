@@ -10,7 +10,7 @@ import java.util.Date;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Change {
+public class Change extends ViewObservable {
 
     private Date date;
     private String user;
@@ -28,6 +28,8 @@ public class Change {
 
     public void setDate(Date date) {
         this.date = date;
+
+        updateView();
     }
 
     public String getUser() {
@@ -36,6 +38,8 @@ public class Change {
 
     public void setUser(String user) {
         this.user = user;
+
+        updateView();
     }
 
     public String getChange() {
@@ -44,5 +48,7 @@ public class Change {
 
     public void setChange(String change) {
         this.change = change;
+
+        updateView();
     }
 }

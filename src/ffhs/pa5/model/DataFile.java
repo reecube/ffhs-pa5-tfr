@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author Yves Riedener
  * @version 1.0
  */
-public class DataFile {
+public class DataFile extends ViewObservable {
 
     private Metadata metadata;
     private Meeting meeting;
@@ -40,6 +40,8 @@ public class DataFile {
 
     public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
+
+        updateView();
     }
 
     public Meeting getMeeting() {
@@ -48,6 +50,8 @@ public class DataFile {
 
     public void setMeeting(Meeting meeting) {
         this.meeting = meeting;
+
+        updateView();
     }
 
     public ArrayList<Change> getChanges() {
@@ -56,5 +60,7 @@ public class DataFile {
 
     public void setChanges(ArrayList<Change> changes) {
         this.changes = changes;
+
+        updateView();
     }
 }

@@ -8,7 +8,7 @@ package ffhs.pa5.model;
  * @author Yves Riedener
  * @version 1.0
  */
-public class AgendaItem {
+public class AgendaItem extends ViewObservable {
 
     private String id;
     private String title;
@@ -28,6 +28,8 @@ public class AgendaItem {
 
     public void setId(String id) {
         this.id = id;
+
+        updateView();
     }
 
     public String getTitle() {
@@ -36,6 +38,8 @@ public class AgendaItem {
 
     public void setTitle(String title) {
         this.title = title;
+
+        updateView();
     }
 
     public String getContent() {
@@ -44,6 +48,8 @@ public class AgendaItem {
 
     public void setContent(String content) {
         this.content = content;
+
+        updateView();
     }
 
     public Boolean getDeleted() {
@@ -52,5 +58,7 @@ public class AgendaItem {
 
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
+
+        updateView();
     }
 }

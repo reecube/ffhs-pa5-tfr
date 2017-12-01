@@ -8,7 +8,7 @@ package ffhs.pa5.model;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Participant {
+public class Participant extends ViewObservable {
 
     private String firstname;
     private String lastname;
@@ -32,6 +32,8 @@ public class Participant {
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
+
+        updateView();
     }
 
     public String getLastname() {
@@ -40,6 +42,8 @@ public class Participant {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+
+        updateView();
     }
 
     public String getEmail() {
@@ -48,6 +52,8 @@ public class Participant {
 
     public void setEmail(String email) {
         this.email = email;
+
+        updateView();
     }
 
     public String getPhone() {
@@ -56,6 +62,8 @@ public class Participant {
 
     public void setPhone(String phone) {
         this.phone = phone;
+
+        updateView();
     }
 
     public String getRole() {
@@ -64,6 +72,8 @@ public class Participant {
 
     public void setRole(String role) {
         this.role = role;
+
+        updateView();
     }
 
     public String getNotes() {
@@ -72,5 +82,7 @@ public class Participant {
 
     public void setNotes(String notes) {
         this.notes = notes;
+
+        updateView();
     }
 }

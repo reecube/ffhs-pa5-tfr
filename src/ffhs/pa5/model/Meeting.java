@@ -11,7 +11,7 @@ import java.util.Date;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Meeting {
+public class Meeting extends ViewObservable {
 
     private String title;
     private String location;
@@ -47,6 +47,8 @@ public class Meeting {
 
     public void setTitle(String title) {
         this.title = title;
+
+        updateView();
     }
 
     public String getLocation() {
@@ -55,6 +57,8 @@ public class Meeting {
 
     public void setLocation(String location) {
         this.location = location;
+
+        updateView();
     }
 
     public Date getDate() {
@@ -63,6 +67,8 @@ public class Meeting {
 
     public void setDate(Date date) {
         this.date = date;
+
+        updateView();
     }
 
     public ArrayList<Participant> getParticipants() {
@@ -71,6 +77,8 @@ public class Meeting {
 
     public void setParticipants(ArrayList<Participant> participants) {
         this.participants = participants;
+
+        updateView();
     }
 
     public State getState() {
@@ -79,6 +87,8 @@ public class Meeting {
 
     public void setState(State state) {
         this.state = state;
+
+        updateView();
     }
 
     public Date getNextMeeting() {
@@ -87,6 +97,8 @@ public class Meeting {
 
     public void setNextMeeting(Date nextMeeting) {
         this.nextMeeting = nextMeeting;
+
+        updateView();
     }
 
     public ArrayList<AgendaItem> getAgendaItems() {
@@ -95,5 +107,7 @@ public class Meeting {
 
     public void setAgendaItems(ArrayList<AgendaItem> agendaItems) {
         this.agendaItems = agendaItems;
+
+        updateView();
     }
 }
