@@ -10,6 +10,8 @@ package ffhs.pa5;
  */
 public abstract class Constants {
 
+    // DEMO
+
     // app
     public static final int APP_VERSION = 1;
 
