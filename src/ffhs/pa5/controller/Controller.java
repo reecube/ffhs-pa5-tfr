@@ -38,6 +38,8 @@ public class Controller implements Initializable {
     @SuppressWarnings("unused")
     private BorderPane main;
 
+    // Super comment to commit
+
     /**
      * shows the different strategies
      *
