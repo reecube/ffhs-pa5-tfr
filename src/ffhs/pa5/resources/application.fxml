@@ -21,7 +21,7 @@
                 </MenuBar>
                 <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                        <Tab text="Vorbereitung" />
+                        <Tab text="Vorbereitung1" />
                         <Tab disable="true" text="Sitzung" />
                         <Tab disable="true" text="Abschluss" />
                     </tabs>
