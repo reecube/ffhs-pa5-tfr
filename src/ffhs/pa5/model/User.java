@@ -5,7 +5,7 @@ import ffhs.pa5.util.Logger;
 import java.net.InetAddress;
 
 /**
- * TODO
+ * This class handles the data about the user (hostname and username) which is editing the meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

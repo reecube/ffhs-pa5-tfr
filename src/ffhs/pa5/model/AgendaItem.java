@@ -1,7 +1,7 @@
 package ffhs.pa5.model;
 
 /**
- * This class handles the agenda items within a meeting protocol.
+ * This class handles the data of agenda items within a meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

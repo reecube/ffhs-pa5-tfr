@@ -3,7 +3,7 @@ package ffhs.pa5.model;
 import java.util.Date;
 
 /**
- * TODO
+ * This class handles the data of changes made in a meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

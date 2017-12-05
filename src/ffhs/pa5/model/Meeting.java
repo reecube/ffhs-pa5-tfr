@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * TODO
+ * This class handles the data of a meeting.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

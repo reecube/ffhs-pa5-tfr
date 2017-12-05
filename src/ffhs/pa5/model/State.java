@@ -1,7 +1,7 @@
 package ffhs.pa5.model;
 
 /**
- * TODO
+ * This enumeration handles the allowed states of a meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

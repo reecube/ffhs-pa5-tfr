@@ -3,7 +3,8 @@ package ffhs.pa5.model;
 import java.util.ArrayList;
 
 /**
- * TODO
+ * TODO (Stimmt das so, Yves?)
+ * This class handles the data of a meeting protocol which is saved on the file system.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

@@ -1,7 +1,7 @@
 package ffhs.pa5.model;
 
 /**
- * TODO
+ * This class handles the data of the participants of a meeting.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

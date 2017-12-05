@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * TODO
+ * This class handles the metadata of a meetingprotocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
