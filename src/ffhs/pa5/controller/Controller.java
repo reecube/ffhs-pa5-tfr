@@ -38,8 +38,6 @@ public class Controller implements Initializable {
     @SuppressWarnings("unused")
     private BorderPane main;
 
-    // Super comment to commit
-
     /**
      * shows the different strategies
      *
@@ -60,8 +58,6 @@ public class Controller implements Initializable {
             stage.setScene(scene);
 
             // TODO
-
-            // fancy new line of code as an example
 
             stage.show();
         } catch (Exception ex) {

@@ -1,7 +1,7 @@
 package ffhs.pa5.model;
 
 /**
- * TODO
+ * This class handles the agenda items within a meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
