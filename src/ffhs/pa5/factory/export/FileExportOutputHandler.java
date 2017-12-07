@@ -1,5 +1,7 @@
 package ffhs.pa5.factory.export;
 
+import javafx.stage.FileChooser;
+
 /**
  * TODO
  *
@@ -13,25 +15,23 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
 
     private String path;
 
-    protected FileExportOutputHandler (String path){
-        this.path = path;
-        //TODO > Was braucht es sonst noch?
+    FileExportOutputHandler() {
+        this.path = null;
     }
 
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-    //TODO > Wie muss ich die von IntelliJ gemeldeten Fehler korrigieren? Darf ich abstract einfach löschen?
     /**
      * TODO
-     * @return  TODO
+     *
+     * @return TODO
      */
-    public abstract static String getFileExtension(){ //TODO > Welche Parameter?
-        //TODO > File Extension auslesen
-        String fileExtension = "";
-        return fileExtension;
-    }
+    public abstract FileChooser.ExtensionFilter[] getFileExtension();
 
     @Override
-    public void handleExport(ExportModel eModel) {
+    public void export(ExportModel content) {
         //TODO
     }
 }

@@ -14,9 +14,7 @@ public interface ExportOutputHandler {
     /**
      * TODO
      *
-     * @param eModel    TODO
+     * @param content TODO
      */
-    public abstract void handleExport(ExportModel eModel);
-    //TODO > Ist das OK, wenn das public ist?
-
+    void export(ExportModel content);
 }
