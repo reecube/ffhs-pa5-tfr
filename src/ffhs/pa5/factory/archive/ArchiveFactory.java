@@ -1,10 +1,9 @@
-package ffhs.pa5.util;
+package ffhs.pa5.factory.archive;
 
-import ffhs.pa5.model.util.ArchiveFactoryEntry;
+import ffhs.pa5.util.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;

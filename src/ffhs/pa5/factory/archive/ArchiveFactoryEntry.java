@@ -1,4 +1,4 @@
-package ffhs.pa5.model.util;
+package ffhs.pa5.factory.archive;
 
 import java.io.File;
 import java.util.zip.ZipEntry;

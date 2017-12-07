@@ -1,7 +1,7 @@
 package ffhs.pa5.tests;
 
-import ffhs.pa5.model.util.ArchiveFactoryEntry;
-import ffhs.pa5.util.ArchiveFactory;
+import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
+import ffhs.pa5.factory.archive.ArchiveFactory;
 import org.junit.Test;
 
 import java.io.File;

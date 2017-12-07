@@ -1,9 +1,13 @@
-package ffhs.pa5.util;
+package ffhs.pa5.factory.storage;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.factory.archive.ArchiveFactory;
 import ffhs.pa5.model.*;
-import ffhs.pa5.model.util.ArchiveFactoryEntry;
-import ffhs.pa5.model.util.FileStorageFactoryResult;
+import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
+import ffhs.pa5.factory.storage.FileStorageFactoryResult;
+import ffhs.pa5.util.FileUtil;
+import ffhs.pa5.util.JsonUtil;
+import ffhs.pa5.util.Logger;
 
 import java.util.HashMap;
 

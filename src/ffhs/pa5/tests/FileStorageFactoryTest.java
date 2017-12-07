@@ -1,8 +1,8 @@
 package ffhs.pa5.tests;
 
 import ffhs.pa5.Constants;
-import ffhs.pa5.model.util.FileStorageFactoryResult;
-import ffhs.pa5.util.FileStorageFactory;
+import ffhs.pa5.factory.storage.FileStorageFactoryResult;
+import ffhs.pa5.factory.storage.FileStorageFactory;
 import org.junit.Test;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package ffhs.pa5.model.util;
+package ffhs.pa5.factory.storage;
 
 /**
  * TODO

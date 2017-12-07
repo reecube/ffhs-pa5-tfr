@@ -1,10 +1,9 @@
-package ffhs.pa5.util.export;
+package ffhs.pa5.factory.export;
 
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
 import ffhs.pa5.model.State;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
