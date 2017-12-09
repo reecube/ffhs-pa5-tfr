@@ -21,9 +21,11 @@ public abstract class Constants {
 
     // path
     private static final String PATH_RESOURCES = "/ffhs/pa5/resources";
+    private static final String PATH_RESOURCES_DIALOG = PATH_RESOURCES + "/dialog";
 
     // fxml
     public static final String FXML_MAIN = PATH_RESOURCES + "/application.fxml";
+    public static final String FXML_DIALOG_PARTICIPANT = PATH_RESOURCES_DIALOG + "/participant.fxml";
 
     // css
     public static final String CSS_MAIN = PATH_RESOURCES + "/application.css";

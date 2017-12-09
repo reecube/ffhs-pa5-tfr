@@ -10,12 +10,15 @@ package ffhs.pa5.model;
  */
 public class Participant extends ViewObservable {
 
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String phone;
-    private String role;
-    private String notes;
+    private String firstname = "";
+    private String lastname = "";
+    private String email = "";
+    private String phone = "";
+    private String role = "";
+    private String notes = "";
+
+    public Participant() {
+    }
 
     public Participant(String firstname, String lastname, String email, String phone, String role, String notes) {
         this.firstname = firstname;
