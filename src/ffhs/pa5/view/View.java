@@ -26,9 +26,10 @@ public class View extends Stage implements Observer {
     public View() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
-            fxmlLoader.setController(new Controller(this));
-
             Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
+
+            Controller controller = fxmlLoader.getController();
+            controller.setViewObserver(this);
 
             primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
 

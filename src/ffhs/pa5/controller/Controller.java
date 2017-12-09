@@ -35,7 +35,6 @@ public class Controller implements Initializable {
     // ********************************************************************************
 
     @FXML
-    @SuppressWarnings("unused")
     private BorderPane main;
 
     /**
@@ -71,13 +70,9 @@ public class Controller implements Initializable {
     // main code
     // ********************************************************************************
 
-    /**
-     * The constructor of the controller.
-     */
-    public Controller(Observer viewObserver) {
-        this.viewObserver = viewObserver;
 
-        // TODO: model.addObserver(viewObserver)
+    public void setViewObserver(Observer viewObserver) {
+        this.viewObserver = viewObserver;
     }
 
     @Override
