@@ -22,6 +22,14 @@ public class ExportModelAgendaItem {
      * @param agendaItem TODO
      */
     public ExportModelAgendaItem(AgendaItem agendaItem) {
+        if (agendaItem.getDeleted() == false){
+            this.id = agendaItem.getId();
+            this.title = agendaItem.getTitle();
+            this.content = agendaItem.getContent();
+        }
+        else {
+            //TODO Muss ich hier noch was machen, damit keine leeren Instanzen entstehen können?
+        }
         // TODO: Barbara, fülle die Variablen anhand der Parameter (ps. nur jene, welche nicht gelöscht sind)
     }
 

@@ -1,9 +1,9 @@
 package ffhs.pa5.factory.export;
 
-import ffhs.pa5.model.DataFile;
-import ffhs.pa5.model.State;
+import ffhs.pa5.model.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -33,9 +33,24 @@ public class ExportModel {
      * @param dataFile TODO
      */
     public ExportModel(DataFile dataFile) {
-        // TODO: Barbara, fülle die Variablen anhand der Parameter
-        //TODO > auch infos zum Benutzer, der bearbeitet hat, exportieren? Nein
-        //TODO > Wie muss ich hier mit einer NullPointerException umgehen? Sollte keine auftreten! ;)
+        Meeting meeting = dataFile.getMeeting();
+
+        this.title = meeting.getTitle();
+        this.location = meeting.getLocation();
+        this.date = meeting.getDate();
+        this.participants = new ArrayList<>();
+        for (Participant participant : meeting.getParticipants()) {
+            this.participants.add(new ExportModelParticipant(participant));
+        }
+        this.state = meeting.getState();
+        this.nextMeeting = meeting.getNextMeeting();
+        this.agendaItems = new ArrayList<>();
+        for (AgendaItem agendaItem : meeting.getAgendaItems()){
+            this.agendaItems.add(new ExportModelAgendaItem(agendaItem));
+        }
+        // this.creationDate TODO
+        // this.lastEditionDate TODO
+        this.exportDate = Calendar.getInstance().getTime();
     }
 
     public String getTitle() {
