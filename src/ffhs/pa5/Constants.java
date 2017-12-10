@@ -26,6 +26,7 @@ public abstract class Constants {
     // fxml
     public static final String FXML_MAIN = PATH_RESOURCES + "/application.fxml";
     public static final String FXML_DIALOG_PARTICIPANT = PATH_RESOURCES_DIALOG + "/participant.fxml";
+    public static final String FXML_DIALOG_AGENDA_ITEM = PATH_RESOURCES_DIALOG + "/agendaItem.fxml";
 
     // css
     public static final String CSS_MAIN = PATH_RESOURCES + "/application.css";

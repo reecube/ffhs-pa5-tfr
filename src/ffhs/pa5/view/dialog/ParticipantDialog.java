@@ -21,6 +21,8 @@ import javafx.stage.Window;
  */
 public class ParticipantDialog extends Dialog<Participant> {
 
+    private Participant participant;
+
     // ********************************************************************************
     // fxml components
     // ********************************************************************************
@@ -81,6 +83,8 @@ public class ParticipantDialog extends Dialog<Participant> {
     }
 
     private void loadParticipant(Participant participant) {
+        this.participant = participant;
+
         inputFirstname.setText(participant.getFirstname());
         inputLastname.setText(participant.getLastname());
         inputEmail.setText(participant.getEmail());
@@ -91,8 +95,6 @@ public class ParticipantDialog extends Dialog<Participant> {
 
     @FXML
     private void handleButtonSaveAction(ActionEvent event) {
-        Participant participant = new Participant();
-
         participant.setFirstname(inputFirstname.getText());
         participant.setLastname(inputLastname.getText());
         participant.setEmail(inputEmail.getText());

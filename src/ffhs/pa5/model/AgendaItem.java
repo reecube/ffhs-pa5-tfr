@@ -10,10 +10,13 @@ package ffhs.pa5.model;
  */
 public class AgendaItem extends ViewObservable {
 
-    private String id;
-    private String title;
-    private String content;
-    private Boolean deleted;
+    private String id = "";
+    private String title = "";
+    private String content = "";
+    private Boolean deleted = false;
+
+    public AgendaItem() {
+    }
 
     public AgendaItem(String id, String title, String content, Boolean deleted) {
         this.id = id;
