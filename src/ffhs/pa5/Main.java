@@ -1,7 +1,10 @@
 package ffhs.pa5;
 
-import ffhs.pa5.view.View;
+import ffhs.pa5.controller.Controller;
+import ffhs.pa5.util.Logger;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +28,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        new View();
+        try {
+            new Controller();
+        } catch (Exception ex) {
+            final Logger logger = Logger.getInstance();
+            logger.handleException(ex);
+
+            System.exit(1);
+        }
     }
 }

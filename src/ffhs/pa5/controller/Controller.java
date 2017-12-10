@@ -1,9 +1,13 @@
 package ffhs.pa5.controller;
 
-import javafx.fxml.Initializable;
+import ffhs.pa5.Constants;
+import ffhs.pa5.util.Logger;
+import ffhs.pa5.view.View;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.net.URL;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -14,7 +18,7 @@ import java.util.*;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Controller implements Initializable {
+public class Controller {
 
     private Observer viewObserver;
 
@@ -32,12 +36,18 @@ public class Controller implements Initializable {
     // ********************************************************************************
 
 
-    public void setViewObserver(Observer viewObserver) {
-        this.viewObserver = viewObserver;
-    }
+    public Controller() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
+        Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // TODO
+        View view = fxmlLoader.getController();
+        this.viewObserver = view;
+
+        primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
+
+        view.setTitle(Constants.VIEW_TITLE);
+        view.setScene(primaryScene);
+        view.sizeToScene();
+        view.show();
     }
 }
