@@ -1,6 +1,7 @@
 package ffhs.pa5.view;
 
 import ffhs.pa5.model.*;
+import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,13 +23,25 @@ import java.util.Observer;
 public class View extends Stage implements Observer {
 
     @FXML
+    private TabPane tabPane;
+
+    @FXML
+    private Tab tabPreparation;
+
+    @FXML
+    private Tab tabMeeting;
+
+    @FXML
+    private Tab tabEnding;
+
+    @FXML
     private TextField inputMeetingTitle;
 
     @FXML
     private DatePicker inputMeetingDate;
 
     @FXML
-    private TextArea inputMeetingPlace;
+    private TextArea inputMeetingLocation;
 
     @FXML
     private ListView inputParticipants;
@@ -47,7 +60,6 @@ public class View extends Stage implements Observer {
 
     @FXML
     private ChoiceBox inputExport;
-
 
     /**
      * TODO
@@ -82,6 +94,45 @@ public class View extends Stage implements Observer {
      * @param meeting TODO
      */
     private void updateMeeting(Meeting meeting) {
+        inputMeetingTitle.setText(meeting.getTitle());
+        inputMeetingDate.setValue(DateUtil.toLocalDate(meeting.getDate()));
+        inputMeetingLocation.setText(meeting.getLocation());
+        inputMeetingNextMeeting.setValue(DateUtil.toLocalDate(meeting.getNextMeeting()));
+
+        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+        switch (meeting.getState()) {
+            case PREPARATION:
+                selectionModel.select(tabPreparation);
+                tabPreparation.setDisable(false);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(true);
+                break;
+            case MEETING:
+                selectionModel.select(tabMeeting);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(false);
+                break;
+            case ENDING:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(true);
+                tabEnding.setDisable(false);
+                break;
+            case CLOSED:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(true);
+                tabEnding.setDisable(true);
+                break;
+            default:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(false);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(false);
+                break;
+        }
+
         updateAgendaItems(meeting.getAgendaItems());
         updateParticipants(meeting.getParticipants());
     }
