@@ -45,10 +45,21 @@ public class ParticipantDialog extends Dialog<Participant> {
     @FXML
     private TextArea inputNotes;
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     public static ParticipantDialog getNewInstance() {
         return getNewInstance(null);
     }
 
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     * @return TODO
+     */
     public static ParticipantDialog getNewInstance(Participant participant) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(ParticipantDialog.class.getResource(Constants.FXML_DIALOG_PARTICIPANT));
@@ -82,6 +93,11 @@ public class ParticipantDialog extends Dialog<Participant> {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     */
     private void loadParticipant(Participant participant) {
         this.participant = participant;
 
@@ -93,6 +109,11 @@ public class ParticipantDialog extends Dialog<Participant> {
         inputNotes.setText(participant.getNotes());
     }
 
+    /**
+     * TODO
+     *
+     * @param event TODO
+     */
     @FXML
     private void handleButtonSaveAction(ActionEvent event) {
         participant.setFirstname(inputFirstname.getText());
@@ -106,6 +127,11 @@ public class ParticipantDialog extends Dialog<Participant> {
         hide();
     }
 
+    /**
+     * TODO
+     *
+     * @param event TODO
+     */
     @FXML
     private void handleButtonCancelAction(ActionEvent event) {
         Button button = (Button) event.getSource();

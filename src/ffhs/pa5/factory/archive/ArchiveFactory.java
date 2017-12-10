@@ -23,6 +23,11 @@ public class ArchiveFactory {
 
     private String path;
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     */
     public ArchiveFactory(String path) {
         this.path = path;
     }
@@ -81,7 +86,7 @@ public class ArchiveFactory {
     /**
      * TODO
      *
-     * @param entries         TODO
+     * @param entries TODO
      * @return true on success, false on error
      */
     public boolean write(ArchiveFactoryEntry[] entries) {

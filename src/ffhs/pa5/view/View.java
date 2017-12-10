@@ -18,33 +18,66 @@ import java.util.Observer;
  */
 public class View extends Stage implements Observer {
 
+    /**
+     * TODO
+     *
+     * @param metadata TODO
+     */
     private void updateMetadata(Metadata metadata) {
         // TODO: implement this
     }
 
+    /**
+     * TODO
+     *
+     * @param agendaItems TODO
+     */
     private void updateAgendaItems(ArrayList<AgendaItem> agendaItems) {
         // TODO: implement this
     }
 
+    /**
+     * TODO
+     *
+     * @param participants TODO
+     */
     private void updateParticipants(ArrayList<Participant> participants) {
         // TODO: implement this
     }
 
+    /**
+     * TODO
+     *
+     * @param meeting TODO
+     */
     private void updateMeeting(Meeting meeting) {
         updateAgendaItems(meeting.getAgendaItems());
         updateParticipants(meeting.getParticipants());
     }
 
+    /**
+     * TODO
+     *
+     * @param changes TODO
+     */
     private void updateChanges(ArrayList<Change> changes) {
         // TODO: this will be implemented in a future version
     }
 
+    /**
+     * TODO
+     *
+     * @param dataFile TODO
+     */
     private void updateDataFile(DataFile dataFile) {
         updateMetadata(dataFile.getMetadata());
         updateMeeting(dataFile.getMeeting());
         updateChanges(dataFile.getChanges());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void update(Observable o, Object arg) {
         if (o instanceof DataFile) {

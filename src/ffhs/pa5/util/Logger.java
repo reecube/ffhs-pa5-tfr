@@ -30,6 +30,11 @@ public class Logger {
         return instance;
     }
 
+    /**
+     * TODO
+     *
+     * @param ex TODO
+     */
     public void handleException(Exception ex) {
         ex.printStackTrace();
     }

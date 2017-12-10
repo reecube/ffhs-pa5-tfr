@@ -21,6 +21,9 @@ public class Meeting extends ViewObservable {
     private Date nextMeeting;
     private ArrayList<AgendaItem> agendaItems;
 
+    /**
+     * TODO
+     */
     public Meeting() {
         this.title = "";
         this.location = "";
@@ -31,6 +34,17 @@ public class Meeting extends ViewObservable {
         this.agendaItems = new ArrayList<>();
     }
 
+    /**
+     * TODO
+     *
+     * @param title TODO
+     * @param location TODO
+     * @param date TODO
+     * @param participants TODO
+     * @param state TODO
+     * @param nextMeeting TODO
+     * @param agendaItems TODO
+     */
     public Meeting(String title, String location, Date date, ArrayList<Participant> participants, State state, Date nextMeeting, ArrayList<AgendaItem> agendaItems) {
         this.title = title;
         this.location = location;

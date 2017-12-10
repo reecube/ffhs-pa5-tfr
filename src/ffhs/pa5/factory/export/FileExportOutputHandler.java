@@ -15,6 +15,9 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
 
     private String path;
 
+    /**
+     * TODO
+     */
     FileExportOutputHandler() {
         this.path = null;
     }
@@ -30,6 +33,9 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
      */
     public abstract FileChooser.ExtensionFilter[] getFileExtension();
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void export(ExportModel content) {
         //TODO

@@ -19,6 +19,11 @@ public class ExportModelParticipant {
     private String role;
     private String notes;
 
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     */
     public ExportModelParticipant(Participant participant) {
         // TODO: Barbara, fülle die Variablen anhand der Parameter
     }

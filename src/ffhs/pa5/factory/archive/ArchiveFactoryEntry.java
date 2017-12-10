@@ -17,6 +17,12 @@ public class ArchiveFactoryEntry {
     private String file;
     private String content;
 
+    /**
+     * TODO
+     *
+     * @param entry TODO
+     * @param content TODO
+     */
     public ArchiveFactoryEntry(ZipEntry entry, String content) {
         final String path = entry.getName();
         final int lastIndex = path.lastIndexOf(File.separatorChar);
@@ -30,12 +36,24 @@ public class ArchiveFactoryEntry {
         this.content = content;
     }
 
+    /**
+     * TODO
+     *
+     * @param directory TODO
+     * @param file TODO
+     * @param content TODO
+     */
     public ArchiveFactoryEntry(String directory, String file, String content) {
         this.directory = directory;
         this.file = file;
         this.content = content;
     }
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     public String getPath() {
         if (directory == null) {
             return file;
@@ -48,6 +66,9 @@ public class ArchiveFactoryEntry {
         return content;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return getPath() + " [" + content.length() + "]";

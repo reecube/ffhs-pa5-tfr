@@ -4,7 +4,6 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.factory.archive.ArchiveFactory;
 import ffhs.pa5.model.*;
 import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
-import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
@@ -24,23 +23,50 @@ public class FileStorageFactory {
     private HashMap<String, ArchiveFactoryEntry> files;
     private DataFile file;
 
+    /**
+     * TODO
+     */
     public FileStorageFactory() {
         this.files = null;
         this.file = null;
     }
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     private boolean isInitialized() {
         return files != null && file != null;
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     */
     private String getLockFilePath(String path) {
         return path + Constants.DATA_FILE_LOCK_EXTENSION;
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     */
     private boolean isLocked(String path) {
         return FileUtil.exists(getLockFilePath(path));
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @param newStateLocked TODO
+     * @return TODO
+     */
     private boolean setLocked(String path, boolean newStateLocked) {
         final String lockFilePath = getLockFilePath(path);
 
@@ -60,6 +86,11 @@ public class FileStorageFactory {
         return FileUtil.write(lockFilePath, user.toString());
     }
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     public FileStorageFactoryResult open() {
         this.file = new DataFile();
         this.files = new HashMap<>();
@@ -67,6 +98,12 @@ public class FileStorageFactory {
         return FileStorageFactoryResult.SUCCESS;
     }
 
+    /**
+     * TODO
+     *
+     * @param entries TODO
+     * @return TODO
+     */
     private static HashMap<String, ArchiveFactoryEntry> getArchiveFactoryEntryMap(ArchiveFactoryEntry[] entries) {
         HashMap<String, ArchiveFactoryEntry> result = new HashMap<>();
 
@@ -77,6 +114,12 @@ public class FileStorageFactory {
         return result;
     }
 
+    /**
+     * TODO
+     *
+     * @param entryArray TODO
+     * @return TODO
+     */
     private FileStorageFactoryResult parseArchiveFactoryEntriesToFile(ArchiveFactoryEntry[] entryArray) {
         HashMap<String, ArchiveFactoryEntry> entries = getArchiveFactoryEntryMap(entryArray);
 
@@ -95,6 +138,12 @@ public class FileStorageFactory {
         return FileStorageFactoryResult.SUCCESS;
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     */
     public FileStorageFactoryResult open(String path) {
         if (!FileUtil.exists(path)) {
             return FileStorageFactoryResult.ERROR_FILE_NOT_FOUND;
@@ -122,6 +171,13 @@ public class FileStorageFactory {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     * @throws Exception TODO
+     */
     public FileStorageFactoryResult save(String path) throws Exception {
         if (!isInitialized()) {
             throw new Exception("The file has not been initialized yet!");
@@ -149,6 +205,14 @@ public class FileStorageFactory {
         return FileStorageFactoryResult.SUCCESS;
     }
 
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @param save TODO
+     * @return TODO
+     * @throws Exception TODO
+     */
     public FileStorageFactoryResult close(String path, boolean save) throws Exception {
         if (!isInitialized()) {
             throw new Exception("The file has not been initialized yet!");

@@ -12,6 +12,9 @@ import javafx.stage.FileChooser;
  */
 public class TextExportOutputHandler extends FileExportOutputHandler {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public FileChooser.ExtensionFilter[] getFileExtension() {
         return new FileChooser.ExtensionFilter[]{

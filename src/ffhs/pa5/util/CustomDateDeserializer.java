@@ -20,6 +20,7 @@ public class CustomDateDeserializer implements JsonDeserializer<Date> {
     /**
      * {@inheritDoc}
      */
+    @Override
     public Date deserialize(JsonElement dateElement, Type typeOfSrc, JsonDeserializationContext context) {
         try {
             return new Date(dateElement.getAsLong());

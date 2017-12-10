@@ -57,6 +57,9 @@ public class User {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return hostName + "\\" + username;

@@ -17,18 +17,33 @@ public class DataFile extends ViewObservable {
     private Meeting meeting;
     private ArrayList<Change> changes;
 
+    /**
+     * TODO
+     */
     public DataFile() {
         this.metadata = new Metadata("");
         this.meeting = new Meeting();
         this.changes = new ArrayList<>();
     }
 
+    /**
+     * TODO
+     *
+     * @param password TODO
+     */
     public DataFile(String password) {
         this.metadata = new Metadata(password);
         this.meeting = new Meeting();
         this.changes = new ArrayList<>();
     }
 
+    /**
+     * TODO
+     *
+     * @param metadata TODO
+     * @param meeting TODO
+     * @param changes TODO
+     */
     public DataFile(Metadata metadata, Meeting meeting, ArrayList<Change> changes) {
         this.metadata = metadata;
         this.meeting = meeting;

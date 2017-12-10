@@ -16,6 +16,11 @@ public class ExportModelAgendaItem {
     private String title;
     private String content;
 
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     */
     public ExportModelAgendaItem(AgendaItem agendaItem) {
         // TODO: Barbara, fülle die Variablen anhand der Parameter (ps. nur jene, welche nicht gelöscht sind)
     }

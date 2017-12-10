@@ -17,6 +17,11 @@ public enum State {
 
     private final int value;
 
+    /**
+     * TODO
+     *
+     * @param value TODO
+     */
     State(int value) {
         this.value = value;
     }

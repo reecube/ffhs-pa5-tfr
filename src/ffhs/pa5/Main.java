@@ -26,6 +26,9 @@ public class Main extends Application {
         launch(args);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void start(Stage primaryStage) {
         try {

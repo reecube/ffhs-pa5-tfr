@@ -16,6 +16,13 @@ public class Change extends ViewObservable {
     private String user;
     private String change;
 
+    /**
+     * TODO
+     *
+     * @param date TODO
+     * @param user TODO
+     * @param change TODO
+     */
     public Change(Date date, String user, String change) {
         this.date = date;
         this.user = user;

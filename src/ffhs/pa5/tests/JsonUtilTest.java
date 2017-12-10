@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
  */
 public class JsonUtilTest extends TestingBase {
 
+    /**
+     * TODO
+     */
     private class TestObject {
         String valString;
         boolean valBoolean;
@@ -24,6 +27,15 @@ public class JsonUtilTest extends TestingBase {
         double valDouble;
         Date valDate;
 
+        /**
+         * TODO
+         *
+         * @param valString  TODO
+         * @param valBoolean TODO
+         * @param valInteger TODO
+         * @param valDouble  TODO
+         * @param valDate    TODO
+         */
         TestObject(String valString, boolean valBoolean, int valInteger, double valDouble, Date valDate) {
             this.valString = valString;
             this.valBoolean = valBoolean;
@@ -32,6 +44,9 @@ public class JsonUtilTest extends TestingBase {
             this.valDate = valDate;
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public boolean equals(Object obj) {
             if (!(obj instanceof TestObject)) {
@@ -48,6 +63,9 @@ public class JsonUtilTest extends TestingBase {
         }
     }
 
+    /**
+     * TODO
+     */
     @Test
     public void testStringifyAndParseLifecycle() {
         // Config variables

@@ -33,10 +33,21 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
     @FXML
     private TextField inputTitle;
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     public static AgendaItemDialog getNewInstance() {
         return getNewInstance(null);
     }
 
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     * @return TODO
+     */
     public static AgendaItemDialog getNewInstance(AgendaItem agendaItem) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(AgendaItemDialog.class.getResource(Constants.FXML_DIALOG_AGENDA_ITEM));
@@ -70,6 +81,11 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     */
     private void loadAgendaItem(AgendaItem agendaItem) {
         this.agendaItem = agendaItem;
 
@@ -77,6 +93,11 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
         inputTitle.setText(agendaItem.getTitle());
     }
 
+    /**
+     * TODO
+     *
+     * @param event TODO
+     */
     @FXML
     private void handleButtonSaveAction(ActionEvent event) {
         // TODO: Check if the id is not empty!
@@ -88,6 +109,11 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
         hide();
     }
 
+    /**
+     * TODO
+     *
+     * @param event TODO
+     */
     @FXML
     private void handleButtonCancelAction(ActionEvent event) {
         Button button = (Button) event.getSource();

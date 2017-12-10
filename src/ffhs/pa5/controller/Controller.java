@@ -3,11 +3,9 @@ package ffhs.pa5.controller;
 import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.model.DataFile;
-import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.*;
@@ -36,6 +34,11 @@ public class Controller {
     // main code
     // ********************************************************************************
 
+    /**
+     * TODO
+     *
+     * @throws IOException TODO
+     */
     private void initializeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
         Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
@@ -51,6 +54,9 @@ public class Controller {
         view.show();
     }
 
+    /**
+     * TODO
+     */
     private void initializeFileStorageFactory() {
         // TODO: check for arguments and open file from path if there is one => try catch this one
 
@@ -62,6 +68,11 @@ public class Controller {
         file.updateView();
     }
 
+    /**
+     * TODO
+     *
+     * @throws IOException TODO
+     */
     public Controller() throws IOException {
 
         initializeView();

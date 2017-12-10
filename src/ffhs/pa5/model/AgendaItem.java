@@ -15,9 +15,20 @@ public class AgendaItem extends ViewObservable {
     private String content = "";
     private Boolean deleted = false;
 
+    /**
+     * TODO
+     */
     public AgendaItem() {
     }
 
+    /**
+     * TODO
+     *
+     * @param id TODO
+     * @param title TODO
+     * @param content TODO
+     * @param deleted TODO
+     */
     public AgendaItem(String id, String title, String content, Boolean deleted) {
         this.id = id;
         this.title = title;

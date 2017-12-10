@@ -22,6 +22,11 @@ public class Metadata extends ViewObservable {
     private String password;
     private ArrayList<String> attachments;
 
+    /**
+     * TODO
+     *
+     * @param password TODO
+     */
     public Metadata(String password) {
         this.appVersion = Constants.APP_VERSION;
         this.id = generateId();
@@ -30,6 +35,15 @@ public class Metadata extends ViewObservable {
         this.attachments = new ArrayList<>();
     }
 
+    /**
+     * TODO
+     *
+     * @param appVersion TODO
+     * @param id TODO
+     * @param saveDate TODO
+     * @param password TODO
+     * @param attachments TODO
+     */
     public Metadata(int appVersion, String id, Date saveDate, String password, ArrayList<String> attachments) {
         this.appVersion = appVersion;
         this.id = id;
@@ -38,6 +52,11 @@ public class Metadata extends ViewObservable {
         this.attachments = attachments;
     }
 
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
     public static String generateId() {
         return UUID.randomUUID().toString();
     }

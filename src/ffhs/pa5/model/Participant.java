@@ -17,9 +17,22 @@ public class Participant extends ViewObservable {
     private String role = "";
     private String notes = "";
 
+    /**
+     * TODO
+     */
     public Participant() {
     }
 
+    /**
+     * TODO
+     *
+     * @param firstname TODO
+     * @param lastname TODO
+     * @param email TODO
+     * @param phone TODO
+     * @param role TODO
+     * @param notes TODO
+     */
     public Participant(String firstname, String lastname, String email, String phone, String role, String notes) {
         this.firstname = firstname;
         this.lastname = lastname;
