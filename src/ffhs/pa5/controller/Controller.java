@@ -26,9 +26,6 @@ public class Controller {
 
     private FileStorageFactory fileStorageFactory;
 
-    // view stuff
-    private Stage stage;
-
     // ********************************************************************************
     // fxml components
     // ********************************************************************************
