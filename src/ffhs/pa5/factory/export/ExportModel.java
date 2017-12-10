@@ -45,7 +45,7 @@ public class ExportModel {
         this.state = meeting.getState();
         this.nextMeeting = meeting.getNextMeeting();
         this.agendaItems = new ArrayList<>();
-        for (AgendaItem agendaItem : meeting.getAgendaItems()){
+        for (AgendaItem agendaItem : meeting.getAgendaItems()) {
             this.agendaItems.add(new ExportModelAgendaItem(agendaItem));
         }
         // this.creationDate TODO
