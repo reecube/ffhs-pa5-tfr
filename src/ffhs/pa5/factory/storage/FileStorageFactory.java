@@ -172,5 +172,7 @@ public class FileStorageFactory {
         return FileStorageFactoryResult.SUCCESS;
     }
 
-
+    public DataFile getFile() {
+        return file;
+    }
 }

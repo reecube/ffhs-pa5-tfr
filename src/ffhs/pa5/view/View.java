@@ -18,6 +18,7 @@ public class View extends Stage implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         // TODO: implement this
+        System.out.println(o);
         System.out.println(arg);
     }
 }

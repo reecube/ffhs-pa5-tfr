@@ -16,7 +16,7 @@ class ViewObservable extends Observable {
     /**
      * Notify the observers for changes
      */
-    void updateView() {
+    public void updateView() {
         setChanged();
         notifyObservers();
     }
