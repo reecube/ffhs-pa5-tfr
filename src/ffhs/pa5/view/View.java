@@ -2,6 +2,8 @@ package ffhs.pa5.view;
 
 import ffhs.pa5.model.*;
 import ffhs.pa5.util.Logger;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -17,6 +19,32 @@ import java.util.Observer;
  * @version 1.0
  */
 public class View extends Stage implements Observer {
+
+    // Variables from SceneBuilder - Phase Vorbereitung
+    @FXML private String labelMeetingMetadata;
+    @FXML private String labelMeetingTitle;
+    @FXML private String labelMeetingDate;
+    @FXML private String labelMeetingPlace;
+    @FXML private TextInputControl textinputMeetingTitle;
+    @FXML private DatePicker datepickerMeetingDate;
+    @FXML private TextInputControl textinputMeetingPlace;
+    @FXML private ListView listviewParticipants;
+    @FXML private ListView listviewAgendaItemsVO;
+
+    // Variables from SceneBuilder - Phase Sitzung
+    @FXML private String labelAgendaItems;
+    @FXML private ListView listviewAgendaItemsSI;
+    @FXML private String labelAgendaItemSelected;
+    @FXML private String labelAgendaItemID;
+    @FXML private String labelAgendaItemSort;
+    @FXML private TextInputControl textinputAgendaItemContent;
+
+
+    // Variables from SceneBuilder - Phase Abschluss
+    @FXML private String labelMeetingNextMeeting;
+    @FXML private DatePicker datepickerMeetingNextMeeting;
+    @FXML private ChoiceBox choiceboxExport;
+
 
     /**
      * TODO
