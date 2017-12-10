@@ -35,7 +35,6 @@ public class View extends Stage implements Observer {
 
             setTitle(Constants.VIEW_TITLE);
             setScene(primaryScene);
-            setResizable(false);
             sizeToScene();
             show();
         } catch (Exception ex) {

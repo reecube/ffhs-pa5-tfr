@@ -33,6 +33,6 @@ public abstract class Constants {
 
     // view
     public static final String VIEW_TITLE = "TODO";
-    public static final int VIEW_WIDTH = 600;
-    public static final int VIEW_HEIGHT = 500;
+    public static final int VIEW_WIDTH = 1200;
+    public static final int VIEW_HEIGHT = 800;
 }
