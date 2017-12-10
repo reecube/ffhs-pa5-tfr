@@ -1,7 +1,9 @@
 package ffhs.pa5.view;
 
 import ffhs.pa5.model.*;
+import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -20,30 +22,44 @@ import java.util.Observer;
  */
 public class View extends Stage implements Observer {
 
-    // Variables from SceneBuilder - State Preparation
-    @FXML private String labelMeetingMetadata;
-    @FXML private String labelMeetingTitle;
-    @FXML private String labelMeetingDate;
-    @FXML private String labelMeetingPlace;
-    @FXML private TextInputControl textinputMeetingTitle;
-    @FXML private DatePicker datepickerMeetingDate;
-    @FXML private TextInputControl textinputMeetingPlace;
-    @FXML private ListView listviewParticipants;
-    @FXML private ListView listviewAgendaItemsPreparation;
+    @FXML
+    private TabPane tabPane;
 
-    // Variables from SceneBuilder - State Meeting
-    @FXML private String labelAgendaItems;
-    @FXML private ListView listviewAgendaItemsMeeting;
-    @FXML private String labelAgendaItemSelected;
-    @FXML private String labelAgendaItemID;
-    @FXML private String labelAgendaItemSort;
-    @FXML private TextInputControl textinputAgendaItemContent;
+    @FXML
+    private Tab tabPreparation;
 
-    // Variables from SceneBuilder - State Ending
-    @FXML private String labelMeetingNextMeeting;
-    @FXML private DatePicker datepickerMeetingNextMeeting;
-    @FXML private ChoiceBox choiceboxExport;
+    @FXML
+    private Tab tabMeeting;
 
+    @FXML
+    private Tab tabEnding;
+
+    @FXML
+    private TextField inputMeetingTitle;
+
+    @FXML
+    private DatePicker inputMeetingDate;
+
+    @FXML
+    private TextArea inputMeetingLocation;
+
+    @FXML
+    private ListView inputParticipants;
+
+    @FXML
+    private ListView outputAgendaItemsPreparation;
+
+    @FXML
+    private ListView outputAgendaItemsMeeting;
+
+    @FXML
+    private TextArea inputAgendaItemContent;
+
+    @FXML
+    private DatePicker inputMeetingNextMeeting;
+
+    @FXML
+    private ChoiceBox inputExport;
 
     /**
      * TODO
@@ -78,6 +94,45 @@ public class View extends Stage implements Observer {
      * @param meeting TODO
      */
     private void updateMeeting(Meeting meeting) {
+        inputMeetingTitle.setText(meeting.getTitle());
+        inputMeetingDate.setValue(DateUtil.toLocalDate(meeting.getDate()));
+        inputMeetingLocation.setText(meeting.getLocation());
+        inputMeetingNextMeeting.setValue(DateUtil.toLocalDate(meeting.getNextMeeting()));
+
+        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+        switch (meeting.getState()) {
+            case PREPARATION:
+                selectionModel.select(tabPreparation);
+                tabPreparation.setDisable(false);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(true);
+                break;
+            case MEETING:
+                selectionModel.select(tabMeeting);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(false);
+                break;
+            case ENDING:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(true);
+                tabEnding.setDisable(false);
+                break;
+            case CLOSED:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(true);
+                tabMeeting.setDisable(true);
+                tabEnding.setDisable(true);
+                break;
+            default:
+                selectionModel.select(tabEnding);
+                tabPreparation.setDisable(false);
+                tabMeeting.setDisable(false);
+                tabEnding.setDisable(false);
+                break;
+        }
+
         updateAgendaItems(meeting.getAgendaItems());
         updateParticipants(meeting.getParticipants());
     }
@@ -119,52 +174,83 @@ public class View extends Stage implements Observer {
         }
     }
 
-    // onAction for buttons of the state Preparation
-
-    public void addAgendaItem (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onAddAgendaItem(ActionEvent actionEvent) {
     }
 
-    public void editAgendaItem (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onEditAgendaItem(ActionEvent actionEvent) {
     }
 
-    public void removeAgendaItem (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onRemoveAgendaItem(ActionEvent actionEvent) {
     }
 
-    public void addParticipant (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onAddParticipant(ActionEvent actionEvent) {
     }
 
-    public void editParticipant (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onEditParticipant(ActionEvent actionEvent) {
     }
 
-    public void removeParticipant (AgendaItem agendaItem){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onRemoveParticipant(ActionEvent actionEvent) {
     }
 
-
-    //onAction for buttons of the state Meeting
-
-    public void moveAgendaItemUp (AgendaItem agendaItem, int position){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onMoveAgendaItemUp(ActionEvent actionEvent) {
     }
 
-    public void moveAgendaItemDown (AgendaItem agendaItem, int position){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onMoveAgendaItemDown(ActionEvent actionEvent) {
     }
 
-
-    //onAction for buttons of the state Ending
-
-    public void exportMeeting (){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onExportMeeting(ActionEvent actionEvent) {
     }
 
-    public void closeMeeting (){
-        //TODO
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onCloseMeeting(ActionEvent actionEvent) {
     }
-
 }
