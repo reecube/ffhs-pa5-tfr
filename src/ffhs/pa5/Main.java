@@ -3,8 +3,6 @@ package ffhs.pa5;
 import ffhs.pa5.controller.Controller;
 import ffhs.pa5.util.Logger;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
