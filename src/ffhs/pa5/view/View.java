@@ -31,6 +31,7 @@ public class View extends Stage implements Observer {
     @FXML private ListView listviewParticipants;
     @FXML private ListView listviewAgendaItemsVO;
 
+
     // Variables from SceneBuilder - Phase Sitzung
     @FXML private String labelAgendaItems;
     @FXML private ListView listviewAgendaItemsSI;
@@ -38,7 +39,6 @@ public class View extends Stage implements Observer {
     @FXML private String labelAgendaItemID;
     @FXML private String labelAgendaItemSort;
     @FXML private TextInputControl textinputAgendaItemContent;
-
 
     // Variables from SceneBuilder - Phase Abschluss
     @FXML private String labelMeetingNextMeeting;
@@ -119,4 +119,53 @@ public class View extends Stage implements Observer {
             logger.handleException(new Exception("Could not handle the observable with the class `" + o.getClass() + "`!"));
         }
     }
+
+    // Buttons Phase Vorbereitung
+
+    public void addAgendaItem (AgendaItem agendaItem){
+        //TODO
+    }
+
+    public void editAgendaItem (AgendaItem agendaItem){
+        //TODO
+    }
+
+    public void removeAgendaItem (AgendaItem agendaItem){
+        //TODO
+    }
+
+    public void addParticipant (AgendaItem agendaItem){
+        //TODO
+    }
+
+    public void editParticipant (AgendaItem agendaItem){
+        //TODO
+    }
+
+    public void removeParticipant (AgendaItem agendaItem){
+        //TODO
+    }
+
+
+    //Buttons Phase Sitzung
+
+    public void moveAgendaItemUp (AgendaItem agendaItem, int position){
+        //TODO
+    }
+
+    public void moveAgendaItemDown (AgendaItem agendaItem, int position){
+        //TODO
+    }
+
+
+    //Buttons Phase Abschluss
+
+    public void exportMeeting (){
+        //TODO
+    }
+
+    public void closeMeeting (){
+        //TODO
+    }
+
 }

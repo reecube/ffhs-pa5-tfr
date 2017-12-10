@@ -88,17 +88,17 @@
                                                     <children>
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
-                                                                <Button fx:id="buttonParticipantAdd" mnemonicParsing="false" text="todo: add">
+                                                                <Button fx:id="buttonParticipantAdd" mnemonicParsing="false" onAction="#addAgendaItem" text="todo: add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button fx:id="buttonParticipantEdit" mnemonicParsing="false" text="todo: edit">
+                                                                <Button fx:id="buttonParticipantEdit" mnemonicParsing="false" onAction="#editAgendaItem" text="todo: edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button fx:id="buttonParticipantRemove" mnemonicParsing="false" text="todo: remove">
+                                                                <Button fx:id="buttonParticipantRemove" mnemonicParsing="false" onAction="#removeAgendaItem" text="todo: remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
@@ -123,17 +123,17 @@
                                                     <children>
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
-                                                                <Button fx:id="buttonAgendaItemAdd" mnemonicParsing="false" text="todo: add">
+                                                                <Button fx:id="buttonAgendaItemAdd" mnemonicParsing="false" onAction="#addParticipant" text="todo: add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button fx:id="buttonAgendaItemEdit" mnemonicParsing="false" text="todo: edit">
+                                                                <Button fx:id="buttonAgendaItemEdit" mnemonicParsing="false" onAction="#editParticipant" text="todo: edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button fx:id="buttonAgendaItemRemove" mnemonicParsing="false" text="todo: remove">
+                                                                <Button fx:id="buttonAgendaItemRemove" mnemonicParsing="false" onAction="#removeParticipant" text="todo: remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                     </VBox.margin>
@@ -182,12 +182,12 @@
                                                       <Insets bottom="5.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Button fx:id="buttonAgendaItemMoveUp" mnemonicParsing="false" text="todo: move up">
+                                                <Button fx:id="buttonAgendaItemMoveUp" mnemonicParsing="false" onAction="#moveAgendaItemUp" text="todo: move up">
                                                    <VBox.margin>
                                                       <Insets bottom="5.0" />
                                                    </VBox.margin>
                                                 </Button>
-                                                <Button fx:id="buttonAgendaItemMoveDown" mnemonicParsing="false" text="todo: move down">
+                                                <Button fx:id="buttonAgendaItemMoveDown" mnemonicParsing="false" onAction="#moveAgendaItemDown" text="todo: move down">
                                                    <VBox.margin>
                                                       <Insets bottom="5.0" />
                                                    </VBox.margin>
@@ -237,12 +237,12 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </ChoiceBox>
-                              <Button fx:id="buttonMeetingExport" mnemonicParsing="false" text="todo: exportieren">
+                              <Button fx:id="buttonMeetingExport" mnemonicParsing="false" onAction="#exportMeeting" text="todo: exportieren">
                                  <VBox.margin>
                                     <Insets bottom="30.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button fx:id="buttonMeetingClose" mnemonicParsing="false" text="todo: close spv" />
+                              <Button fx:id="buttonMeetingClose" mnemonicParsing="false" onAction="#closeMeeting" text="todo: close spv" />
                            </children>
                         </VBox>
                      </content></Tab>
