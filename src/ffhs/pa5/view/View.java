@@ -20,7 +20,7 @@ import java.util.Observer;
  */
 public class View extends Stage implements Observer {
 
-    // Variables from SceneBuilder - Phase Vorbereitung
+    // Variables from SceneBuilder - State Preparation
     @FXML private String labelMeetingMetadata;
     @FXML private String labelMeetingTitle;
     @FXML private String labelMeetingDate;
@@ -29,18 +29,17 @@ public class View extends Stage implements Observer {
     @FXML private DatePicker datepickerMeetingDate;
     @FXML private TextInputControl textinputMeetingPlace;
     @FXML private ListView listviewParticipants;
-    @FXML private ListView listviewAgendaItemsVO;
+    @FXML private ListView listviewAgendaItemsPreparation;
 
-
-    // Variables from SceneBuilder - Phase Sitzung
+    // Variables from SceneBuilder - State Meeting
     @FXML private String labelAgendaItems;
-    @FXML private ListView listviewAgendaItemsSI;
+    @FXML private ListView listviewAgendaItemsMeeting;
     @FXML private String labelAgendaItemSelected;
     @FXML private String labelAgendaItemID;
     @FXML private String labelAgendaItemSort;
     @FXML private TextInputControl textinputAgendaItemContent;
 
-    // Variables from SceneBuilder - Phase Abschluss
+    // Variables from SceneBuilder - State Ending
     @FXML private String labelMeetingNextMeeting;
     @FXML private DatePicker datepickerMeetingNextMeeting;
     @FXML private ChoiceBox choiceboxExport;
@@ -120,7 +119,7 @@ public class View extends Stage implements Observer {
         }
     }
 
-    // Buttons Phase Vorbereitung
+    // onAction for buttons of the state Preparation
 
     public void addAgendaItem (AgendaItem agendaItem){
         //TODO
@@ -147,7 +146,7 @@ public class View extends Stage implements Observer {
     }
 
 
-    //Buttons Phase Sitzung
+    //onAction for buttons of the state Meeting
 
     public void moveAgendaItemUp (AgendaItem agendaItem, int position){
         //TODO
@@ -158,7 +157,7 @@ public class View extends Stage implements Observer {
     }
 
 
-    //Buttons Phase Abschluss
+    //onAction for buttons of the state Ending
 
     public void exportMeeting (){
         //TODO
