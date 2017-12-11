@@ -18,7 +18,7 @@ import java.util.*;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Controller {
+public class Controller implements ViewController {
 
     private Observer viewObserver;
 
@@ -44,6 +44,7 @@ public class Controller {
         Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
         View view = fxmlLoader.getController();
+        view.setController(this);
         this.viewObserver = view;
 
         primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());

@@ -1,5 +1,6 @@
 package ffhs.pa5.view;
 
+import ffhs.pa5.controller.ViewController;
 import ffhs.pa5.model.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
@@ -24,6 +25,8 @@ import java.util.Optional;
  * @version 1.0
  */
 public class View extends Stage implements Observer {
+
+    private ViewController controller;
 
     @FXML
     private TabPane tabPane;
@@ -63,6 +66,10 @@ public class View extends Stage implements Observer {
 
     @FXML
     private ChoiceBox inputExport;
+
+    public void setController(ViewController controller) {
+        this.controller = controller;
+    }
 
     /**
      * TODO
