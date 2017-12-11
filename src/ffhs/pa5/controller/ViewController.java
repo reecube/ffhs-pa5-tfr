@@ -1,6 +1,7 @@
 package ffhs.pa5.controller;
 
 import ffhs.pa5.model.AgendaItem;
+import ffhs.pa5.model.Participant;
 
 /**
  * TODO
@@ -41,4 +42,30 @@ public interface ViewController {
      * @return TODO
      */
     boolean moveAgendaItem(AgendaItem agendaItem, int value);
+
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     */
+    void addParticipant(Participant participant);
+
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     */
+    void editParticipant(Participant participant);
+
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     */
+    void removeParticipant(Participant participant);
+
+    /**
+     * TODO
+     */
+    void closeMeeting();
 }

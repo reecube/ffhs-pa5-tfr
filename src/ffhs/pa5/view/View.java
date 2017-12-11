@@ -5,6 +5,7 @@ import ffhs.pa5.model.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.dialog.AgendaItemDialog;
+import ffhs.pa5.view.dialog.ParticipantDialog;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -249,6 +250,13 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onAddParticipant(ActionEvent actionEvent) {
+        ParticipantDialog participantDialog = ParticipantDialog.getNewInstance();
+        Optional<Participant> result = participantDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        controller.addParticipant(result.get());
     }
 
     /**
@@ -257,6 +265,21 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onEditParticipant(ActionEvent actionEvent) {
+        Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
+
+        if (participant == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        ParticipantDialog participantDialog = ParticipantDialog.getNewInstance(participant);
+        // FIXME: what's going on intellij?
+        Optional<Participant> result = participantDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        controller.editParticipant(result.get());
     }
 
     /**
@@ -265,6 +288,14 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onRemoveParticipant(ActionEvent actionEvent) {
+        Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
+
+        if (participant == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        controller.removeParticipant(participant);
     }
 
     /**
@@ -322,6 +353,6 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onCloseMeeting(ActionEvent actionEvent) {
-        // TODO: implement this
+        controller.closeMeeting();
     }
 }
