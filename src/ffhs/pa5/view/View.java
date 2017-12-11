@@ -86,8 +86,11 @@ public class View extends Stage implements Observer {
      * @param agendaItems TODO
      */
     private void updateAgendaItems(ArrayList<AgendaItem> agendaItems) {
-        ObservableList<AgendaItem> list = outputAgendaItemsMeeting.getItems();
-        list.addAll(agendaItems);
+        ObservableList<AgendaItem> listMeeting = outputAgendaItemsMeeting.getItems();
+        listMeeting.addAll(agendaItems);
+
+        ObservableList<AgendaItem> listPreparation = outputAgendaItemsPreparation.getItems();
+        listPreparation.addAll(agendaItems);
     }
 
     /**
@@ -192,6 +195,13 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onAddAgendaItem(ActionEvent actionEvent) {
+        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance();
+        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        controller.addAgendaItem(result.get());
     }
 
     /**
@@ -200,6 +210,21 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onEditAgendaItem(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance(agendaItem);
+        // FIXME: what's going on intellij?
+        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        controller.editAgendaItem(result.get());
     }
 
     /**
@@ -208,6 +233,14 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onRemoveAgendaItem(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        controller.removeAgendaItem(agendaItem);
     }
 
     /**
@@ -240,6 +273,18 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onMoveAgendaItemUp(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        boolean result = controller.moveAgendaItem(agendaItem, -1);
+        if (result) {
+            return;
+        }
+        // TODO: @barbara show error message
     }
 
     /**
@@ -248,6 +293,18 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onMoveAgendaItemDown(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            // TODO: @barbara show error message
+            return;
+        }
+
+        boolean result = controller.moveAgendaItem(agendaItem, 1);
+        if (result) {
+            return;
+        }
+        // TODO: @barbara show error message
     }
 
     /**
@@ -256,6 +313,7 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onExportMeeting(ActionEvent actionEvent) {
+        // TODO: implement this
     }
 
     /**
@@ -264,5 +322,6 @@ public class View extends Stage implements Observer {
      * @param actionEvent TODO
      */
     public void onCloseMeeting(ActionEvent actionEvent) {
+        // TODO: implement this
     }
 }
