@@ -81,23 +81,14 @@ public class View extends Stage implements Observer, Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        addChangeListener(outputParticipants, (observable, oldValue, newValue) -> {
-            // TODO: implement this
-            System.out.println(oldValue);
-            System.out.println(newValue);
-        });
+        addChangeListener(outputParticipants, (observable, oldValue, newValue)
+                -> onParticipantsSelectionChange(oldValue, newValue));
 
-        addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue) -> {
-            // TODO: implement this
-            System.out.println(oldValue);
-            System.out.println(newValue);
-        });
+        addChangeListener(outputAgendaItemsPreparation, (observable, oldValue, newValue)
+                -> onAgendaItemsPreparationSelectionChange(oldValue, newValue));
 
-        addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue) -> {
-            // TODO: implement this
-            System.out.println(oldValue);
-            System.out.println(newValue);
-        });
+        addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue)
+                -> onAgendaItemsMeetingSelectionChange(oldValue, newValue));
     }
 
     /**
@@ -216,6 +207,42 @@ public class View extends Stage implements Observer, Initializable {
             final Logger logger = Logger.getInstance();
             logger.handleException(new Exception("Could not handle the observable with the class `" + o.getClass() + "`!"));
         }
+    }
+
+    /**
+     * TODO
+     *
+     * @param oldValue TODO
+     * @param newValue TODO
+     */
+    private void onParticipantsSelectionChange(Participant oldValue, Participant newValue) {
+        // TODO: implement this
+        System.out.println(oldValue);
+        System.out.println(newValue);
+    }
+
+    /**
+     * TODO
+     *
+     * @param oldValue TODO
+     * @param newValue TODO
+     */
+    private void onAgendaItemsPreparationSelectionChange(AgendaItem oldValue, AgendaItem newValue) {
+        // TODO: implement this
+        System.out.println(oldValue);
+        System.out.println(newValue);
+    }
+
+    /**
+     * TODO
+     *
+     * @param oldValue TODO
+     * @param newValue TODO
+     */
+    private void onAgendaItemsMeetingSelectionChange(AgendaItem oldValue, AgendaItem newValue) {
+        // TODO: implement this
+        System.out.println(oldValue);
+        System.out.println(newValue);
     }
 
     /**
