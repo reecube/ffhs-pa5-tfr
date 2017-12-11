@@ -104,7 +104,7 @@
                                                                </Button>
                                                            </children>
                                                        </VBox>
-                                                       <ListView fx:id="inputParticipants" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                       <ListView fx:id="outputParticipants" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                                    </children>
                                                </HBox>
                                            </children>

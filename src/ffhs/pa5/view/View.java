@@ -3,6 +3,8 @@ package ffhs.pa5.view;
 import ffhs.pa5.model.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
+import ffhs.pa5.view.dialog.AgendaItemDialog;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -11,6 +13,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Optional;
 
 /**
  * The View class. Shows the stage and the first scene.
@@ -44,13 +47,13 @@ public class View extends Stage implements Observer {
     private TextArea inputMeetingLocation;
 
     @FXML
-    private ListView inputParticipants;
+    private ListView<Participant> outputParticipants;
 
     @FXML
-    private ListView outputAgendaItemsPreparation;
+    private ListView<AgendaItem> outputAgendaItemsPreparation;
 
     @FXML
-    private ListView outputAgendaItemsMeeting;
+    private ListView<AgendaItem> outputAgendaItemsMeeting;
 
     @FXML
     private TextArea inputAgendaItemContent;
@@ -76,7 +79,8 @@ public class View extends Stage implements Observer {
      * @param agendaItems TODO
      */
     private void updateAgendaItems(ArrayList<AgendaItem> agendaItems) {
-        // TODO: implement this
+        ObservableList<AgendaItem> list = outputAgendaItemsMeeting.getItems();
+        list.addAll(agendaItems);
     }
 
     /**
@@ -85,7 +89,8 @@ public class View extends Stage implements Observer {
      * @param participants TODO
      */
     private void updateParticipants(ArrayList<Participant> participants) {
-        // TODO: implement this
+        ObservableList<Participant> list = outputParticipants.getItems();
+        list.addAll(participants);
     }
 
     /**
