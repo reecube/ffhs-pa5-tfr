@@ -2,7 +2,9 @@ package ffhs.pa5.controller;
 
 import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
+import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.DataFile;
+import ffhs.pa5.model.Participant;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -78,5 +80,70 @@ public class Controller implements ViewController {
 
         initializeView();
         initializeFileStorageFactory();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addAgendaItem(AgendaItem agendaItem) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void editAgendaItem(AgendaItem agendaItem) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void removeAgendaItem(AgendaItem agendaItem) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
+        // TODO: implement this
+        return false;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addParticipant(Participant participant) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void editParticipant(Participant participant) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void removeParticipant(Participant participant) {
+        // TODO: implement this
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void closeMeeting() {
+        // TODO: implement this
     }
 }
