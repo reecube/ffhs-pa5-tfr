@@ -6,16 +6,16 @@ import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Optional;
+import java.net.URL;
+import java.util.*;
 
 /**
  * The View class. Shows the stage and the first scene.
@@ -25,7 +25,7 @@ import java.util.Optional;
  * @author Yves Riedener
  * @version 1.0
  */
-public class View extends Stage implements Observer {
+public class View extends Stage implements Observer, Initializable {
 
     private ViewController controller;
 
@@ -70,6 +70,34 @@ public class View extends Stage implements Observer {
 
     public void setController(ViewController controller) {
         this.controller = controller;
+    }
+
+    private static <T> void addChangeListener(ListView<T> listView, ChangeListener<T> listener) {
+        listView.getSelectionModel().selectedItemProperty().addListener(listener);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        addChangeListener(outputParticipants, (observable, oldValue, newValue) -> {
+            // TODO: implement this
+            System.out.println(oldValue);
+            System.out.println(newValue);
+        });
+
+        addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue) -> {
+            // TODO: implement this
+            System.out.println(oldValue);
+            System.out.println(newValue);
+        });
+
+        addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue) -> {
+            // TODO: implement this
+            System.out.println(oldValue);
+            System.out.println(newValue);
+        });
     }
 
     /**
