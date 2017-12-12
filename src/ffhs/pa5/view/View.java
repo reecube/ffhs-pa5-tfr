@@ -360,7 +360,7 @@ public class View extends Stage implements Observer, Initializable {
      * @param actionEvent TODO
      */
     public void onMoveAgendaItemUp(ActionEvent actionEvent) {
-        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
             UserMessages.showMessageAgendaItemNull();
@@ -380,7 +380,7 @@ public class View extends Stage implements Observer, Initializable {
      * @param actionEvent TODO
      */
     public void onMoveAgendaItemDown(ActionEvent actionEvent) {
-        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
             UserMessages.showMessageAgendaItemNull();
