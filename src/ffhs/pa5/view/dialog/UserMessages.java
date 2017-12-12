@@ -15,33 +15,28 @@ public class UserMessages {
 
     public static void showMessageAgendaItemNull(){
         //TODO: Use variables for translations
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText("The agenda item you are looking for is null");
-        alert.showAndWait();
+        showErrorMessage("The agenda item you are looking for is null");
     }
 
     public static void showMessageParticipantNull(){
         //TODO: Use variables for translations
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText("The participant you are looking for is null");
-        alert.showAndWait();
+        showErrorMessage("The participant you are looking for is null");
     }
 
     public static void showMessageMoveAgendaItemUp(){
         //TODO: Use variables for translations
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText("You can't move the agenda item up");
-        alert.showAndWait();
+        showErrorMessage("You can't move the agenda item up");
     }
 
     public static void showMessageMoveAgendaItemDown(){
         //TODO: Use variables for translations
+        showErrorMessage("You can't move the agenda item down");
+    }
+
+    private static void showErrorMessage(String contentText){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setContentText("You can't move the agenda item down");
+        alert.setContentText(contentText);
         alert.showAndWait();
     }
 }
