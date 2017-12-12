@@ -16,5 +16,5 @@ public interface ExportOutputHandler {
      *
      * @param content TODO
      */
-    void export(ExportModel content);
+    boolean export(ExportModel content);
 }

@@ -21,4 +21,15 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
                 new FileChooser.ExtensionFilter("Text file (*.txt)", "*.txt")
         };
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected byte[] getContent(ExportModel model) {
+        return new byte[0];
+        //TODO: ev anderer Rückgabewert
+        //hier kommt dann der text
+    }
+
 }

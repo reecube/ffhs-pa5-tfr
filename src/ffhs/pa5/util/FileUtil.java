@@ -64,7 +64,7 @@ public abstract class FileUtil {
      * Writes the content to a file
      *
      * @param path    the file path
-     * @param content the content to write
+     * @param content the content to export
      * @return true on successfull read, false on error
      */
     public static boolean write(String path, String content) {

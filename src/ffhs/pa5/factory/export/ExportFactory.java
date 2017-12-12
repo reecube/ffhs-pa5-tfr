@@ -18,23 +18,20 @@ import java.util.zip.ZipEntry;
  */
 
 public class ExportFactory {
-    //TODO
+    //TODO: @barbara: tests, sonst alles erledigt
 
-    private ExportModel exportModel;//TODO Wir hatten mal von einem Datafile gesprochen, aber das wäre jetzt vermutlich eher das Model, oder?
+    private ExportModel exportModel;
     private ExportOutputHandler exportOutputHandler;
-    private String path; //TODO du hattest einmal gesagt, den Pfad bekomme ich über das DataFile. Das DataFile hat aber gar keine Variable path?
 
     /**
      * TODO
      *
      * @param exportModel         TODO
      * @param exportOutputHandler TODO
-     * @param path                TODO
      */
-    public ExportFactory(ExportModel exportModel, ExportOutputHandler exportOutputHandler, String path) {
+    public ExportFactory(ExportModel exportModel, ExportOutputHandler exportOutputHandler) {
         this.exportModel = exportModel;
         this.exportOutputHandler = exportOutputHandler;
-        this.path = path;
     }
 
     /**
@@ -42,21 +39,14 @@ public class ExportFactory {
      *
      * @return true on success, false on error
      */
-    public boolean write() {
-        try {
-            final File file = new File(path);
-            final FileOutputStream fos = new FileOutputStream(file);
-
-            // TODO: Keine Ahnung, welcher String da umgewandelt werden müsste ;)
-            //fos.write(exportOutputHandler.export(exportModel).getBytes());
-            fos.close();
-
-            return true;
-        } catch (Exception ex) {
-            final Logger logger = Logger.getInstance();
-            logger.handleException(ex);
-
-            return false;
+    public boolean export(String path) {
+        if (path == null){
+            return exportOutputHandler.export(exportModel);
         }
+        FileExportOutputHandler fileExportOutputHandler = (FileExportOutputHandler) exportOutputHandler;
+        //TODO: Was soll geschehen, wenn der cast nicht erfolgreich ist?
+        fileExportOutputHandler.setPath(path);
+        return fileExportOutputHandler.export(exportModel);
+
     }
 }

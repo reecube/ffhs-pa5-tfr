@@ -6,7 +6,6 @@ import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
-import ffhs.pa5.view.dialog.UserMessages;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -141,18 +140,18 @@ public class View extends Stage implements Observer, Initializable {
                 selectionModel.select(tabPreparation);
                 tabPreparation.setDisable(false);
                 tabMeeting.setDisable(false);
-                tabEnding.setDisable(true);
+                tabEnding.setDisable(false);
                 break;
             case MEETING:
                 selectionModel.select(tabMeeting);
-                tabPreparation.setDisable(true);
+                tabPreparation.setDisable(false);
                 tabMeeting.setDisable(false);
                 tabEnding.setDisable(false);
                 break;
             case ENDING:
                 selectionModel.select(tabEnding);
-                tabPreparation.setDisable(true);
-                tabMeeting.setDisable(true);
+                tabPreparation.setDisable(false);
+                tabMeeting.setDisable(false);
                 tabEnding.setDisable(false);
                 break;
             case CLOSED:
@@ -270,7 +269,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            UserMessages.showMessageAgendaItemNull();
+            AlertHelper.showErrorAgendaItemNull();
             return;
         }
 
@@ -293,7 +292,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            UserMessages.showMessageAgendaItemNull();
+            AlertHelper.showErrorAgendaItemNull();
             return;
         }
 
@@ -324,7 +323,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            UserMessages.showMessageParticipantNull();
+            AlertHelper.showErrorParticipantNull();
             return;
         }
 
@@ -347,7 +346,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            UserMessages.showMessageParticipantNull();
+            AlertHelper.showErrorParticipantNull();
             return;
         }
 
@@ -363,7 +362,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            UserMessages.showMessageAgendaItemNull();
+            AlertHelper.showErrorAgendaItemNull();
             return;
         }
 
@@ -371,7 +370,7 @@ public class View extends Stage implements Observer, Initializable {
         if (result) {
             return;
         }
-        UserMessages.showMessageMoveAgendaItemUp();
+        AlertHelper.showErrorMoveAgendaItemUp();
     }
 
     /**
@@ -383,7 +382,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            UserMessages.showMessageAgendaItemNull();
+            AlertHelper.showErrorAgendaItemNull();
             return;
         }
 
@@ -391,7 +390,7 @@ public class View extends Stage implements Observer, Initializable {
         if (result) {
             return;
         }
-        UserMessages.showMessageMoveAgendaItemDown();
+        AlertHelper.showErrorMoveAgendaItemDown();
     }
 
     /**
