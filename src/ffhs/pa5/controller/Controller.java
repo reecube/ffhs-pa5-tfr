@@ -44,6 +44,7 @@ public class Controller implements ViewController {
      */
     private void initializeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
+        fxmlLoader.setResources(defineResourceBundle());
         Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
         View view = fxmlLoader.getController();
