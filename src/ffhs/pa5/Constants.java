@@ -10,8 +10,6 @@ package ffhs.pa5;
  */
 public abstract class Constants {
 
-    // DEMO
-
     // app
     public static final int APP_VERSION = 1;
 
@@ -35,4 +33,8 @@ public abstract class Constants {
     public static final String VIEW_TITLE = "TODO";
     public static final int VIEW_WIDTH = 1200;
     public static final int VIEW_HEIGHT = 800;
+
+    // ResourceBundleUtil
+    public static final String INDICATOR_MISSING_RESOURCE = "Error: missing resource";
+    public static final String INDICATOR_MISSING_KEY = "Error: missing key";
 }

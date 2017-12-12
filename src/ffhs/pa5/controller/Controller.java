@@ -23,6 +23,7 @@ import java.util.*;
 public class Controller implements ViewController {
 
     private Observer viewObserver;
+    private static ResourceBundle bundle;
 
     private FileStorageFactory fileStorageFactory;
 
@@ -80,6 +81,18 @@ public class Controller implements ViewController {
 
         initializeView();
         initializeFileStorageFactory();
+        bundle = defineResourceBundle();
+    }
+
+    /**
+     * TODO
+     *
+     * @return
+     */
+    private ResourceBundle defineResourceBundle() {
+        String userLanguage = defineUserLanguage();
+        Locale locale = new Locale(userLanguage);
+        return ResourceBundle.getBundle("ffhs.pa5.resources.lang.SPV", locale);
     }
 
     /**
@@ -145,5 +158,22 @@ public class Controller implements ViewController {
     @Override
     public void closeMeeting() {
         // TODO: implement this
+    }
+
+    /**
+     * TODO
+     *
+     * @return
+     */
+    private String defineUserLanguage() {
+        if (Locale.getDefault().getLanguage().toString().equals("de")) {
+            return "de";
+        } else {
+            return "en";
+        }
+    }
+
+    public static ResourceBundle getBundle() {
+        return bundle;
     }
 }

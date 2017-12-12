@@ -1,5 +1,8 @@
 package ffhs.pa5.view.dialog;
 
+import ffhs.pa5.controller.Controller;
+import ffhs.pa5.resources.lang.LanguageKeys;
+import ffhs.pa5.util.ResourceBundleUtil;
 import javafx.scene.control.Alert;
 
 /**
@@ -13,29 +16,26 @@ import javafx.scene.control.Alert;
 
 public class UserMessages {
 
-    public static void showMessageAgendaItemNull(){
-        //TODO: Use variables for translations
-        showErrorMessage("The agenda item you are looking for is null");
+    public static void showMessageAgendaItemNull() {
+        showErrorMessage(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemNull));
     }
 
-    public static void showMessageParticipantNull(){
-        //TODO: Use variables for translations
-        showErrorMessage("The participant you are looking for is null");
+    public static void showMessageParticipantNull() {
+        showErrorMessage(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_participantNull));
     }
 
-    public static void showMessageMoveAgendaItemUp(){
-        //TODO: Use variables for translations
-        showErrorMessage("You can't move the agenda item up");
+    public static void showMessageMoveAgendaItemUp() {
+        showErrorMessage(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveUp));
     }
 
-    public static void showMessageMoveAgendaItemDown(){
-        //TODO: Use variables for translations
-        showErrorMessage("You can't move the agenda item down");
+    public static void showMessageMoveAgendaItemDown() {
+        showErrorMessage(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveDown));
     }
 
-    private static void showErrorMessage(String contentText){
+    private static void showErrorMessage(String contentText) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
+        alert.setTitle(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.messageType_error));
+        alert.setHeaderText(null);
         alert.setContentText(contentText);
         alert.showAndWait();
     }
