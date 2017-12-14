@@ -169,11 +169,13 @@ public class Controller implements ViewController {
      * @return TODO
      */
     private static String defineUserLanguage() {
-        if (Locale.getDefault().getLanguage().equals("de")) {
-            return "de";
-        } else {
-            return "en";
+        String language = Locale.getDefault().getLanguage();
+
+        if (Arrays.asList(Constants.SUPPORTED_LANGUAGES).contains(language)) {
+            return language;
         }
+
+        return Constants.DEFAULT_LANGUAGE;
     }
 
     public static ResourceBundle getBundle() {

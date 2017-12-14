@@ -1,5 +1,7 @@
 package ffhs.pa5;
 
+import java.util.Locale;
+
 /**
  * This class contains all constants.
  *
@@ -28,6 +30,11 @@ public abstract class Constants {
 
     // translation
     public static final String PACKAGE_TRANSLATION = "ffhs.pa5.resources.application";
+    public static final String[] SUPPORTED_LANGUAGES = new String[]{
+            Locale.GERMAN.getLanguage(),
+            Locale.ENGLISH.getLanguage(),
+    };
+    public static final String DEFAULT_LANGUAGE = Locale.ENGLISH.getLanguage();
 
     // css
     public static final String CSS_MAIN = PATH_RESOURCES + "/application.css";
