@@ -83,7 +83,8 @@ public class ParticipantDialog extends Dialog<Participant> {
             Window window = dialogPane.getScene().getWindow();
             window.setOnCloseRequest(event -> instance.hide());
 
-            instance.setTitle(Constants.VIEW_TITLE);
+            instance.setTitle(Constants.VIEW_TITLE);//TODO @Barbara: mit label_viewTitleParticipant ersetzen, das geht im..
+            //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
 
             primaryScene.getStylesheets().add(ParticipantDialog.class.getResource(Constants.CSS_MAIN).toExternalForm());
 

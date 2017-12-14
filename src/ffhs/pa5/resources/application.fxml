@@ -13,7 +13,7 @@
             <children>
                 <MenuBar>
                     <menus>
-                        <Menu mnemonicParsing="false" text="todo: file">
+                        <Menu mnemonicParsing="false" text="%menu_file">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="%menu_open"/>
                                 <MenuItem mnemonicParsing="false" text="%menu_save"/>
