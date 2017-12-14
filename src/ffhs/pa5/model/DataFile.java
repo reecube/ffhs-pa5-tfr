@@ -41,8 +41,8 @@ public class DataFile extends ViewObservable {
      * TODO
      *
      * @param metadata TODO
-     * @param meeting TODO
-     * @param changes TODO
+     * @param meeting  TODO
+     * @param changes  TODO
      */
     public DataFile(Metadata metadata, Meeting meeting, ArrayList<Change> changes) {
         this.metadata = metadata;
@@ -70,13 +70,28 @@ public class DataFile extends ViewObservable {
         updateView();
     }
 
-    public ArrayList<Change> getChanges() {
-        return changes;
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
+    public Change[] getChanges() {
+        return changes.toArray(new Change[0]);
     }
 
-    public void setChanges(ArrayList<Change> changes) {
-        this.changes = changes;
+    /**
+     * TODO
+     *
+     * @param change TODO
+     * @return TODO
+     */
+    public boolean addChange(Change change) {
+        boolean result = changes.add(change);
 
-        updateView();
+        if (result) {
+            updateView();
+        }
+
+        return result;
     }
 }

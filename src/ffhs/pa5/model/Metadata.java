@@ -20,36 +20,32 @@ public class Metadata extends ViewObservable {
     private String id;
     private Date saveDate;
     private String password;
-    private ArrayList<String> attachments;
 
     /**
      * TODO
      *
      * @param password TODO
      */
-    public Metadata(String password) {
+    Metadata(String password) {
         this.appVersion = Constants.APP_VERSION;
         this.id = generateId();
         this.saveDate = null;
         this.password = password;
-        this.attachments = new ArrayList<>();
     }
 
     /**
      * TODO
      *
      * @param appVersion TODO
-     * @param id TODO
-     * @param saveDate TODO
-     * @param password TODO
-     * @param attachments TODO
+     * @param id         TODO
+     * @param saveDate   TODO
+     * @param password   TODO
      */
-    public Metadata(int appVersion, String id, Date saveDate, String password, ArrayList<String> attachments) {
+    public Metadata(int appVersion, String id, Date saveDate, String password) {
         this.appVersion = appVersion;
         this.id = id;
         this.saveDate = saveDate;
         this.password = password;
-        this.attachments = attachments;
     }
 
     /**
@@ -97,16 +93,6 @@ public class Metadata extends ViewObservable {
 
     public void setPassword(String password) {
         this.password = password;
-
-        updateView();
-    }
-
-    public ArrayList<String> getAttachments() {
-        return attachments;
-    }
-
-    public void setAttachments(ArrayList<String> attachments) {
-        this.attachments = attachments;
 
         updateView();
     }
