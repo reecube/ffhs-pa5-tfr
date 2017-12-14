@@ -1,6 +1,7 @@
 package ffhs.pa5.view.dialog;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.Participant;
 import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import java.util.ResourceBundle;
 
 /**
  * TODO
@@ -62,7 +65,9 @@ public class ParticipantDialog extends Dialog<Participant> {
      */
     public static ParticipantDialog getNewInstance(Participant participant) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ParticipantDialog.class.getResource(Constants.FXML_DIALOG_PARTICIPANT));
+            ResourceBundle bundle = Controller.defineResourceBundle();
+            FXMLLoader fxmlLoader = new FXMLLoader(ParticipantDialog.class.getResource(Constants.FXML_DIALOG_PARTICIPANT), bundle);
+
             Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
             ParticipantDialog instance = fxmlLoader.getController();

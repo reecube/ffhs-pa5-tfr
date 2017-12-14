@@ -88,12 +88,12 @@ public class Controller implements ViewController {
     /**
      * TODO
      *
-     * @return
+     * @return TODO
      */
-    private ResourceBundle defineResourceBundle() {
+    public static ResourceBundle defineResourceBundle() {
         String userLanguage = defineUserLanguage();
         Locale locale = new Locale(userLanguage);
-        return ResourceBundle.getBundle("ffhs.pa5.resources.lang.SPV", locale);
+        return ResourceBundle.getBundle(Constants.PACKAGE_TRANSLATION, locale);
     }
 
     /**
@@ -164,10 +164,10 @@ public class Controller implements ViewController {
     /**
      * TODO
      *
-     * @return
+     * @return TODO
      */
-    private String defineUserLanguage() {
-        if (Locale.getDefault().getLanguage().toString().equals("de")) {
+    private static String defineUserLanguage() {
+        if (Locale.getDefault().getLanguage().equals("de")) {
             return "de";
         } else {
             return "en";

@@ -1,6 +1,7 @@
 package ffhs.pa5.view.dialog;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import java.util.ResourceBundle;
 
 /**
  * TODO
@@ -50,7 +53,8 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
      */
     public static AgendaItemDialog getNewInstance(AgendaItem agendaItem) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(AgendaItemDialog.class.getResource(Constants.FXML_DIALOG_AGENDA_ITEM));
+            ResourceBundle bundle = Controller.defineResourceBundle();
+            FXMLLoader fxmlLoader = new FXMLLoader(AgendaItemDialog.class.getResource(Constants.FXML_DIALOG_AGENDA_ITEM), bundle);
             Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
             AgendaItemDialog instance = fxmlLoader.getController();
