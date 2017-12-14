@@ -25,6 +25,14 @@ public class AgendaItem extends ViewObservable {
         addObserver(observer);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return "[" + id + "] " + title;
+    }
+
     public String getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package ffhs.pa5.model;
 
+import java.util.ArrayList;
 import java.util.Observer;
 
 /**
@@ -25,6 +26,36 @@ public class Participant extends ViewObservable {
     @Override
     public void addObserverRecursive(Observer observer) {
         addObserver(observer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        ArrayList<String> result = new ArrayList<>();
+
+        if (firstname != null && firstname.length() > 0) {
+            result.add(firstname);
+        }
+
+        if (lastname != null && lastname.length() > 0) {
+            result.add(lastname);
+        }
+
+        if (role != null && role.length() > 0) {
+            result.add("(" + role + ")");
+        }
+
+        if (email != null && email.length() > 0) {
+            result.add("<" + email + ">");
+        }
+
+        if (phone != null && phone.length() > 0) {
+            result.add("[" + phone + "]");
+        }
+
+        return String.join(" ", result);
     }
 
     public String getFirstname() {
