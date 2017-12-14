@@ -257,7 +257,11 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        controller.addAgendaItem(result.get());
+        if (controller.addAgendaItem(result.get())) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -274,13 +278,20 @@ public class View extends Stage implements Observer, Initializable {
         }
 
         AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance(agendaItem);
-        // FIXME: what's going on intellij?
+        if (agendaItemDialog == null) {
+            // Exception already handled
+            return;
+        }
         Optional<AgendaItem> result = agendaItemDialog.showAndWait();
         if (!result.isPresent()) {
             return;
         }
 
-        controller.editAgendaItem(result.get());
+        if (controller.editAgendaItem(result.get())) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -296,7 +307,11 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        controller.removeAgendaItem(agendaItem);
+        if (controller.removeAgendaItem(agendaItem)) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -311,7 +326,11 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        controller.addParticipant(result.get());
+        if (controller.addParticipant(result.get())) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -328,13 +347,20 @@ public class View extends Stage implements Observer, Initializable {
         }
 
         ParticipantDialog participantDialog = ParticipantDialog.getNewInstance(participant);
-        // FIXME: what's going on intellij?
+        if (participantDialog == null) {
+            // Exception already handled
+            return;
+        }
         Optional<Participant> result = participantDialog.showAndWait();
         if (!result.isPresent()) {
             return;
         }
 
-        controller.editParticipant(result.get());
+        if (controller.editParticipant(result.get())) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -350,7 +376,11 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        controller.removeParticipant(participant);
+        if (controller.removeParticipant(participant)) {
+            return;
+        }
+
+        // TODO: show error message
     }
 
     /**
@@ -366,10 +396,10 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        boolean result = controller.moveAgendaItem(agendaItem, -1);
-        if (result) {
+        if (controller.moveAgendaItem(agendaItem, -1)) {
             return;
         }
+
         AlertHelper.showErrorMoveAgendaItemUp();
     }
 
@@ -386,10 +416,10 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        boolean result = controller.moveAgendaItem(agendaItem, 1);
-        if (result) {
+        if (controller.moveAgendaItem(agendaItem, 1)) {
             return;
         }
+
         AlertHelper.showErrorMoveAgendaItemDown();
     }
 

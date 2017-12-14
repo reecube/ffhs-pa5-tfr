@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.DataFile;
+import ffhs.pa5.model.Meeting;
 import ffhs.pa5.model.Participant;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;
@@ -101,24 +102,30 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
-    public void addAgendaItem(AgendaItem agendaItem) {
+    public boolean addAgendaItem(AgendaItem agendaItem) {
         // TODO: implement this
+
+        return false;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void editAgendaItem(AgendaItem agendaItem) {
+    public boolean editAgendaItem(AgendaItem agendaItem) {
         // TODO: implement this
+
+        return false;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void removeAgendaItem(AgendaItem agendaItem) {
+    public boolean removeAgendaItem(AgendaItem agendaItem) {
         // TODO: implement this
+
+        return false;
     }
 
     /**
@@ -127,6 +134,7 @@ public class Controller implements ViewController {
     @Override
     public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
         // TODO: implement this
+
         return false;
     }
 
@@ -134,26 +142,28 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
-    public void addParticipant(Participant participant) {
-        // FIXME: improve this
-        fileStorageFactory.getFile().getMeeting().addParticipant(participant);
-        fileStorageFactory.getFile().getMeeting().updateView();
+    public boolean addParticipant(Participant participant) {
+        return fileStorageFactory.getFile().getMeeting().addParticipant(participant);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void editParticipant(Participant participant) {
+    public boolean editParticipant(Participant participant) {
         // TODO: implement this
+
+        return false;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void removeParticipant(Participant participant) {
+    public boolean removeParticipant(Participant participant) {
         // TODO: implement this
+
+        return false;
     }
 
     /**

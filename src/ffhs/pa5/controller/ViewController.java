@@ -18,21 +18,21 @@ public interface ViewController {
      *
      * @param agendaItem TODO
      */
-    void addAgendaItem(AgendaItem agendaItem);
+    boolean addAgendaItem(AgendaItem agendaItem);
 
     /**
      * TODO
      *
      * @param agendaItem TODO
      */
-    void editAgendaItem(AgendaItem agendaItem);
+    boolean editAgendaItem(AgendaItem agendaItem);
 
     /**
      * TODO
      *
      * @param agendaItem TODO
      */
-    void removeAgendaItem(AgendaItem agendaItem);
+    boolean removeAgendaItem(AgendaItem agendaItem);
 
     /**
      * TODO
@@ -48,21 +48,21 @@ public interface ViewController {
      *
      * @param participant TODO
      */
-    void addParticipant(Participant participant);
+    boolean addParticipant(Participant participant);
 
     /**
      * TODO
      *
      * @param participant TODO
      */
-    void editParticipant(Participant participant);
+    boolean editParticipant(Participant participant);
 
     /**
      * TODO
      *
      * @param participant TODO
      */
-    void removeParticipant(Participant participant);
+    boolean removeParticipant(Participant participant);
 
     /**
      * TODO
