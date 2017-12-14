@@ -27,12 +27,6 @@ public class Meeting extends ViewObservable {
      */
     @Override
     public void addObserverRecursive(Observer observer) {
-        for (Participant participant : participants) {
-            participant.addObserverRecursive(observer);
-        }
-        for (AgendaItem agendaItem : agendaItems) {
-            agendaItem.addObserverRecursive(observer);
-        }
         addObserver(observer);
     }
 

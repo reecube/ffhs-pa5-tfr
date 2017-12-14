@@ -35,9 +35,6 @@ public class DataFile extends ViewObservable {
     public void addObserverRecursive(Observer observer) {
         metadata.addObserverRecursive(observer);
         meeting.addObserverRecursive(observer);
-        for (Change change : changes) {
-            change.addObserverRecursive(observer);
-        }
         addObserver(observer);
     }
 
