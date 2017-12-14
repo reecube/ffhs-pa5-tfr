@@ -21,15 +21,14 @@ public class ExportModelAgendaItem {
      *
      * @param agendaItem TODO
      */
-    public ExportModelAgendaItem(AgendaItem agendaItem) {
-        if (agendaItem.getDeleted() == false) {
-            this.id = agendaItem.getId();
-            this.title = agendaItem.getTitle();
-            this.content = agendaItem.getContent();
-        } else {
-            //TODO Muss ich hier noch was machen, damit keine leeren Instanzen entstehen können?
+    ExportModelAgendaItem(AgendaItem agendaItem) throws Exception {
+        if (agendaItem.isDeleted()) {
+            throw new Exception("You must not export a deleted agenda item!");
         }
-        // TODO: Barbara, fülle die Variablen anhand der Parameter (ps. nur jene, welche nicht gelöscht sind)
+
+        this.id = agendaItem.getId();
+        this.title = agendaItem.getTitle();
+        this.content = agendaItem.getContent();
     }
 
     public String getId() {

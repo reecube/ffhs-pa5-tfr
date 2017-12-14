@@ -1,6 +1,7 @@
 package ffhs.pa5.factory.export;
 
 import ffhs.pa5.model.*;
+import ffhs.pa5.util.Logger;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -46,7 +47,16 @@ public class ExportModel {
         this.nextMeeting = meeting.getNextMeeting();
         this.agendaItems = new ArrayList<>();
         for (AgendaItem agendaItem : meeting.getAgendaItems()) {
-            this.agendaItems.add(new ExportModelAgendaItem(agendaItem));
+            if (agendaItem.isDeleted()) {
+                continue;
+            }
+
+            try {
+                this.agendaItems.add(new ExportModelAgendaItem(agendaItem));
+            } catch (Exception ex) {
+                Logger logger = Logger.getInstance();
+                logger.handleException(ex);
+            }
         }
         // this.creationDate TODO
         // this.lastEditionDate TODO
