@@ -51,12 +51,16 @@ public class ExportModel {
                 continue;
             }
 
+            ExportModelAgendaItem exportModelAgendaItem;
             try {
-                this.agendaItems.add(new ExportModelAgendaItem(agendaItem));
+                exportModelAgendaItem = new ExportModelAgendaItem(agendaItem);
             } catch (Exception ex) {
                 Logger logger = Logger.getInstance();
                 logger.handleException(ex);
+
+                continue;
             }
+            this.agendaItems.add(exportModelAgendaItem);
         }
         // this.creationDate TODO
         // this.lastEditionDate TODO
