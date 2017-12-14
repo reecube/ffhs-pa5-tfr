@@ -2,7 +2,7 @@ package ffhs.pa5.view;
 
 import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.LanguageKeys;
-import ffhs.pa5.util.ResourceBundleUtil;
+import ffhs.pa5.util.ResourceUtil;
 import javafx.scene.control.Alert;
 
 /**
@@ -17,27 +17,36 @@ import javafx.scene.control.Alert;
 abstract class AlertHelper {
 
     /**
-     * TODO @Barbara: javadoc
+     * TODO
      */
     static void showErrorAgendaItemNull() {
-        showError(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemNull));
+        showError(ResourceUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemNull));
     }
 
+    /**
+     * TODO
+     */
     static void showErrorParticipantNull() {
-        showError(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_participantNull));
+        showError(ResourceUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_participantNull));
     }
 
+    /**
+     * TODO
+     */
     static void showErrorMoveAgendaItemUp() {
-        showError(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveUp));
+        showError(ResourceUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveUp));
     }
 
+    /**
+     * TODO
+     */
     static void showErrorMoveAgendaItemDown() {
-        showError(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveDown));
+        showError(ResourceUtil.getLangString(Controller.getBundle(), LanguageKeys.userMessage_agendaItemMoveDown));
     }
 
     private static void showError(String contentText) { //TODO: Language key mitgeben
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(ResourceBundleUtil.getLangString(Controller.getBundle(), LanguageKeys.messageType_error));
+        alert.setTitle(ResourceUtil.getLangString(Controller.getBundle(), LanguageKeys.messageType_error));
         alert.setHeaderText(null);
         alert.setContentText(contentText);
         alert.showAndWait();

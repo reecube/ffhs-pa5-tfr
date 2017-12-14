@@ -44,7 +44,7 @@ public abstract class Constants {
     public static final int VIEW_WIDTH = 1200;
     public static final int VIEW_HEIGHT = 800;
 
-    // ResourceBundleUtil
+    // ResourceUtil
     public static final String INDICATOR_MISSING_RESOURCE = "Error: missing resource";
     public static final String INDICATOR_MISSING_KEY = "Error: missing key";
 }
