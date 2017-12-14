@@ -1,6 +1,7 @@
 package ffhs.pa5.model;
 
 import java.util.Observable;
+import java.util.Observer;
 
 /**
  * This is the Observable class with custom functions.
@@ -10,7 +11,9 @@ import java.util.Observable;
  * @author Yves Riedener
  * @version 1.0
  */
-class ViewObservable extends Observable {
+abstract class ViewObservable extends Observable {
+
+    public abstract void addObserverRecursive(Observer observer);
 
     /**
      * Notify the observers for changes

@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Observer;
 import java.util.UUID;
 
 /**
@@ -28,6 +29,14 @@ public class Metadata extends ViewObservable {
      */
     Metadata(String password) {
         this.password = password;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        addObserver(observer);
     }
 
     /**

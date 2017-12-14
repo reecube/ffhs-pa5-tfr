@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import java.util.Observer;
+
 /**
  * This class handles the data of the participants of a meeting.
  *
@@ -16,6 +18,14 @@ public class Participant extends ViewObservable {
     private String phone = "";
     private String role = "";
     private String notes = "";
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        addObserver(observer);
+    }
 
     public String getFirstname() {
         return firstname;

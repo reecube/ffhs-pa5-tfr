@@ -68,7 +68,7 @@ public class Controller implements ViewController {
         fileStorageFactory.open();
 
         DataFile file = fileStorageFactory.getFile();
-        file.addObserver(viewObserver);
+        file.addObserverRecursive(viewObserver);
         file.updateView();
     }
 

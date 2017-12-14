@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import java.util.Observer;
+
 /**
  * This class handles the data of agenda items within a meeting protocol.
  *
@@ -14,6 +16,14 @@ public class AgendaItem extends ViewObservable {
     private String title = "";
     private String content = "";
     private boolean deleted = false;
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        addObserver(observer);
+    }
 
     public String getId() {
         return id;

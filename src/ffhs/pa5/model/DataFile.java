@@ -1,6 +1,7 @@
 package ffhs.pa5.model;
 
 import java.util.ArrayList;
+import java.util.Observer;
 
 /**
  * This class handles the data of a meeting protocol.
@@ -25,6 +26,19 @@ public class DataFile extends ViewObservable {
         this.metadata = new Metadata(password);
         this.meeting = new Meeting();
         this.changes = new ArrayList<>();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        metadata.addObserverRecursive(observer);
+        meeting.addObserverRecursive(observer);
+        for (Change change : changes) {
+            change.addObserverRecursive(observer);
+        }
+        addObserver(observer);
     }
 
     public Metadata getMetadata() {

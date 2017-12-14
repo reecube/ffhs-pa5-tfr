@@ -1,6 +1,7 @@
 package ffhs.pa5.model;
 
 import java.util.Date;
+import java.util.Observer;
 
 /**
  * This class handles the data of changes made in a meeting protocol.
@@ -27,6 +28,14 @@ public class Change extends ViewObservable {
         this.date = date;
         this.user = user;
         this.change = change;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        addObserver(observer);
     }
 
     public Date getDate() {

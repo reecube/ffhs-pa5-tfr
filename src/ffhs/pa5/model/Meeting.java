@@ -2,6 +2,7 @@ package ffhs.pa5.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Observer;
 
 /**
  * This class handles the data of a meeting.
@@ -20,6 +21,20 @@ public class Meeting extends ViewObservable {
     private Date nextMeeting = null;
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<AgendaItem> agendaItems = new ArrayList<>();
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addObserverRecursive(Observer observer) {
+        for (Participant participant : participants) {
+            participant.addObserverRecursive(observer);
+        }
+        for (AgendaItem agendaItem : agendaItems) {
+            agendaItem.addObserverRecursive(observer);
+        }
+        addObserver(observer);
+    }
 
     public String getTitle() {
         return title;
