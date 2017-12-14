@@ -134,7 +134,9 @@ public class Controller implements ViewController {
      */
     @Override
     public void addParticipant(Participant participant) {
-        // TODO: implement this
+        // FIXME: improve this
+        fileStorageFactory.getFile().getMeeting().getParticipants().add(participant);
+        fileStorageFactory.getFile().getMeeting().updateView();
     }
 
     /**
