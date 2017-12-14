@@ -7,7 +7,6 @@ import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
 import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
-
 import java.util.HashMap;
 
 /**
@@ -63,7 +62,7 @@ public class FileStorageFactory {
     /**
      * TODO
      *
-     * @param path TODO
+     * @param path           TODO
      * @param newStateLocked TODO
      * @return TODO
      */
@@ -117,6 +116,23 @@ public class FileStorageFactory {
     /**
      * TODO
      *
+     * @return TODO
+     */
+    private FileStorageFactoryResult checkApplicationVersion() {
+        if (file == null) {
+            return FileStorageFactoryResult.ERROR_UNEXPECTED_BEHAVIOR;
+        }
+
+        if (file.getMetadata().getAppVersion() != Constants.APP_VERSION) {
+            return FileStorageFactoryResult.ERROR_FILE_VERSION_MISMATCH;
+        }
+
+        return FileStorageFactoryResult.SUCCESS;
+    }
+
+    /**
+     * TODO
+     *
      * @param entryArray TODO
      * @return TODO
      */
@@ -135,7 +151,7 @@ public class FileStorageFactory {
         this.file = JsonUtil.parse(dataJsonFile.getContent(), DataFile.class);
         this.files = entries;
 
-        return FileStorageFactoryResult.SUCCESS;
+        return checkApplicationVersion();
     }
 
     /**
