@@ -81,6 +81,9 @@ public class View extends Stage implements Observer, Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        tabPane.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)
+                -> onTabPaneSelectionChange(oldValue, newValue));
+
         addChangeListener(outputParticipants, (observable, oldValue, newValue)
                 -> onParticipantsSelectionChange(oldValue, newValue));
 
@@ -210,6 +213,17 @@ public class View extends Stage implements Observer, Initializable {
             final Logger logger = Logger.getInstance();
             logger.handleException(new Exception("Could not handle the observable with the class `" + o.getClass() + "`!"));
         }
+    }
+
+    /**
+     * TODO
+     *
+     * @param oldValue TODO
+     * @param newValue TODO
+     */
+    private void onTabPaneSelectionChange(Tab oldValue, Tab newValue) {
+        System.out.println(oldValue);
+        System.out.println(newValue);
     }
 
     /**
