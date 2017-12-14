@@ -250,75 +250,6 @@ public class View extends Stage implements Observer, Initializable {
      *
      * @param actionEvent TODO
      */
-    public void onAddAgendaItem(ActionEvent actionEvent) {
-        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance();
-        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
-        if (!result.isPresent()) {
-            return;
-        }
-
-        if (controller.addAgendaItem(result.get())) {
-            return;
-        }
-
-        // TODO: show error message
-    }
-
-    /**
-     * TODO
-     *
-     * @param actionEvent TODO
-     */
-    public void onEditAgendaItem(ActionEvent actionEvent) {
-        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
-
-        if (agendaItem == null) {
-            AlertHelper.showErrorAgendaItemNull();
-            return;
-        }
-
-        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance(agendaItem);
-        if (agendaItemDialog == null) {
-            // Exception already handled
-            return;
-        }
-        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
-        if (!result.isPresent()) {
-            return;
-        }
-
-        if (controller.editAgendaItem(result.get())) {
-            return;
-        }
-
-        // TODO: show error message
-    }
-
-    /**
-     * TODO
-     *
-     * @param actionEvent TODO
-     */
-    public void onRemoveAgendaItem(ActionEvent actionEvent) {
-        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
-
-        if (agendaItem == null) {
-            AlertHelper.showErrorAgendaItemNull();
-            return;
-        }
-
-        if (controller.removeAgendaItem(agendaItem)) {
-            return;
-        }
-
-        // TODO: show error message
-    }
-
-    /**
-     * TODO
-     *
-     * @param actionEvent TODO
-     */
     public void onAddParticipant(ActionEvent actionEvent) {
         ParticipantDialog participantDialog = ParticipantDialog.getNewInstance();
         Optional<Participant> result = participantDialog.showAndWait();
@@ -330,7 +261,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: show error message
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_ADD);
     }
 
     /**
@@ -342,7 +273,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            AlertHelper.showErrorParticipantNull();
+            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL);
             return;
         }
 
@@ -360,7 +291,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: show error message
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_EDIT);
     }
 
     /**
@@ -372,7 +303,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            AlertHelper.showErrorParticipantNull();
+            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL);
             return;
         }
 
@@ -380,7 +311,76 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: show error message
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_REMOVE);
+    }
+
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onAddAgendaItem(ActionEvent actionEvent) {
+        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance();
+        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        if (controller.addAgendaItem(result.get())) {
+            return;
+        }
+
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_ADD);
+    }
+
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onEditAgendaItem(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            return;
+        }
+
+        AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance(agendaItem);
+        if (agendaItemDialog == null) {
+            // Exception already handled
+            return;
+        }
+        Optional<AgendaItem> result = agendaItemDialog.showAndWait();
+        if (!result.isPresent()) {
+            return;
+        }
+
+        if (controller.editAgendaItem(result.get())) {
+            return;
+        }
+
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT);
+    }
+
+    /**
+     * TODO
+     *
+     * @param actionEvent TODO
+     */
+    public void onRemoveAgendaItem(ActionEvent actionEvent) {
+        AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            return;
+        }
+
+        if (controller.removeAgendaItem(agendaItem)) {
+            return;
+        }
+
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_REMOVE);
     }
 
     /**
@@ -392,7 +392,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showErrorAgendaItemNull();
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
             return;
         }
 
@@ -400,7 +400,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showErrorMoveAgendaItemUp();
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE);
     }
 
     /**
@@ -412,7 +412,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showErrorAgendaItemNull();
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
             return;
         }
 
@@ -420,7 +420,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showErrorMoveAgendaItemDown();
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE);
     }
 
     /**
