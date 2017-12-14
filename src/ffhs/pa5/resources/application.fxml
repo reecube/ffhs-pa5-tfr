@@ -15,9 +15,9 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="todo: file">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="todo: open"/>
-                                <MenuItem mnemonicParsing="false" text="todo: save"/>
-                                <MenuItem mnemonicParsing="false" text="todo: save-template"/>
+                                <MenuItem mnemonicParsing="false" text="%menu_open"/>
+                                <MenuItem mnemonicParsing="false" text="%menu_save"/>
+                                <MenuItem mnemonicParsing="false" text="%menu_saveTemplate"/>
                             </items>
                         </Menu>
                     </menus>
@@ -25,7 +25,7 @@
                 <TabPane fx:id="tabPane" prefHeight="146.0" prefWidth="429.0" tabClosingPolicy="UNAVAILABLE"
                          VBox.vgrow="ALWAYS">
                     <tabs>
-                        <Tab fx:id="tabPreparation" text="todo: vorbereitung">
+                        <Tab fx:id="tabPreparation" text="%label_preparation">
                             <content>
                                 <VBox prefHeight="200.0" prefWidth="100.0">
                                     <children>
@@ -48,29 +48,29 @@
                                                                         vgrow="SOMETIMES"/>
                                                     </rowConstraints>
                                                     <children>
-                                                        <Label text="todo: titel">
+                                                        <Label text="%label_title">
                                                             <GridPane.margin>
                                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                                             </GridPane.margin>
                                                         </Label>
-                                                        <Label text="todo: datum" GridPane.columnIndex="1">
+                                                        <Label text="%label_date" GridPane.columnIndex="1">
                                                             <GridPane.margin>
                                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                                             </GridPane.margin>
                                                         </Label>
-                                                        <Label text="todo: ort" GridPane.columnIndex="2">
+                                                        <Label text="%label_place" GridPane.columnIndex="2">
                                                             <GridPane.margin>
                                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                                             </GridPane.margin>
                                                         </Label>
-                                                        <TextField fx:id="inputMeetingTitle" promptText="todo: titel"
+                                                        <TextField fx:id="inputMeetingTitle" promptText="%label_title"
                                                                    GridPane.rowIndex="1" GridPane.valignment="TOP">
                                                             <GridPane.margin>
                                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                                             </GridPane.margin>
                                                         </TextField>
                                                         <TextArea fx:id="inputMeetingLocation" prefHeight="200.0"
-                                                                  prefWidth="200.0" promptText="todo: ort"
+                                                                  prefWidth="200.0" promptText="%label_place"
                                                                   GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                             <GridPane.margin>
                                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -95,20 +95,20 @@
                                         </VBox>
                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                             <children>
-                                                <Label text="todo: teilnehmer"/>
+                                                <Label text="%label_participants"/>
                                                 <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                     <children>
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onAddAgendaItem" text="todo: add">
+                                                                        onAction="#onAddAgendaItem" text="%button_add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onEditAgendaItem" text="todo: edit">
+                                                                        onAction="#onEditAgendaItem" text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
@@ -116,7 +116,7 @@
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
                                                                         onAction="#onRemoveAgendaItem"
-                                                                        text="todo: remove">
+                                                                        text="%button_remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
@@ -138,20 +138,20 @@
                                         </VBox>
                                         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                             <children>
-                                                <Label text="todo: traktanden"/>
+                                                <Label text="%label_agendaItems"/>
                                                 <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                     <children>
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onAddParticipant" text="todo: add">
+                                                                        onAction="#onAddParticipant" text="%button_add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onEditParticipant" text="todo: edit">
+                                                                        onAction="#onEditParticipant" text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
@@ -159,7 +159,7 @@
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
                                                                         onAction="#onRemoveParticipant"
-                                                                        text="todo: remove">
+                                                                        text="%button_remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
@@ -167,14 +167,14 @@
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
                                                                         onAction="#onMoveAgendaItemUp"
-                                                                        text="todo: move up">
+                                                                        text="%button_moveUp">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
                                                                         onAction="#onMoveAgendaItemDown"
-                                                                        text="todo: move down">
+                                                                        text="%button_moveDown">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0"/>
                                                                     </VBox.margin>
@@ -198,11 +198,11 @@
                                 </VBox>
                             </content>
                         </Tab>
-                        <Tab fx:id="tabMeeting" text="todo: sitzung">
+                        <Tab fx:id="tabMeeting" text="%label_meeting">
                             <content>
                                 <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                     <children>
-                                        <Label text="todo: traktanden"/>
+                                        <Label text="%label_agendaItems"/>
                                         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                             <children>
                                                 <ListView fx:id="outputAgendaItemsMeeting" prefHeight="300.0"
@@ -211,17 +211,17 @@
                                                     <children>
                                                         <VBox prefHeight="399.0" prefWidth="224.0">
                                                             <children>
-                                                                <Label text="todo: ausgewähltes Traktandum">
+                                                                <Label text="%label_chosenAgendaItem">
                                                                     <VBox.margin>
                                                                         <Insets bottom="30.0"/>
                                                                     </VBox.margin>
                                                                 </Label>
-                                                                <Label text="todo: id">
+                                                                <Label text="%label_id">
                                                                     <VBox.margin>
                                                                         <Insets bottom="30.0"/>
                                                                     </VBox.margin>
                                                                 </Label>
-                                                                <Label text="todo: sort">
+                                                                <Label text="%label_sort">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0"/>
                                                                     </VBox.margin>
@@ -251,14 +251,14 @@
                                 </VBox>
                             </content>
                         </Tab>
-                        <Tab fx:id="tabEnding" text="todo: abschluss">
+                        <Tab fx:id="tabEnding" text="%label_ending">
                             <content>
                                 <VBox prefHeight="200.0" prefWidth="100.0">
                                     <padding>
                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                                     </padding>
                                     <children>
-                                        <Label text="todo: nächstes Meeting">
+                                        <Label text="%label_nextMeeting">
                                             <VBox.margin>
                                                 <Insets bottom="5.0"/>
                                             </VBox.margin>
@@ -274,13 +274,13 @@
                                             </VBox.margin>
                                         </ChoiceBox>
                                         <Button mnemonicParsing="false" onAction="#onExportMeeting"
-                                                text="todo: exportieren">
+                                                text="%button_export">
                                             <VBox.margin>
                                                 <Insets bottom="30.0"/>
                                             </VBox.margin>
                                         </Button>
                                         <Button mnemonicParsing="false" onAction="#onCloseMeeting"
-                                                text="todo: close spv"/>
+                                                text="%button_closeMeeting"/>
                                     </children>
                                 </VBox>
                             </content>

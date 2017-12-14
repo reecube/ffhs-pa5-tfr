@@ -5,44 +5,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:controller="ffhs.pa5.view.dialog.ParticipantDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <GridPane alignment="CENTER" prefHeight="458.0" prefWidth="616.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button mnemonicParsing="false" onAction="#handleButtonSaveAction" prefHeight="25.0" prefWidth="180.0" text="todo: save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Button mnemonicParsing="false" onAction="#handleButtonCancelAction" prefHeight="25.0" prefWidth="170.0" text="todo: cancel" GridPane.rowIndex="6" />
-            <Label alignment="CENTER" text="todo: firstname" />
-            <Label text="todo: lastname" GridPane.rowIndex="1" />
-            <Label text="todo: email" GridPane.rowIndex="2" />
-            <Label text="todo: phone" GridPane.rowIndex="3" />
-            <Label text="todo: role" GridPane.rowIndex="4" />
-            <Label text="todo: notes" GridPane.rowIndex="5" />
-            <TextField fx:id="inputFirstname" promptText="todo: firstname" GridPane.columnIndex="1" />
-            <TextField fx:id="inputLastname" promptText="todo: lastname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="inputEmail" promptText="todo: email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="inputPhone" promptText="todo: phone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="inputRole" promptText="todo: role" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextArea fx:id="inputNotes" prefHeight="200.0" prefWidth="200.0" promptText="todo: notes" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
-         </padding>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </GridPane>
-   </center>
+<BorderPane fx:controller="ffhs.pa5.view.dialog.ParticipantDialog" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <GridPane alignment="CENTER" prefHeight="458.0" prefWidth="616.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleButtonSaveAction" prefHeight="25.0" prefWidth="180.0"
+                        text="%button_save" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="6"/>
+                <Button mnemonicParsing="false" onAction="#handleButtonCancelAction" prefHeight="25.0" prefWidth="170.0"
+                        text="%button_cancel" GridPane.rowIndex="6"/>
+                <Label alignment="CENTER" text="%label_firstname"/>
+                <Label text="%label_lastname" GridPane.rowIndex="1"/>
+                <Label text="%label_email" GridPane.rowIndex="2"/>
+                <Label text="%label_phone" GridPane.rowIndex="3"/>
+                <Label text="%label_role" GridPane.rowIndex="4"/>
+                <Label text="%label_notes" GridPane.rowIndex="5"/>
+                <TextField fx:id="inputFirstname" promptText="%label_firstname" GridPane.columnIndex="1"/>
+                <TextField fx:id="inputLastname" promptText="%label_lastname" GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+                <TextField fx:id="inputEmail" promptText="%label_email" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="inputPhone" promptText="%label_phone" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="inputRole" promptText="%label_role" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextArea fx:id="inputNotes" prefHeight="200.0" prefWidth="200.0" promptText="%label_notes"
+                          GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+            </padding>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </GridPane>
+    </center>
 </BorderPane>

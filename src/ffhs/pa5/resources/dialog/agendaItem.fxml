@@ -18,12 +18,12 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#handleButtonSaveAction" prefHeight="25.0" prefWidth="180.0" text="todo: save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonCancelAction" prefHeight="25.0" prefWidth="170.0" text="todo: cancel" GridPane.rowIndex="2" />
-            <Label alignment="CENTER" text="todo: id" />
-            <Label text="todo: title" GridPane.rowIndex="1" />
-            <TextField fx:id="inputId" promptText="todo: id" GridPane.columnIndex="1" />
-            <TextField fx:id="inputTitle" promptText="todo: title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonSaveAction" prefHeight="25.0" prefWidth="180.0" text="%button_save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonCancelAction" prefHeight="25.0" prefWidth="170.0" text="%button_cancel" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" text="%label_id" />
+            <Label text="%label_title" GridPane.rowIndex="1" />
+            <TextField fx:id="inputId" promptText="%label_id" GridPane.columnIndex="1" />
+            <TextField fx:id="inputTitle" promptText="%label_title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
