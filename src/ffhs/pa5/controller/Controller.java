@@ -53,7 +53,8 @@ public class Controller implements ViewController {
 
         primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
 
-        view.setTitle(Constants.VIEW_TITLE);
+        view.setTitle(Constants.VIEW_TITLE); //TODO @Barbara: mit label_viewTitleMain ersetzen, das geht im..
+                //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
         view.setScene(primaryScene);
         view.sizeToScene();
         view.show();
