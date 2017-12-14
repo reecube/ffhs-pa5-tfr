@@ -1,5 +1,7 @@
 package ffhs.pa5.factory.export;
 
+import java.io.IOException;
+
 /**
  * TODO
  *
@@ -14,7 +16,7 @@ public interface ExportOutputHandler {
     /**
      * TODO
      *
-     * @param content TODO
+     * @param exportModel TODO
      */
-    boolean export(ExportModel content);
+    boolean export(ExportModel exportModel);
 }

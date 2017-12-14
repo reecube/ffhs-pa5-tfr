@@ -47,4 +47,8 @@ public abstract class Constants {
     // ResourceUtil
     public static final String INDICATOR_MISSING_RESOURCE = "Error: missing resource";
     public static final String INDICATOR_MISSING_KEY = "Error: missing key";
+
+    // export
+    public static final String JAVA_LINE_SEPARATOR = "line.separator";
+    public static final char CHAR_TAB = '\t';
 }

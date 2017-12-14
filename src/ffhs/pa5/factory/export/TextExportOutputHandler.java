@@ -1,5 +1,9 @@
 package ffhs.pa5.factory.export;
 
+import ffhs.pa5.Constants;
+import ffhs.pa5.controller.Controller;
+import ffhs.pa5.model.LanguageKey;
+import ffhs.pa5.util.ResourceUtil;
 import javafx.stage.FileChooser;
 
 /**
@@ -12,6 +16,9 @@ import javafx.stage.FileChooser;
  */
 public class TextExportOutputHandler extends FileExportOutputHandler {
 
+    private String lineSeparator;
+    private String content;
+
     /**
      * {@inheritDoc}
      */
@@ -22,14 +29,34 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
         };
     }
 
+    private void addLine(String line) {
+        this.content = content + (line == null ? "" : line) + lineSeparator;
+    }
+
+    private void addLine() {
+        addLine(null);
+    }
+
+    private void addLabelContent(LanguageKey label, String theContent) {
+        String labelContent = ResourceUtil.getLangString(Controller.getBundle(), label);
+
+        addLine(labelContent + Constants.CHAR_TAB + theContent);
+    }
+
     /**
      * {@inheritDoc}
      */
     @Override
     protected byte[] getContent(ExportModel model) {
-        return new byte[0];
-        //TODO: ev anderer Rückgabewert
-        //hier kommt dann der text
+        this.lineSeparator = System.getProperty(Constants.JAVA_LINE_SEPARATOR);
+        this.content = "";
+
+        addLabelContent(LanguageKey.ERROR_TITLE, model.getTitle());
+        addLine(null);
+
+        // TODO: implement the rest
+
+        return content.getBytes();
     }
 
 }

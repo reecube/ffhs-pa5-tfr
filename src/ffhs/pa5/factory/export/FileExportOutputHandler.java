@@ -1,6 +1,13 @@
 package ffhs.pa5.factory.export;
 
+import ffhs.pa5.util.Logger;
 import javafx.stage.FileChooser;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 /**
  * TODO
@@ -38,8 +45,19 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
      */
     @Override
     public boolean export(ExportModel content) {
-        //TODO: File holen mit getContent() (z.B: aus TextExportOutputHanlder)
-        //TODO: Als file speichern --> hier kommt der FileOutputStream --> gibt es ev. bessere variante? suche nach java8
+        byte[] fileContent = getContent(content);
+
+        try {
+            // @see https://examples.javacodegeeks.com/core-java/nio/file-nio/java-nio-write-file-example/
+            // @see http://tutorials.jenkov.com/java-nio/files.html
+            Files.write(Paths.get(path), fileContent);
+
+            return true;
+        } catch (IOException ex) {
+            Logger logger = Logger.getInstance();
+            logger.handleException(ex);
+        }
+
         return false;
     }
 
