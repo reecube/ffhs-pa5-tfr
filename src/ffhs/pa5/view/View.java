@@ -107,9 +107,11 @@ public class View extends Stage implements Observer, Initializable {
      */
     private void updateAgendaItems(AgendaItem[] agendaItems) {
         ObservableList<AgendaItem> listMeeting = outputAgendaItemsMeeting.getItems();
+        listMeeting.clear();
         listMeeting.addAll(agendaItems);
 
         ObservableList<AgendaItem> listPreparation = outputAgendaItemsPreparation.getItems();
+        listPreparation.clear();
         listPreparation.addAll(agendaItems);
     }
 
@@ -120,6 +122,7 @@ public class View extends Stage implements Observer, Initializable {
      */
     private void updateParticipants(Participant[] participants) {
         ObservableList<Participant> list = outputParticipants.getItems();
+        list.clear();
         list.addAll(participants);
     }
 
