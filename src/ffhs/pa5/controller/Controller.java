@@ -2,10 +2,7 @@ package ffhs.pa5.controller;
 
 import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
-import ffhs.pa5.model.AgendaItem;
-import ffhs.pa5.model.DataFile;
-import ffhs.pa5.model.Meeting;
-import ffhs.pa5.model.Participant;
+import ffhs.pa5.model.*;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -103,9 +100,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean addAgendaItem(AgendaItem agendaItem) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().addAgendaItem(agendaItem);
     }
 
     /**
@@ -123,9 +118,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean removeAgendaItem(AgendaItem agendaItem) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().removeAgendaItem(agendaItem);
     }
 
     /**
@@ -161,9 +154,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean removeParticipant(Participant participant) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().removeParticipant(participant);
     }
 
     /**
@@ -171,7 +162,9 @@ public class Controller implements ViewController {
      */
     @Override
     public void closeMeeting() {
-        // TODO: implement this
+        fileStorageFactory.getFile().getMeeting().setState(State.CLOSED);
+
+        // TODO: save the file or not?
     }
 
     /**
