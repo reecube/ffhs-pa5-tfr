@@ -3,8 +3,7 @@ package ffhs.pa5.model;
 import java.util.ArrayList;
 
 /**
- * TODO (Stimmt das so, Yves?)
- * This class handles the data of a meeting protocol which is saved on the file system.
+ * This class handles the data of a meeting protocol.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -19,15 +18,6 @@ public class DataFile extends ViewObservable {
 
     /**
      * TODO
-     */
-    public DataFile() {
-        this.metadata = new Metadata("");
-        this.meeting = new Meeting();
-        this.changes = new ArrayList<>();
-    }
-
-    /**
-     * TODO
      *
      * @param password TODO
      */
@@ -37,37 +27,12 @@ public class DataFile extends ViewObservable {
         this.changes = new ArrayList<>();
     }
 
-    /**
-     * TODO
-     *
-     * @param metadata TODO
-     * @param meeting  TODO
-     * @param changes  TODO
-     */
-    public DataFile(Metadata metadata, Meeting meeting, ArrayList<Change> changes) {
-        this.metadata = metadata;
-        this.meeting = meeting;
-        this.changes = changes;
-    }
-
     public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metadata metadata) {
-        this.metadata = metadata;
-
-        updateView();
-    }
-
     public Meeting getMeeting() {
         return meeting;
-    }
-
-    public void setMeeting(Meeting meeting) {
-        this.meeting = meeting;
-
-        updateView();
     }
 
     /**

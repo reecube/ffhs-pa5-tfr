@@ -13,47 +13,13 @@ import java.util.Date;
  */
 public class Meeting extends ViewObservable {
 
-    private String title;
-    private String location;
-    private Date date;
-    private ArrayList<Participant> participants;
-    private State state;
-    private Date nextMeeting;
-    private ArrayList<AgendaItem> agendaItems;
-
-    /**
-     * TODO
-     */
-    public Meeting() {
-        this.title = "";
-        this.location = "";
-        this.date = null;
-        this.participants = new ArrayList<>();
-        this.state = State.PREPARATION;
-        this.nextMeeting = null;
-        this.agendaItems = new ArrayList<>();
-    }
-
-    /**
-     * TODO
-     *
-     * @param title TODO
-     * @param location TODO
-     * @param date TODO
-     * @param participants TODO
-     * @param state TODO
-     * @param nextMeeting TODO
-     * @param agendaItems TODO
-     */
-    public Meeting(String title, String location, Date date, ArrayList<Participant> participants, State state, Date nextMeeting, ArrayList<AgendaItem> agendaItems) {
-        this.title = title;
-        this.location = location;
-        this.date = date;
-        this.participants = participants;
-        this.state = state;
-        this.nextMeeting = nextMeeting;
-        this.agendaItems = agendaItems;
-    }
+    private String title = "";
+    private String location = "";
+    private Date date = null;
+    private State state = State.PREPARATION;
+    private Date nextMeeting = null;
+    private ArrayList<Participant> participants = new ArrayList<>();
+    private ArrayList<AgendaItem> agendaItems = new ArrayList<>();
 
     public String getTitle() {
         return title;
@@ -85,16 +51,6 @@ public class Meeting extends ViewObservable {
         updateView();
     }
 
-    public ArrayList<Participant> getParticipants() {
-        return participants;
-    }
-
-    public void setParticipants(ArrayList<Participant> participants) {
-        this.participants = participants;
-
-        updateView();
-    }
-
     public State getState() {
         return state;
     }
@@ -115,13 +71,75 @@ public class Meeting extends ViewObservable {
         updateView();
     }
 
-    public ArrayList<AgendaItem> getAgendaItems() {
-        return agendaItems;
+    public Participant[] getParticipants() {
+        return participants.toArray(new Participant[0]);
     }
 
-    public void setAgendaItems(ArrayList<AgendaItem> agendaItems) {
-        this.agendaItems = agendaItems;
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     * @return TODO
+     */
+    public boolean addParticipant(Participant participant) {
+        boolean result = participants.add(participant);
 
-        updateView();
+        if (result) {
+            updateView();
+        }
+
+        return result;
+    }
+
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     * @return TODO
+     */
+    public boolean removeParticipant(Participant participant) {
+        boolean result = participants.remove(participant);
+
+        if (result) {
+            updateView();
+        }
+
+        return result;
+    }
+
+    public AgendaItem[] getAgendaItems() {
+        return agendaItems.toArray(new AgendaItem[0]);
+    }
+
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     * @return TODO
+     */
+    public boolean addAgendaItem(AgendaItem agendaItem) {
+        boolean result = agendaItems.add(agendaItem);
+
+        if (result) {
+            updateView();
+        }
+
+        return result;
+    }
+
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     * @return TODO
+     */
+    public boolean removeAgendaItem(AgendaItem agendaItem) {
+        boolean result = agendaItems.remove(agendaItem);
+
+        if (result) {
+            updateView();
+        }
+
+        return result;
     }
 }

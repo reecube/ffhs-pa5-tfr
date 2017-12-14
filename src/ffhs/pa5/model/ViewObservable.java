@@ -3,8 +3,7 @@ package ffhs.pa5.model;
 import java.util.Observable;
 
 /**
- * TODO (Stimmt das so, Yves?)
- * This is the Observable class.
+ * This is the Observable class with custom functions.
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

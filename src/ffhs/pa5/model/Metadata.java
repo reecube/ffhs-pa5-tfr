@@ -16,9 +16,9 @@ import java.util.UUID;
  */
 public class Metadata extends ViewObservable {
 
-    private int appVersion;
-    private String id;
-    private Date saveDate;
+    private int appVersion = Constants.APP_VERSION;
+    private String id = generateId();
+    private Date saveDate = null;
     private String password;
 
     /**
@@ -27,24 +27,6 @@ public class Metadata extends ViewObservable {
      * @param password TODO
      */
     Metadata(String password) {
-        this.appVersion = Constants.APP_VERSION;
-        this.id = generateId();
-        this.saveDate = null;
-        this.password = password;
-    }
-
-    /**
-     * TODO
-     *
-     * @param appVersion TODO
-     * @param id         TODO
-     * @param saveDate   TODO
-     * @param password   TODO
-     */
-    public Metadata(int appVersion, String id, Date saveDate, String password) {
-        this.appVersion = appVersion;
-        this.id = id;
-        this.saveDate = saveDate;
         this.password = password;
     }
 
@@ -61,20 +43,8 @@ public class Metadata extends ViewObservable {
         return appVersion;
     }
 
-    public void setAppVersion(int appVersion) {
-        this.appVersion = appVersion;
-
-        updateView();
-    }
-
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-
-        updateView();
     }
 
     public Date getSaveDate() {
@@ -89,11 +59,5 @@ public class Metadata extends ViewObservable {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-
-        updateView();
     }
 }

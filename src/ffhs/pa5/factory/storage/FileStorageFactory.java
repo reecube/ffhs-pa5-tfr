@@ -7,6 +7,8 @@ import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
 import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
+
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -91,7 +93,7 @@ public class FileStorageFactory {
      * @return TODO
      */
     public FileStorageFactoryResult open() {
-        this.file = new DataFile();
+        this.file = new DataFile("");
         this.files = new HashMap<>();
 
         return FileStorageFactoryResult.SUCCESS;
@@ -217,6 +219,8 @@ public class FileStorageFactory {
         if (!archiveFactory.write(files.values().toArray(new ArchiveFactoryEntry[0]))) {
             return FileStorageFactoryResult.ERROR_BUILD_ARCHIVE;
         }
+
+        file.getMetadata().setSaveDate(new Date());
 
         return FileStorageFactoryResult.SUCCESS;
     }

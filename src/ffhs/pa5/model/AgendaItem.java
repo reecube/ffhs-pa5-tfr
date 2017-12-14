@@ -13,28 +13,7 @@ public class AgendaItem extends ViewObservable {
     private String id = "";
     private String title = "";
     private String content = "";
-    private Boolean deleted = false;
-
-    /**
-     * TODO
-     */
-    public AgendaItem() {
-    }
-
-    /**
-     * TODO
-     *
-     * @param id TODO
-     * @param title TODO
-     * @param content TODO
-     * @param deleted TODO
-     */
-    public AgendaItem(String id, String title, String content, Boolean deleted) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.deleted = deleted;
-    }
+    private boolean deleted = false;
 
     public String getId() {
         return id;
@@ -66,11 +45,11 @@ public class AgendaItem extends ViewObservable {
         updateView();
     }
 
-    public Boolean getDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
 
-    public void setDeleted(Boolean deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
 
         updateView();

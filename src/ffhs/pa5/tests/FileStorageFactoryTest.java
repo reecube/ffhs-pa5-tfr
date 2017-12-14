@@ -76,4 +76,6 @@ public class FileStorageFactoryTest extends TestingBase {
         Files.deleteIfExists(pathStorageFile);
         Files.deleteIfExists(pathStorageLockFile);
     }
+
+    // TODO: @barbara add tests with sample content for data files
 }

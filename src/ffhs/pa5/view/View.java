@@ -105,7 +105,7 @@ public class View extends Stage implements Observer, Initializable {
      *
      * @param agendaItems TODO
      */
-    private void updateAgendaItems(ArrayList<AgendaItem> agendaItems) {
+    private void updateAgendaItems(AgendaItem[] agendaItems) {
         ObservableList<AgendaItem> listMeeting = outputAgendaItemsMeeting.getItems();
         listMeeting.addAll(agendaItems);
 
@@ -118,7 +118,7 @@ public class View extends Stage implements Observer, Initializable {
      *
      * @param participants TODO
      */
-    private void updateParticipants(ArrayList<Participant> participants) {
+    private void updateParticipants(Participant[] participants) {
         ObservableList<Participant> list = outputParticipants.getItems();
         list.addAll(participants);
     }
@@ -177,7 +177,7 @@ public class View extends Stage implements Observer, Initializable {
      *
      * @param changes TODO
      */
-    private void updateChanges(ArrayList<Change> changes) {
+    private void updateChanges(Change[] changes) {
         // TODO: this will be implemented in a future version
     }
 
