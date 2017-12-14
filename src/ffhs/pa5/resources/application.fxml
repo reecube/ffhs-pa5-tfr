@@ -101,21 +101,21 @@
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onAddAgendaItem" text="%button_add">
+                                                                        onAction="#onAddParticipant" text="%button_add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onEditAgendaItem" text="%button_edit">
+                                                                        onAction="#onEditParticipant" text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onRemoveAgendaItem"
+                                                                        onAction="#onRemoveParticipant"
                                                                         text="%button_remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
@@ -144,21 +144,21 @@
                                                         <VBox prefHeight="200.0" prefWidth="100.0">
                                                             <children>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onAddParticipant" text="%button_add">
+                                                                        onAction="#onAddAgendaItem" text="%button_add">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onEditParticipant" text="%button_edit">
+                                                                        onAction="#onEditAgendaItem" text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
                                                                 <Button mnemonicParsing="false"
-                                                                        onAction="#onRemoveParticipant"
+                                                                        onAction="#onRemoveAgendaItem"
                                                                         text="%button_remove">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
