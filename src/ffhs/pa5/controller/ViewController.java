@@ -1,5 +1,6 @@
 package ffhs.pa5.controller;
 
+import ffhs.pa5.factory.export.ExportOutputHandler;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
@@ -124,4 +125,13 @@ public interface ViewController {
      * @return TODO
      */
     String getLastSavePath();
+
+    /**
+     * TODO
+     *
+     * @param handler TODO
+     * @param path    TODO
+     * @return TODO
+     */
+    boolean export(ExportOutputHandler handler, String path);
 }

@@ -1,6 +1,9 @@
 package ffhs.pa5.controller;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.factory.export.ExportFactory;
+import ffhs.pa5.factory.export.ExportModel;
+import ffhs.pa5.factory.export.ExportOutputHandler;
 import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
@@ -39,6 +42,13 @@ public class Controller implements ViewController {
     @Override
     public String getLastSavePath() {
         return lastSavePath;
+    }
+
+    @Override
+    public boolean export(ExportOutputHandler handler, String path) {
+        ExportModel model = new ExportModel(fileStorageFactory.getFile());
+        ExportFactory factory = new ExportFactory(model, handler);
+        return factory.export(path);
     }
 
     /**

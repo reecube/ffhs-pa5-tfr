@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.type.LanguageKey;
 import ffhs.pa5.util.ResourceUtil;
+import javafx.collections.ObservableList;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
@@ -76,6 +77,26 @@ public abstract class FileChooserHelper {
      */
     static File showSaveDialog(final String initialDirectory, final String initialFileName, final Window ownerWindow) {
         FileChooser fileChooser = getFileChooser(initialDirectory, initialFileName);
+
+        return fileChooser.showSaveDialog(ownerWindow);
+    }
+
+    /**
+     * TODO
+     *
+     * @param initialDirectory TODO
+     * @param fileExtensions   TODO
+     */
+    public static File showExportDialog(
+            final String initialDirectory,
+            final FileChooser.ExtensionFilter[] fileExtensions,
+            final Window ownerWindow
+    ) {
+        FileChooser fileChooser = getFileChooser(initialDirectory, null);
+
+        ObservableList<FileChooser.ExtensionFilter> extensionFilters = fileChooser.getExtensionFilters();
+        extensionFilters.clear();
+        extensionFilters.addAll(fileExtensions);
 
         return fileChooser.showSaveDialog(ownerWindow);
     }

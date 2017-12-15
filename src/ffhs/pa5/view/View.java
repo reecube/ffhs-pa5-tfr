@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.controller.ViewController;
 import ffhs.pa5.factory.export.ExportFactory;
 import ffhs.pa5.factory.export.ExportOutputHandler;
+import ffhs.pa5.factory.export.FileExportOutputHandler;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
 import ffhs.pa5.model.type.*;
@@ -567,7 +568,38 @@ public class View extends Stage implements Observer, Initializable {
      * TODO
      */
     public void onExportMeeting() {
-        // TODO: implement this
+        ExportOutputHandler handler = inputExport.getValue();
+
+        if (handler == null) {
+            // TODO: @barbara show error?
+            return;
+        }
+
+        String path = null;
+
+        if (handler instanceof FileExportOutputHandler) {
+            FileExportOutputHandler fileExportOutputHandler = (FileExportOutputHandler) handler;
+
+            String initialDirectory = getInitialDirectory();
+            File file = FileChooserHelper.showExportDialog(initialDirectory,
+                    fileExportOutputHandler.getFileExtension(), this);
+
+            if (file == null) {
+                // Happens on user cancel
+                return;
+            }
+
+            path = file.getAbsolutePath();
+        }
+
+        boolean result = controller.export(handler, path);
+
+        if (result) {
+            return;
+        }
+
+        // TODO: @barbara show export error
+        System.err.println("TODO: export");
     }
 
     /**
