@@ -54,7 +54,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
         addLabelContent(LanguageKey.ERROR_TITLE, model.getTitle());
         addLine(null);
 
-        // TODO: implement the rest
+        // TODO: @barbara implement the rest
 
         return content.getBytes();
     }
