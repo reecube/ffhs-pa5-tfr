@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.Observer;
 
 /**
@@ -12,9 +14,16 @@ import java.util.Observer;
  */
 public class AgendaItem extends ViewObservable {
 
+    @Expose
     private String id = "";
+
+    @Expose
     private String title = "";
+
+    @Expose
     private String content = "";
+
+    @Expose
     private boolean deleted = false;
 
     /**

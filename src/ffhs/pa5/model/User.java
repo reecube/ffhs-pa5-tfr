@@ -1,5 +1,6 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
 import ffhs.pa5.util.Logger;
 
 import java.net.InetAddress;
@@ -19,7 +20,10 @@ public class User {
 
     private static User instance = null;
 
+    @Expose
     private String hostName;
+
+    @Expose
     private String username;
 
     /**

@@ -1,5 +1,6 @@
 package ffhs.pa5.tests;
 
+import com.google.gson.annotations.Expose;
 import ffhs.pa5.util.JsonUtil;
 import org.junit.Test;
 
@@ -21,10 +22,20 @@ public class JsonUtilTest extends TestingBase {
      * TODO
      */
     private class TestObject {
+
+        @Expose
         String valString;
+
+        @Expose
         boolean valBoolean;
+
+        @Expose
         int valInteger;
+
+        @Expose
         double valDouble;
+
+        @Expose
         Date valDate;
 
         /**

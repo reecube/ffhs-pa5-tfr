@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -15,12 +17,25 @@ import java.util.Observer;
  */
 public class Meeting extends ViewObservable {
 
+    @Expose
     private String title = "";
+
+    @Expose
     private String location = "";
+
+    @Expose
     private Date date = null;
+
+    @Expose
     private State state = State.PREPARATION;
+
+    @Expose
     private Date nextMeeting = null;
+
+    @Expose
     private ArrayList<Participant> participants = new ArrayList<>();
+
+    @Expose
     private ArrayList<AgendaItem> agendaItems = new ArrayList<>();
 
     /**

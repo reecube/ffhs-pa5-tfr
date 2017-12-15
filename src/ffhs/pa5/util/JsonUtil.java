@@ -17,6 +17,7 @@ public abstract class JsonUtil {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateSerializer());
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateDeserializer());
+        gsonBuilder.excludeFieldsWithoutExposeAnnotation();
         return gsonBuilder.create();
     }
 

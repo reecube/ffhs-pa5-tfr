@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.Date;
 import java.util.Observer;
 
@@ -13,8 +15,13 @@ import java.util.Observer;
  */
 public class Change extends ViewObservable {
 
+    @Expose
     private Date date;
+
+    @Expose
     private String user;
+
+    @Expose
     private String change;
 
     /**

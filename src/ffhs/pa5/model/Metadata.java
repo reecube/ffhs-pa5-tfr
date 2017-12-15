@@ -1,5 +1,6 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
 import ffhs.pa5.Constants;
 
 import java.util.ArrayList;
@@ -17,9 +18,16 @@ import java.util.UUID;
  */
 public class Metadata extends ViewObservable {
 
+    @Expose
     private int appVersion = Constants.APP_VERSION;
+
+    @Expose
     private String id = generateId();
+
+    @Expose
     private Date saveDate = null;
+
+    @Expose
     private String password;
 
     /**

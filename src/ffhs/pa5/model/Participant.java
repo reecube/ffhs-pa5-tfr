@@ -1,5 +1,7 @@
 package ffhs.pa5.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.Observer;
 
@@ -13,11 +15,22 @@ import java.util.Observer;
  */
 public class Participant extends ViewObservable {
 
+    @Expose
     private String firstname = "";
+
+    @Expose
     private String lastname = "";
+
+    @Expose
     private String email = "";
+
+    @Expose
     private String phone = "";
+
+    @Expose
     private String role = "";
+
+    @Expose
     private String notes = "";
 
     /**
