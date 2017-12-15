@@ -8,6 +8,7 @@ import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ import java.util.ResourceBundle;
  * @author Yves Riedener
  * @version 1.0
  */
-public class ParticipantDialog extends Dialog<Participant> {
+public class ParticipantDialog extends Dialog<Participant> implements Initializable {
 
     private Participant participant;
 
@@ -50,6 +51,9 @@ public class ParticipantDialog extends Dialog<Participant> {
 
     @FXML
     private TextArea inputNotes;
+
+    @FXML
+    private Button buttonSave;
 
 
     // ********************************************************************************
@@ -108,6 +112,31 @@ public class ParticipantDialog extends Dialog<Participant> {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        inputFirstname.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+        inputLastname.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+        inputEmail.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+        inputPhone.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+        inputRole.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+        inputNotes.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+    }
+
+    /**
+     * TODO
+     */
+    private void refreshView() {
+        buttonSave.setDisable(inputFirstname.getText().length() == 0
+                && inputLastname.getText().length() == 0
+                && inputEmail.getText().length() == 0
+                && inputPhone.getText().length() == 0
+                && inputRole.getText().length() == 0
+                && inputNotes.getText().length() == 0);
+    }
+
+    /**
      * TODO
      *
      * @param participant TODO
@@ -125,11 +154,9 @@ public class ParticipantDialog extends Dialog<Participant> {
 
     /**
      * TODO
-     *
-     * @param event TODO
      */
     @FXML
-    private void handleButtonSaveAction(ActionEvent event) {
+    private void handleButtonSaveAction() {
         participant.setFirstname(inputFirstname.getText());
         participant.setLastname(inputLastname.getText());
         participant.setEmail(inputEmail.getText());
