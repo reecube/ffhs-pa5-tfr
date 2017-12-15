@@ -177,6 +177,17 @@ public class View extends Stage implements Observer, Initializable {
      * TODO
      *
      * @param meeting TODO
+     * @return TODO
+     */
+    private boolean isMeetingReadyToContinue(Meeting meeting) {
+        return meeting.getAgendaItems().length != 0 && !meeting.getTitle().equals("");
+
+    }
+
+    /**
+     * TODO
+     *
+     * @param meeting TODO
      */
     private void updateMeeting(Meeting meeting) {
         inputMeetingTitle.setText(meeting.getTitle());
@@ -189,7 +200,7 @@ public class View extends Stage implements Observer, Initializable {
             case PREPARATION:
                 selectionModel.select(tabPreparation);
                 tabPreparation.setDisable(false);
-                tabMeeting.setDisable(meeting.getAgendaItems().length == 0);
+                tabMeeting.setDisable(!isMeetingReadyToContinue(meeting));
                 tabEnding.setDisable(true);
                 break;
             case MEETING:
