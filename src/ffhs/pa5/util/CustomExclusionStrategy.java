@@ -2,6 +2,7 @@ package ffhs.pa5.util;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
+import ffhs.pa5.model.DataFile;
 
 /**
  * TODO
@@ -18,7 +19,7 @@ public class CustomExclusionStrategy implements ExclusionStrategy {
      */
     @Override
     public boolean shouldSkipField(FieldAttributes f) {
-        return !f.getDeclaringClass().getName().startsWith(ffhs.pa5.Main.class.getPackage().getName());
+        return !f.getDeclaringClass().getName().startsWith(DataFile.class.getPackage().getName());
     }
 
     /**
