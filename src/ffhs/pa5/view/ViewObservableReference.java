@@ -20,6 +20,10 @@ public abstract class ViewObservableReference {
      * Notify the observers for changes
      */
     public void updateView() {
+        if (observable == null) {
+            return;
+        }
+
         observable.updateView();
     }
 
