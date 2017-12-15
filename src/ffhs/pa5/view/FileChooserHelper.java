@@ -37,13 +37,11 @@ public abstract class FileChooserHelper {
      *
      * @return TODO
      */
-    private static FileChooser getFileChooser(String initialFileName) {
+    private static FileChooser getFileChooser(final String initialDirectory, final String initialFileName) {
         ResourceBundle bundle = Controller.getBundle();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(ResourceUtil.getLangString(bundle, LanguageKey.VIEW_TITLE_MAIN));
-        fileChooser.setInitialDirectory(
-                new File(System.getProperty(Constants.JAVA_USER_HOME))
-        );
+        fileChooser.setInitialDirectory(new File(initialDirectory));
         fileChooser.setInitialFileName(initialFileName);
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter(
                 ResourceUtil.getLangString(bundle, LanguageKey.VIEW_FILEFILTER_ALL_DESCRIPTION),
@@ -65,8 +63,8 @@ public abstract class FileChooserHelper {
      *
      * @param ownerWindow TODO
      */
-    static File showOpenDialog(final Window ownerWindow) {
-        FileChooser fileChooser = getFileChooser(null);
+    static File showOpenDialog(final String initialDirectory, final Window ownerWindow) {
+        FileChooser fileChooser = getFileChooser(initialDirectory, null);
 
         return fileChooser.showOpenDialog(ownerWindow);
     }
@@ -76,8 +74,8 @@ public abstract class FileChooserHelper {
      *
      * @param ownerWindow TODO
      */
-    static File showSaveDialog(final String initialFileName, final Window ownerWindow) {
-        FileChooser fileChooser = getFileChooser(initialFileName);
+    static File showSaveDialog(final String initialDirectory, final String initialFileName, final Window ownerWindow) {
+        FileChooser fileChooser = getFileChooser(initialDirectory, initialFileName);
 
         return fileChooser.showSaveDialog(ownerWindow);
     }

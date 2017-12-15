@@ -35,6 +35,14 @@ public class Controller implements ViewController {
     private String lastSavePath;
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getLastSavePath() {
+        return lastSavePath;
+    }
+
+    /**
      * TODO
      *
      * @throws IOException TODO
@@ -56,6 +64,13 @@ public class Controller implements ViewController {
         view.show();
     }
 
+    private void updateView() {
+        DataFile file = fileStorageFactory.getFile();
+        this.viewObservable = new ViewObservable(file);
+        viewObservable.addObserver(viewObserver);
+        file.updateView();
+    }
+
     /**
      * TODO
      */
@@ -71,30 +86,15 @@ public class Controller implements ViewController {
             fileStorageFactory.close(lastSavePath, false);
         }));
 
-        FileStorageFactoryResult result;
+        FileStorageFactoryResult result = openFile(path);
 
-        if (path == null) {
-            result = fileStorageFactory.open();
-        } else {
-            result = fileStorageFactory.open(path);
-
-            if (result != FileStorageFactoryResult.SUCCESS) {
-                System.err.println(result);
-
-                result = fileStorageFactory.open();
-            }
+        if (result == FileStorageFactoryResult.SUCCESS) {
+            return;
         }
 
-        if (result != FileStorageFactoryResult.SUCCESS) {
-            System.err.println(result);
+        System.err.println(result);
 
-            System.exit(1);
-        }
-
-        DataFile file = fileStorageFactory.getFile();
-        this.viewObservable = new ViewObservable(file);
-        viewObservable.addObserver(viewObserver);
-        file.updateView();
+        System.exit(1);
     }
 
     /**
@@ -170,12 +170,33 @@ public class Controller implements ViewController {
      */
     @Override
     public FileStorageFactoryResult openFile(String path) {
-        return fileStorageFactory.open(path);
+        FileStorageFactoryResult result;
+
+        if (path == null) {
+            result = fileStorageFactory.open();
+        } else {
+            result = fileStorageFactory.open(path);
+        }
+
+        if (result == FileStorageFactoryResult.SUCCESS) {
+            updateView();
+        }
+
+        return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public FileStorageFactoryResult saveFile(String path) {
-        return fileStorageFactory.save(path);
+        FileStorageFactoryResult result = fileStorageFactory.save(path);
+
+        if (result == FileStorageFactoryResult.SUCCESS) {
+            this.lastSavePath = path;
+        }
+
+        return result;
     }
 
     /**

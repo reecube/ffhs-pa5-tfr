@@ -117,4 +117,11 @@ public interface ViewController {
      * @return TODO
      */
     FileStorageFactoryResult saveFile(String path);
+
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
+    String getLastSavePath();
 }

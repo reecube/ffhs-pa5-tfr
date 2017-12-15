@@ -11,6 +11,7 @@ import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -564,25 +565,71 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
+     *
+     * @return TODO
      */
-    public void onMenuOpen() {
-        File file = FileChooserHelper.showOpenDialog(this);
+    private String getInitialDirectory() {
+        String lastSavedPath = controller.getLastSavePath();
 
-        if (file == null || !file.exists() || !file.isFile()) {
-            return;
+        if (lastSavedPath == null) {
+            return System.getProperty(Constants.JAVA_USER_HOME);
         }
 
-        handleFileStorageFactoryResult(controller.openFile(file.getAbsolutePath()));
+        File lastSavedFile = new File(lastSavedPath);
+
+        return lastSavedFile.getAbsoluteFile().getParent();
     }
 
     /**
      * TODO
      *
-     * @param extension TODO
+     * @return TODO
      */
-    private void handleMenuSave(String extension) {
-        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(inputMeetingTitle.getText(), extension);
-        File file = FileChooserHelper.showSaveDialog(initialFileName, this);
+    private String getInitialFilename(String extension) {
+        String lastSavedPath = controller.getLastSavePath();
+
+        if (lastSavedPath == null) {
+            return FileChooserHelper.getFileNameFromMeetingTitle(inputMeetingTitle.getText(), extension);
+        }
+
+        File lastSavedFile = new File(lastSavedPath);
+
+        return lastSavedFile.getParent();
+    }
+
+    private void handleMenuOpen(String path) {
+        handleFileStorageFactoryResult(controller.openFile(path));
+    }
+
+    /**
+     * TODO
+     */
+    public void onMenuNew() {
+        handleMenuOpen(null);
+    }
+
+    /**
+     * TODO
+     */
+    public void onMenuOpen() {
+        String initialDirectory = getInitialDirectory();
+        System.out.println(initialDirectory);
+        File file = FileChooserHelper.showOpenDialog(initialDirectory, this);
+
+        if (file == null || !file.exists() || !file.isFile()) {
+            return;
+        }
+
+        handleMenuOpen(file.getAbsolutePath());
+    }
+
+    /**
+     * TODO
+     */
+    private void handleMenuSave() {
+        String initialDirectory = getInitialDirectory();
+        String initialFileName = getInitialFilename(Constants.APP_FILEEXTENSION_SPV);
+        File file = FileChooserHelper.showSaveDialog(initialDirectory, initialFileName, this);
 
         if (file == null) {
             return;
@@ -595,13 +642,20 @@ public class View extends Stage implements Observer, Initializable {
      * TODO
      */
     public void onMenuSave() {
-        handleMenuSave(Constants.APP_FILEEXTENSION_SPV);
+        String lastSavedPath = controller.getLastSavePath();
+
+        if (lastSavedPath == null) {
+            onMenuSaveAs();
+            return;
+        }
+
+        handleFileStorageFactoryResult(controller.saveFile(lastSavedPath));
     }
 
     /**
      * TODO
      */
-    public void onMenuSaveTemplate() {
-        handleMenuSave(Constants.APP_FILEEXTENSION_SPV_TEMPLATE);
+    public void onMenuSaveAs() {
+        handleMenuSave();
     }
 }
