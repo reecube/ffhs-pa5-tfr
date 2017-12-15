@@ -3,11 +3,13 @@ package ffhs.pa5.controller;
 import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.model.*;
+import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -113,6 +115,30 @@ public class Controller implements ViewController {
         meeting.setState(newState);
 
         return true;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void changeMeetingTitle(String newValue) {
+        fileStorageFactory.getFile().getMeeting().setTitle(newValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void changeMeetingDate(LocalDate newValue) {
+        fileStorageFactory.getFile().getMeeting().setDate(DateUtil.fromLocalDate(newValue));
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void changeMeetingLocation(String newValue) {
+        fileStorageFactory.getFile().getMeeting().setLocation(newValue);
     }
 
     /**

@@ -3,6 +3,9 @@ package ffhs.pa5.controller;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
 import ffhs.pa5.model.State;
+import javafx.beans.Observable;
+
+import java.time.LocalDate;
 
 /**
  * TODO
@@ -77,4 +80,25 @@ public interface ViewController {
      * @return TODO
      */
     boolean changeState(State newState);
+
+    /**
+     * TODO
+     *
+     * @param newValue TODO
+     */
+    void changeMeetingTitle(String newValue);
+
+    /**
+     * TODO
+     *
+     * @param newValue TODO
+     */
+    void changeMeetingDate(LocalDate newValue);
+
+    /**
+     * TODO
+     *
+     * @param newValue TODO
+     */
+    void changeMeetingLocation(String newValue);
 }

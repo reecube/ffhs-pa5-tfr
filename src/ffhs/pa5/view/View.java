@@ -11,6 +11,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -121,6 +123,13 @@ public class View extends Stage implements Observer, Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)
                 -> onTabPaneSelectionChange(newValue));
+
+        inputMeetingTitle.textProperty().addListener((ov, oldValue, newValue)
+                -> controller.changeMeetingTitle(newValue));
+        inputMeetingDate.valueProperty().addListener((ov, oldValue, newValue)
+                -> controller.changeMeetingDate(newValue));
+        inputMeetingLocation.textProperty().addListener((ov, oldValue, newValue)
+                -> controller.changeMeetingLocation(newValue));
 
         addChangeListener(outputParticipants, (observable, oldValue, newValue)
                 -> onParticipantsSelectionChange(newValue));
