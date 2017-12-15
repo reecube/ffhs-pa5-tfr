@@ -145,7 +145,7 @@ public class View extends Stage implements Observer, Initializable {
                 selectionModel.select(tabPreparation);
                 tabPreparation.setDisable(false);
                 tabMeeting.setDisable(false);
-                tabEnding.setDisable(false);
+                tabEnding.setDisable(true);
                 break;
             case MEETING:
                 selectionModel.select(tabMeeting);
@@ -155,7 +155,7 @@ public class View extends Stage implements Observer, Initializable {
                 break;
             case ENDING:
                 selectionModel.select(tabEnding);
-                tabPreparation.setDisable(false);
+                tabPreparation.setDisable(true);
                 tabMeeting.setDisable(false);
                 tabEnding.setDisable(false);
                 break;
