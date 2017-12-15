@@ -575,9 +575,7 @@ public class View extends Stage implements Observer, Initializable {
      * TODO
      */
     public void onMenuOpen() {
-        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(inputMeetingTitle.getText(),
-                Constants.APP_FILEEXTENSION_SPV);
-        File file = FileChooserHelper.showOpenDialog(initialFileName, this);
+        File file = FileChooserHelper.showOpenDialog(this);
 
         if (file == null || !file.exists() || !file.isFile()) {
             return;

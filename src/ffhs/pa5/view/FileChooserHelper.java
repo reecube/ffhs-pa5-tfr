@@ -65,8 +65,8 @@ public abstract class FileChooserHelper {
      *
      * @param ownerWindow TODO
      */
-    static File showOpenDialog(final String initialFileName, final Window ownerWindow) {
-        FileChooser fileChooser = getFileChooser(initialFileName);
+    static File showOpenDialog(final Window ownerWindow) {
+        FileChooser fileChooser = getFileChooser(null);
 
         return fileChooser.showOpenDialog(ownerWindow);
     }
