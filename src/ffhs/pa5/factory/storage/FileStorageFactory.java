@@ -8,6 +8,7 @@ import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -211,11 +212,12 @@ public class FileStorageFactory {
             return FileStorageFactoryResult.ERROR_UNEXPECTED_BEHAVIOR;
         }
 
-        files.put(dataEntry.getPath(), dataEntry);
+        ArrayList<ArchiveFactoryEntry> tmpFiles = new ArrayList<>(files.values());
+        tmpFiles.add(dataEntry);
 
         ArchiveFactory archiveFactory = new ArchiveFactory(path);
 
-        if (!archiveFactory.write(files.values().toArray(new ArchiveFactoryEntry[0]))) {
+        if (!archiveFactory.write(tmpFiles.toArray(new ArchiveFactoryEntry[0]))) {
             return FileStorageFactoryResult.ERROR_BUILD_ARCHIVE;
         }
 
