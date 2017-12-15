@@ -93,12 +93,14 @@ public class JsonUtilTest extends TestingBase {
                 expectedDate
         );
 
+        final JsonUtil jsonUtil = new JsonUtil(null);
+
         logTestCase("Stringify");
-        final String json = JsonUtil.stringify(expectedResult);
+        final String json = jsonUtil.stringify(expectedResult);
         assertTrue(json.length() > 0);
 
         logTestCase("Parse");
-        final TestObject result = JsonUtil.parse(json, TestObject.class);
+        final TestObject result = jsonUtil.parse(json, TestObject.class);
         assertNotNull(result);
         assertEquals(expectedResult, result);
     }

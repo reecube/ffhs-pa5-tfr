@@ -12,21 +12,42 @@ import java.util.Date;
  * @author Yves Riedener
  * @version 1.0
  */
-public abstract class JsonUtil {
+public class JsonUtil {
+
+    private Gson gson;
 
     /**
      * TODO
      *
-     * @return TODO
+     * @param exclusionStrategy TODO
      */
-    private static Gson getGson() {
+    private void initialize(ExclusionStrategy exclusionStrategy) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateSerializer());
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateDeserializer());
-        CustomExclusionStrategy exclusionStrategy = new CustomExclusionStrategy();
-        gsonBuilder.addSerializationExclusionStrategy(exclusionStrategy);
-        gsonBuilder.addDeserializationExclusionStrategy(exclusionStrategy);
-        return gsonBuilder.create();
+
+        if (exclusionStrategy != null) {
+            gsonBuilder.addSerializationExclusionStrategy(exclusionStrategy);
+            gsonBuilder.addDeserializationExclusionStrategy(exclusionStrategy);
+        }
+
+        this.gson = gsonBuilder.create();
+    }
+
+    /**
+     * TODO
+     */
+    public JsonUtil() {
+        initialize(new CustomExclusionStrategy());
+    }
+
+    /**
+     * TODO
+     *
+     * @param exclusionStrategy TODO
+     */
+    public JsonUtil(ExclusionStrategy exclusionStrategy) {
+        initialize(exclusionStrategy);
     }
 
     /**
@@ -38,8 +59,7 @@ public abstract class JsonUtil {
      * @return TODO
      * @throws JsonSyntaxException TODO
      */
-    public static <T> T parse(String json, Class<T> classOfT) throws JsonSyntaxException {
-        Gson gson = getGson();
+    public <T> T parse(String json, Class<T> classOfT) throws JsonSyntaxException {
         return gson.fromJson(json, classOfT);
     }
 
@@ -49,8 +69,7 @@ public abstract class JsonUtil {
      * @param src TODO
      * @return TODO
      */
-    public static String stringify(Object src) {
-        Gson gson = getGson();
+    public String stringify(Object src) {
         return gson.toJson(src);
     }
 }

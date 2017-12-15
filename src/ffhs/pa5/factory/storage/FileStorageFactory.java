@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.factory.archive.ArchiveFactory;
 import ffhs.pa5.model.*;
 import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
+import ffhs.pa5.util.CustomExclusionStrategy;
 import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
@@ -151,7 +152,8 @@ public class FileStorageFactory {
         entries.remove(Constants.DATA_FILE_PATH);
 
         // Initialize
-        this.file = JsonUtil.parse(dataJsonFile.getContent(), DataFile.class);
+        JsonUtil jsonUtil = new JsonUtil();
+        this.file = jsonUtil.parse(dataJsonFile.getContent(), DataFile.class);
         this.files = entries;
 
         return checkApplicationVersion();
@@ -201,11 +203,17 @@ public class FileStorageFactory {
             return FileStorageFactoryResult.ERROR_UNINITIALIZED;
         }
 
+        if (isLocked(path)) {
+            return FileStorageFactoryResult.ERROR_FILE_LOCKED;
+        }
+
         if (!setLocked(path, true)) {
             return FileStorageFactoryResult.ERROR_LOCKSTATE_FAILED;
         }
 
-        String jsonContent = JsonUtil.stringify(file);
+
+        JsonUtil jsonUtil = new JsonUtil();
+        String jsonContent = jsonUtil.stringify(file);
         ArchiveFactoryEntry dataEntry = new ArchiveFactoryEntry(null, Constants.DATA_FILE_PATH, jsonContent);
 
         if (files.containsKey(dataEntry.getPath())) {
