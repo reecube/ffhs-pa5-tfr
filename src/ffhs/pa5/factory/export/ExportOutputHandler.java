@@ -1,7 +1,5 @@
 package ffhs.pa5.factory.export;
 
-import java.io.IOException;
-
 /**
  * TODO
  *
