@@ -2,6 +2,8 @@ package ffhs.pa5.view;
 
 import ffhs.pa5.Constants;
 import ffhs.pa5.controller.ViewController;
+import ffhs.pa5.factory.export.ExportFactory;
+import ffhs.pa5.factory.export.ExportOutputHandler;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
 import ffhs.pa5.model.type.*;
@@ -103,7 +105,10 @@ public class View extends Stage implements Observer, Initializable {
     private DatePicker inputMeetingNextMeeting;
 
     @FXML
-    private ChoiceBox inputExport;
+    private ChoiceBox<ExportOutputHandler> inputExport;
+
+    @FXML
+    private Button buttonExport;
 
 
     // ********************************************************************************
@@ -114,8 +119,31 @@ public class View extends Stage implements Observer, Initializable {
         this.controller = controller;
     }
 
+    /**
+     * TODO
+     *
+     * @param listView TODO
+     * @param listener TODO
+     * @param <T>      TODO
+     */
     private static <T> void addChangeListener(ListView<T> listView, ChangeListener<T> listener) {
         listView.getSelectionModel().selectedItemProperty().addListener(listener);
+    }
+
+    /**
+     * TODO
+     */
+    private void initializeExport() {
+        ExportOutputHandler[] exportOutputHandlers = ExportFactory.getAvailableHandlers();
+        boolean disableExport = exportOutputHandlers.length == 0;
+        inputExport.setDisable(disableExport);
+        buttonExport.setDisable(disableExport);
+        ObservableList<ExportOutputHandler> exportList = inputExport.getItems();
+        exportList.clear();
+        exportList.addAll(exportOutputHandlers);
+        if (!disableExport) {
+            inputExport.getSelectionModel().select(0);
+        }
     }
 
     /**
@@ -145,6 +173,8 @@ public class View extends Stage implements Observer, Initializable {
 
         addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue)
                 -> onAgendaItemsMeetingSelectionChange(newValue));
+
+        initializeExport();
     }
 
     /**

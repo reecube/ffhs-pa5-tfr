@@ -59,4 +59,11 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
         return content.getBytes();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return "TextExportOutputHandler";
+    }
 }

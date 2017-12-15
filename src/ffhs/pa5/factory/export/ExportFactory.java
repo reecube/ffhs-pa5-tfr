@@ -1,6 +1,7 @@
 package ffhs.pa5.factory.export;
 
 import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
+import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.model.DataFile;
 import ffhs.pa5.util.Logger;
 
@@ -32,6 +33,17 @@ public class ExportFactory {
     public ExportFactory(ExportModel exportModel, ExportOutputHandler exportOutputHandler) {
         this.exportModel = exportModel;
         this.exportOutputHandler = exportOutputHandler;
+    }
+
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
+    public static ExportOutputHandler[] getAvailableHandlers() {
+        return new ExportOutputHandler[]{
+                new TextExportOutputHandler(),
+        };
     }
 
     /**

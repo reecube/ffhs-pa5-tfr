@@ -260,7 +260,7 @@
                                                 <Insets bottom="5.0"/>
                                             </VBox.margin>
                                         </ChoiceBox>
-                                        <Button mnemonicParsing="false" onAction="#onExportMeeting"
+                                        <Button fx:id="buttonExport" mnemonicParsing="false" onAction="#onExportMeeting"
                                                 text="%button_export">
                                             <VBox.margin>
                                                 <Insets bottom="30.0"/>
