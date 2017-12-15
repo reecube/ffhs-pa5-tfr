@@ -30,6 +30,8 @@ public class Controller implements ViewController {
 
     private FileStorageFactory fileStorageFactory;
 
+    private String lastSavePath;
+
     /**
      * TODO
      *
@@ -57,6 +59,15 @@ public class Controller implements ViewController {
      */
     private void initializeFileStorageFactory(String path) {
         this.fileStorageFactory = new FileStorageFactory();
+        this.lastSavePath = path;
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            if (fileStorageFactory == null) {
+                return;
+            }
+
+            fileStorageFactory.close(lastSavePath, false);
+        }));
 
         FileStorageFactoryResult result;
 
