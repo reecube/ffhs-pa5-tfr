@@ -50,7 +50,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
      * @return TODO
      */
     public static AgendaItemDialog getNewInstance() {
-        return getNewInstance(null);
+        return getNewInstance(null, false);
     }
 
     /**
@@ -60,6 +60,16 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
      * @return TODO
      */
     public static AgendaItemDialog getNewInstance(AgendaItem agendaItem) {
+        return getNewInstance(agendaItem, true);
+    }
+
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     * @return TODO
+     */
+    private static AgendaItemDialog getNewInstance(AgendaItem agendaItem, boolean disableId) {
         try {
             ResourceBundle bundle = Controller.getBundle();
             URL location = AgendaItemDialog.class.getResource(Constants.FXML_DIALOG_AGENDA_ITEM);
@@ -73,6 +83,10 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
             }
 
             instance.loadAgendaItem(agendaItem);
+
+            if (disableId) {
+                instance.disableInputId();
+            }
 
             DialogPane dialogPane = instance.getDialogPane();
 
@@ -104,6 +118,10 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
 
         inputId.setText(agendaItem.getId());
         inputTitle.setText(agendaItem.getTitle());
+    }
+
+    public void disableInputId() {
+        inputId.setDisable(true);
     }
 
     /**
