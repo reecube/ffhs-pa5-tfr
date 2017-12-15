@@ -6,6 +6,14 @@ import com.google.gson.JsonSyntaxException;
 
 import java.util.Date;
 
+/**
+ * TODO
+ *
+ * @author Murat Tokmak
+ * @author Barbara Fauth
+ * @author Yves Riedener
+ * @version 1.0
+ */
 public abstract class JsonUtil {
 
     /**
