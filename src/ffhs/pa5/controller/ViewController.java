@@ -129,6 +129,13 @@ public interface ViewController {
     /**
      * TODO
      *
+     * @param newValue TODO
+     */
+    void changeMeetingNextMeeting(LocalDate newValue);
+
+    /**
+     * TODO
+     *
      * @param handler TODO
      * @param path    TODO
      * @return TODO

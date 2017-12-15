@@ -175,6 +175,10 @@ public class View extends Stage implements Observer, Initializable {
         addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue)
                 -> onAgendaItemsMeetingSelectionChange(newValue));
 
+
+        inputMeetingNextMeeting.valueProperty().addListener((ov, oldValue, newValue)
+                -> controller.changeMeetingNextMeeting(newValue));
+
         initializeExport();
     }
 

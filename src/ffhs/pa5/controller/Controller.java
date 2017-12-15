@@ -44,6 +44,17 @@ public class Controller implements ViewController {
         return lastSavePath;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void changeMeetingNextMeeting(LocalDate newValue) {
+        fileStorageFactory.getFile().getMeeting().setNextMeeting(DateUtil.fromLocalDate(newValue));
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean export(ExportOutputHandler handler, String path) {
         ExportModel model = new ExportModel(fileStorageFactory.getFile());
