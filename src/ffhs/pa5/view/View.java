@@ -11,7 +11,6 @@ import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
