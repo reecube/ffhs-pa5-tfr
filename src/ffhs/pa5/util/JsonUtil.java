@@ -23,9 +23,9 @@ public abstract class JsonUtil {
     /**
      * TODO
      *
-     * @param json TODO
+     * @param json     TODO
      * @param classOfT TODO
-     * @param <T> TODO
+     * @param <T>      TODO
      * @return TODO
      * @throws JsonSyntaxException TODO
      */
