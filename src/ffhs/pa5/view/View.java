@@ -8,7 +8,6 @@ import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -264,10 +263,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onAddParticipant(ActionEvent actionEvent) {
+    public void onAddParticipant() {
         ParticipantDialog participantDialog = ParticipantDialog.getNewInstance();
         Optional<Participant> result = participantDialog.showAndWait();
         if (!result.isPresent()) {
@@ -283,10 +280,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onEditParticipant(ActionEvent actionEvent) {
+    public void onEditParticipant() {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
@@ -313,10 +308,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onRemoveParticipant(ActionEvent actionEvent) {
+    public void onRemoveParticipant() {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
@@ -333,10 +326,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onAddAgendaItem(ActionEvent actionEvent) {
+    public void onAddAgendaItem() {
         AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance();
         Optional<AgendaItem> result = agendaItemDialog.showAndWait();
         if (!result.isPresent()) {
@@ -352,10 +343,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onEditAgendaItem(ActionEvent actionEvent) {
+    public void onEditAgendaItem() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
@@ -382,10 +371,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onRemoveAgendaItem(ActionEvent actionEvent) {
+    public void onRemoveAgendaItem() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
@@ -402,10 +389,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onMoveAgendaItemUp(ActionEvent actionEvent) {
+    public void onMoveAgendaItemUp() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
@@ -422,10 +407,8 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onMoveAgendaItemDown(ActionEvent actionEvent) {
+    public void onMoveAgendaItemDown() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
@@ -442,19 +425,15 @@ public class View extends Stage implements Observer, Initializable {
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onExportMeeting(ActionEvent actionEvent) {
+    public void onExportMeeting() {
         // TODO: implement this
     }
 
     /**
      * TODO
-     *
-     * @param actionEvent TODO
      */
-    public void onCloseMeeting(ActionEvent actionEvent) {
+    public void onCloseMeeting() {
         controller.closeMeeting();
     }
 }
