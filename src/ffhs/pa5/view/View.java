@@ -311,14 +311,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        boolean result = controller.changeState(newState);
-
-        if (result) {
-            return;
-        }
-
-        Logger logger = Logger.getInstance();
-        logger.handleException(new Exception("Unexpected behavior!"));
+        controller.changeState(newState);
     }
 
     /**
