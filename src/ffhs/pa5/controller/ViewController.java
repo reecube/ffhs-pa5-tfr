@@ -3,7 +3,7 @@ package ffhs.pa5.controller;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
-import ffhs.pa5.model.State;
+import ffhs.pa5.model.type.State;
 
 import java.time.LocalDate;
 

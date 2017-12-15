@@ -1,6 +1,7 @@
 package ffhs.pa5.factory.export;
 
 import ffhs.pa5.model.*;
+import ffhs.pa5.model.type.State;
 import ffhs.pa5.util.Logger;
 
 import java.util.ArrayList;

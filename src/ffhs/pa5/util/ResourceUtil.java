@@ -1,7 +1,7 @@
 package ffhs.pa5.util;
 
 import ffhs.pa5.Constants;
-import ffhs.pa5.model.LanguageKey;
+import ffhs.pa5.model.type.LanguageKey;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;

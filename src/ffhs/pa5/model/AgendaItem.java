@@ -1,6 +1,7 @@
 package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
+import ffhs.pa5.view.ViewObservable;
 
 import java.util.Observer;
 

@@ -1,4 +1,4 @@
-package ffhs.pa5.model;
+package ffhs.pa5.view;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -11,7 +11,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-abstract class ViewObservable extends Observable {
+public abstract class ViewObservable extends Observable {
 
     public abstract void addObserverRecursive(Observer observer);
 

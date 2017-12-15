@@ -1,4 +1,4 @@
-package ffhs.pa5.model;
+package ffhs.pa5.model.type;
 
 /**
  * This enumeration handles the allowed states of a meeting protocol.

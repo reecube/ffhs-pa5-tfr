@@ -3,7 +3,7 @@ package ffhs.pa5.view.dialog;
 import ffhs.pa5.Constants;
 import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.AgendaItem;
-import ffhs.pa5.model.LanguageKey;
+import ffhs.pa5.model.type.LanguageKey;
 import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

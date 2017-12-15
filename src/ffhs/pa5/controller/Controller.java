@@ -4,6 +4,7 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
 import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
+import ffhs.pa5.model.type.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.view.View;
 import javafx.fxml.FXMLLoader;

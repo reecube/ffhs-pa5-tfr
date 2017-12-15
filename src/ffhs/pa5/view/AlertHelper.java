@@ -1,7 +1,7 @@
 package ffhs.pa5.view;
 
 import ffhs.pa5.controller.Controller;
-import ffhs.pa5.model.LanguageKey;
+import ffhs.pa5.model.type.LanguageKey;
 import ffhs.pa5.util.ResourceUtil;
 import javafx.scene.control.Alert;
 
