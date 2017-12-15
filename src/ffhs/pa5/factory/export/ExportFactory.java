@@ -40,11 +40,11 @@ public class ExportFactory {
      * @return true on success, false on error
      */
     public boolean export(String path) {
-        if (path == null){
+        if (path == null || !(exportOutputHandler instanceof FileExportOutputHandler)) {
             return exportOutputHandler.export(exportModel);
         }
+
         FileExportOutputHandler fileExportOutputHandler = (FileExportOutputHandler) exportOutputHandler;
-        //TODO: Was soll geschehen, wenn der cast nicht erfolgreich ist?
         fileExportOutputHandler.setPath(path);
         return fileExportOutputHandler.export(exportModel);
 
