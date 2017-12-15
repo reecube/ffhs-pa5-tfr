@@ -558,7 +558,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: add error
+        // TODO: @barbara show usefull error message depending on FileStorageFactoryResult
         System.err.println(result);
         AlertHelper.showError(LanguageKey.ERROR_TITLE);
     }
