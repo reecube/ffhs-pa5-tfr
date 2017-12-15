@@ -8,6 +8,7 @@ import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ import java.util.ResourceBundle;
  * @author Yves Riedener
  * @version 1.0
  */
-public class AgendaItemDialog extends Dialog<AgendaItem> {
+public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializable {
 
     private AgendaItem agendaItem;
 
@@ -38,6 +39,9 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
 
     @FXML
     private TextField inputTitle;
+
+    @FXML
+    private Button buttonSave;
 
 
     // ********************************************************************************
@@ -109,6 +113,23 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        inputId.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+
+        inputTitle.textProperty().addListener((ov, oldValue, newValue) -> refreshView());
+    }
+
+    /**
+     * TODO
+     */
+    private void refreshView() {
+        buttonSave.setDisable(inputId.getText().length() == 0 || inputTitle.getText().length() == 0);
+    }
+
+    /**
      * TODO
      *
      * @param agendaItem TODO
@@ -120,6 +141,9 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
         inputTitle.setText(agendaItem.getTitle());
     }
 
+    /**
+     * TODO
+     */
     private void disableInputId() {
         inputId.setDisable(true);
     }
@@ -129,8 +153,6 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
      */
     @FXML
     private void handleButtonSaveAction() {
-        // TODO: Check if the id is not empty!
-
         agendaItem.setId(inputId.getText());
         agendaItem.setTitle(inputTitle.getText());
 
