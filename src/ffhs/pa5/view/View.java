@@ -11,8 +11,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -131,6 +129,10 @@ public class View extends Stage implements Observer, Initializable {
         inputMeetingLocation.textProperty().addListener((ov, oldValue, newValue)
                 -> controller.changeMeetingLocation(newValue));
 
+
+        inputAgendaItemContent.textProperty().addListener((ov, oldValue, newValue)
+                -> onChangeAgendaItemContent(newValue));
+
         addChangeListener(outputParticipants, (observable, oldValue, newValue)
                 -> onParticipantsSelectionChange(newValue));
 
@@ -156,13 +158,23 @@ public class View extends Stage implements Observer, Initializable {
      * @param agendaItems TODO
      */
     private void updateAgendaItems(AgendaItem[] agendaItems) {
-        ObservableList<AgendaItem> listMeeting = outputAgendaItemsMeeting.getItems();
-        listMeeting.clear();
-        listMeeting.addAll(agendaItems);
-
+        SelectionModel<AgendaItem> selectionModelPreparation = outputAgendaItemsPreparation.getSelectionModel();
+        AgendaItem selectedItemPreparation = selectionModelPreparation.getSelectedItem();
         ObservableList<AgendaItem> listPreparation = outputAgendaItemsPreparation.getItems();
         listPreparation.clear();
         listPreparation.addAll(agendaItems);
+        if (listPreparation.contains(selectedItemPreparation)) {
+            selectionModelPreparation.select(selectedItemPreparation);
+        }
+
+        SelectionModel<AgendaItem> selectionModelMeeting = outputAgendaItemsMeeting.getSelectionModel();
+        AgendaItem selectedItemMeeting = selectionModelMeeting.getSelectedItem();
+        ObservableList<AgendaItem> listMeeting = outputAgendaItemsMeeting.getItems();
+        listMeeting.clear();
+        listMeeting.addAll(agendaItems);
+        if (listMeeting.contains(selectedItemMeeting)) {
+            selectionModelMeeting.select(selectedItemMeeting);
+        }
     }
 
     /**
@@ -171,9 +183,14 @@ public class View extends Stage implements Observer, Initializable {
      * @param participants TODO
      */
     private void updateParticipants(Participant[] participants) {
+        SelectionModel<Participant> selectionModel = outputParticipants.getSelectionModel();
+        Participant selectedItem = selectionModel.getSelectedItem();
         ObservableList<Participant> list = outputParticipants.getItems();
         list.clear();
         list.addAll(participants);
+        if (list.contains(selectedItem)) {
+            selectionModel.select(selectedItem);
+        }
     }
 
     /**
@@ -498,6 +515,28 @@ public class View extends Stage implements Observer, Initializable {
         }
 
         AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE);
+    }
+
+    /**
+     * TODO
+     *
+     * @param newValue TODO
+     */
+    private void onChangeAgendaItemContent(String newValue) {
+        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            return;
+        }
+
+        agendaItem.setContent(newValue);
+
+        if (controller.editAgendaItem(agendaItem)) {
+            return;
+        }
+
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT);
     }
 
     /**
