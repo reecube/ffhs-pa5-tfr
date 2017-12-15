@@ -28,6 +28,7 @@ public class ParticipantDialog extends Dialog<Participant> {
 
     private Participant participant;
 
+
     // ********************************************************************************
     // fxml components
     // ********************************************************************************
@@ -49,6 +50,11 @@ public class ParticipantDialog extends Dialog<Participant> {
 
     @FXML
     private TextArea inputNotes;
+
+
+    // ********************************************************************************
+    // main code
+    // ********************************************************************************
 
     /**
      * TODO

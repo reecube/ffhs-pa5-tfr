@@ -28,6 +28,13 @@ public class View extends Stage implements Observer, Initializable {
 
     private ViewController controller;
 
+
+    // ********************************************************************************
+    // fxml components
+    // ********************************************************************************
+
+    // Global
+
     @FXML
     private TabPane tabPane;
 
@@ -39,6 +46,9 @@ public class View extends Stage implements Observer, Initializable {
 
     @FXML
     private Tab tabEnding;
+
+
+    // Tab preparation
 
     @FXML
     private TextField inputMeetingTitle;
@@ -55,17 +65,28 @@ public class View extends Stage implements Observer, Initializable {
     @FXML
     private ListView<AgendaItem> outputAgendaItemsPreparation;
 
+
+    // Tab meeting
+
     @FXML
     private ListView<AgendaItem> outputAgendaItemsMeeting;
 
     @FXML
     private TextArea inputAgendaItemContent;
 
+
+    // Tab ending
+
     @FXML
     private DatePicker inputMeetingNextMeeting;
 
     @FXML
     private ChoiceBox inputExport;
+
+
+    // ********************************************************************************
+    // main code
+    // ********************************************************************************
 
     public void setController(ViewController controller) {
         this.controller = controller;

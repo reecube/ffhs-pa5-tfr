@@ -28,6 +28,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
 
     private AgendaItem agendaItem;
 
+
     // ********************************************************************************
     // fxml components
     // ********************************************************************************
@@ -37,6 +38,11 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
 
     @FXML
     private TextField inputTitle;
+
+
+    // ********************************************************************************
+    // main code
+    // ********************************************************************************
 
     /**
      * TODO
