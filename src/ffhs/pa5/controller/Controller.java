@@ -26,7 +26,6 @@ import java.util.*;
 public class Controller implements ViewController {
 
     private Observer viewObserver;
-    private ViewObservable viewObservable;
 
     private static ResourceBundle bundle;
 
@@ -66,7 +65,7 @@ public class Controller implements ViewController {
 
     private void updateView() {
         DataFile file = fileStorageFactory.getFile();
-        this.viewObservable = new ViewObservable(file);
+        ViewObservable viewObservable = new ViewObservable(file);
         viewObservable.addObserver(viewObserver);
         file.updateView();
     }
