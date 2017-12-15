@@ -14,6 +14,8 @@ public abstract class Constants {
 
     // app
     public static final int APP_VERSION = 1;
+    public static final String APP_FILEEXTENSION_SPV = "spv";
+    public static final String APP_FILEEXTENSION_SPV_TEMPLATE = "spvm";
 
     // data file
     public static final String DATA_FILE_LOCK_EXTENSION = ".lock";
@@ -49,5 +51,6 @@ public abstract class Constants {
 
     // export
     public static final String JAVA_LINE_SEPARATOR = "line.separator";
+    public static final String JAVA_USER_HOME = "user.home";
     public static final char CHAR_TAB = '\t';
 }

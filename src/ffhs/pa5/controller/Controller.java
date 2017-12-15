@@ -2,6 +2,7 @@ package ffhs.pa5.controller;
 
 import ffhs.pa5.Constants;
 import ffhs.pa5.factory.storage.FileStorageFactory;
+import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.view.View;
@@ -139,6 +140,19 @@ public class Controller implements ViewController {
     @Override
     public void changeMeetingLocation(String newValue) {
         fileStorageFactory.getFile().getMeeting().setLocation(newValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FileStorageFactoryResult openFile(String path) {
+        return fileStorageFactory.open(path);
+    }
+
+    @Override
+    public FileStorageFactoryResult saveFile(String path) {
+        return fileStorageFactory.save(path);
     }
 
     /**

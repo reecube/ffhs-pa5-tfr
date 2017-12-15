@@ -194,11 +194,10 @@ public class FileStorageFactory {
      *
      * @param path TODO
      * @return TODO
-     * @throws Exception TODO
      */
-    public FileStorageFactoryResult save(String path) throws Exception {
+    public FileStorageFactoryResult save(String path) {
         if (!isInitialized()) {
-            throw new Exception("The file has not been initialized yet!");
+            return FileStorageFactoryResult.ERROR_UNINITIALIZED;
         }
 
         if (!setLocked(path, true)) {

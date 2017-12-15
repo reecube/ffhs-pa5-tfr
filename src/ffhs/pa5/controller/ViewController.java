@@ -1,9 +1,9 @@
 package ffhs.pa5.controller;
 
+import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
 import ffhs.pa5.model.State;
-import javafx.beans.Observable;
 
 import java.time.LocalDate;
 
@@ -101,4 +101,20 @@ public interface ViewController {
      * @param newValue TODO
      */
     void changeMeetingLocation(String newValue);
+
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     */
+    FileStorageFactoryResult openFile(String path);
+
+    /**
+     * TODO
+     *
+     * @param path TODO
+     * @return TODO
+     */
+    FileStorageFactoryResult saveFile(String path);
 }

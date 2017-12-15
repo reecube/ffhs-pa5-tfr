@@ -15,9 +15,10 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="%menu_file">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="%menu_open"/>
-                                <MenuItem mnemonicParsing="false" text="%menu_save"/>
-                                <MenuItem mnemonicParsing="false" text="%menu_saveTemplate"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuOpen" text="%menu_open"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="%menu_save"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuSaveTemplate"
+                                          text="%menu_saveTemplate"/>
                             </items>
                         </Menu>
                     </menus>

@@ -1,6 +1,8 @@
 package ffhs.pa5.view;
 
+import ffhs.pa5.Constants;
 import ffhs.pa5.controller.ViewController;
+import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
@@ -13,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.util.*;
 
@@ -551,5 +554,66 @@ public class View extends Stage implements Observer, Initializable {
      */
     public void onCloseMeeting() {
         controller.closeMeeting();
+    }
+
+    /**
+     * TODO
+     *
+     * @param result TODO
+     */
+    private void handleFileStorageFactoryResult(FileStorageFactoryResult result) {
+        if (result == FileStorageFactoryResult.SUCCESS) {
+            return;
+        }
+
+        // TODO: add error
+        System.err.println(result);
+        AlertHelper.showError(LanguageKey.ERROR_TITLE);
+    }
+
+    /**
+     * TODO
+     */
+    public void onMenuOpen() {
+        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(inputMeetingTitle.getText(),
+                Constants.APP_FILEEXTENSION_SPV);
+        File file = FileChooserHelper.showOpenDialog(initialFileName, this);
+
+        if (file == null || !file.exists() || !file.isFile()) {
+            return;
+        }
+
+        handleFileStorageFactoryResult(controller.openFile(file.getAbsolutePath()));
+    }
+
+    /**
+     * TODO
+     *
+     * @param extension TODO
+     */
+    private void handleMenuSave(String extension) {
+        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(
+                inputMeetingTitle.getText(), extension);
+        File file = FileChooserHelper.showSaveDialog(initialFileName, this);
+
+        if (file == null || !file.exists() || !file.isFile()) {
+            return;
+        }
+
+        handleFileStorageFactoryResult(controller.saveFile(file.getAbsolutePath()));
+    }
+
+    /**
+     * TODO
+     */
+    public void onMenuSave() {
+        handleMenuSave(Constants.APP_FILEEXTENSION_SPV);
+    }
+
+    /**
+     * TODO
+     */
+    public void onMenuSaveTemplate() {
+        handleMenuSave(Constants.APP_FILEEXTENSION_SPV_TEMPLATE);
     }
 }
