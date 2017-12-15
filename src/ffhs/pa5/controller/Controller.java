@@ -24,19 +24,10 @@ import java.util.*;
 public class Controller implements ViewController {
 
     private Observer viewObserver;
+
     private static ResourceBundle bundle;
 
     private FileStorageFactory fileStorageFactory;
-
-    // ********************************************************************************
-    // fxml components
-    // ********************************************************************************
-    // TODO
-
-
-    // ********************************************************************************
-    // main code
-    // ********************************************************************************
 
     /**
      * TODO
@@ -63,11 +54,28 @@ public class Controller implements ViewController {
     /**
      * TODO
      */
-    private void initializeFileStorageFactory() {
-        // TODO: check for arguments and open file from path if there is one => try catch this one
-
+    private void initializeFileStorageFactory(String path) {
         this.fileStorageFactory = new FileStorageFactory();
-        fileStorageFactory.open();
+
+        FileStorageFactoryResult result;
+
+        if (path == null) {
+            result = fileStorageFactory.open();
+        } else {
+            result = fileStorageFactory.open(path);
+
+            if (result != FileStorageFactoryResult.SUCCESS) {
+                System.err.println(result);
+
+                result = fileStorageFactory.open();
+            }
+        }
+
+        if (result != FileStorageFactoryResult.SUCCESS) {
+            System.err.println(result);
+
+            System.exit(1);
+        }
 
         DataFile file = fileStorageFactory.getFile();
         file.addObserverRecursive(viewObserver);
@@ -79,9 +87,9 @@ public class Controller implements ViewController {
      *
      * @throws IOException TODO
      */
-    public Controller() throws IOException {
+    public Controller(String path) throws IOException {
         initializeView();
-        initializeFileStorageFactory();
+        initializeFileStorageFactory(path);
     }
 
     /**

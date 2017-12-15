@@ -5,6 +5,8 @@ import ffhs.pa5.util.Logger;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 /**
  * This is the main class
  *
@@ -30,7 +32,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            new Controller();
+            List<String> args = getParameters().getRaw();
+            String startupPath = null;
+
+            if (args.size() > 0) {
+                startupPath = args.get(0);
+            }
+
+            new Controller(startupPath);
         } catch (Exception ex) {
             final Logger logger = Logger.getInstance();
             logger.handleException(ex);

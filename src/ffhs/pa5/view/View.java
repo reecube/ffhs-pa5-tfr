@@ -590,8 +590,7 @@ public class View extends Stage implements Observer, Initializable {
      * @param extension TODO
      */
     private void handleMenuSave(String extension) {
-        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(
-                inputMeetingTitle.getText(), extension);
+        String initialFileName = FileChooserHelper.getFileNameFromMeetingTitle(inputMeetingTitle.getText(), extension);
         File file = FileChooserHelper.showSaveDialog(initialFileName, this);
 
         if (file == null) {
