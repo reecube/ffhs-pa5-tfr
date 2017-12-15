@@ -63,7 +63,25 @@ public class View extends Stage implements Observer, Initializable {
     private ListView<Participant> outputParticipants;
 
     @FXML
+    private Button buttonParticipantEdit;
+
+    @FXML
+    private Button buttonParticipantRemove;
+
+    @FXML
     private ListView<AgendaItem> outputAgendaItemsPreparation;
+
+    @FXML
+    private Button buttonAgendaItemEdit;
+
+    @FXML
+    private Button buttonAgendaItemRemove;
+
+    @FXML
+    private Button buttonAgendaItemMoveUp;
+
+    @FXML
+    private Button buttonAgendaItemMoveDown;
 
 
     // Tab meeting
@@ -73,6 +91,12 @@ public class View extends Stage implements Observer, Initializable {
 
     @FXML
     private TextArea inputAgendaItemContent;
+
+    @FXML
+    private Label labelSelectedAgendaItemTitle;
+
+    @FXML
+    private Label labelSelectedAgendaItemId;
 
 
     // Tab ending
@@ -105,13 +129,13 @@ public class View extends Stage implements Observer, Initializable {
                 -> onTabPaneSelectionChange(newValue));
 
         addChangeListener(outputParticipants, (observable, oldValue, newValue)
-                -> onParticipantsSelectionChange(oldValue, newValue));
+                -> onParticipantsSelectionChange(newValue));
 
         addChangeListener(outputAgendaItemsPreparation, (observable, oldValue, newValue)
-                -> onAgendaItemsPreparationSelectionChange(oldValue, newValue));
+                -> onAgendaItemsPreparationSelectionChange(newValue));
 
         addChangeListener(outputAgendaItemsMeeting, (observable, oldValue, newValue)
-                -> onAgendaItemsMeetingSelectionChange(oldValue, newValue));
+                -> onAgendaItemsMeetingSelectionChange(newValue));
     }
 
     /**
@@ -165,7 +189,7 @@ public class View extends Stage implements Observer, Initializable {
             case PREPARATION:
                 selectionModel.select(tabPreparation);
                 tabPreparation.setDisable(false);
-                tabMeeting.setDisable(false);
+                tabMeeting.setDisable(meeting.getAgendaItems().length == 0);
                 tabEnding.setDisable(true);
                 break;
             case MEETING:
@@ -268,37 +292,36 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * TODO
      *
-     * @param oldValue TODO
      * @param newValue TODO
      */
-    private void onParticipantsSelectionChange(Participant oldValue, Participant newValue) {
-        // TODO: implement this
-        System.out.println(oldValue);
-        System.out.println(newValue);
+    private void onParticipantsSelectionChange(Participant newValue) {
+        boolean disabledBecauseOfSelection = newValue == null;
+        buttonParticipantEdit.setDisable(disabledBecauseOfSelection);
+        buttonParticipantRemove.setDisable(disabledBecauseOfSelection);
     }
 
     /**
      * TODO
      *
-     * @param oldValue TODO
      * @param newValue TODO
      */
-    private void onAgendaItemsPreparationSelectionChange(AgendaItem oldValue, AgendaItem newValue) {
-        // TODO: implement this
-        System.out.println(oldValue);
-        System.out.println(newValue);
+    private void onAgendaItemsPreparationSelectionChange(AgendaItem newValue) {
+        boolean disabledBecauseOfSelection = newValue == null;
+        buttonAgendaItemEdit.setDisable(disabledBecauseOfSelection);
+        buttonAgendaItemRemove.setDisable(disabledBecauseOfSelection);
+        buttonAgendaItemMoveUp.setDisable(disabledBecauseOfSelection);
+        buttonAgendaItemMoveDown.setDisable(disabledBecauseOfSelection);
     }
 
     /**
      * TODO
      *
-     * @param oldValue TODO
      * @param newValue TODO
      */
-    private void onAgendaItemsMeetingSelectionChange(AgendaItem oldValue, AgendaItem newValue) {
-        // TODO: implement this
-        System.out.println(oldValue);
-        System.out.println(newValue);
+    private void onAgendaItemsMeetingSelectionChange(AgendaItem newValue) {
+        boolean disabledBecauseOfSelection = newValue == null;
+        inputAgendaItemContent.setText(disabledBecauseOfSelection ? "" : newValue.getContent());
+        inputAgendaItemContent.setDisable(disabledBecauseOfSelection);
     }
 
     /**

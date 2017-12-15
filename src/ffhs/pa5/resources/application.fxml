@@ -107,14 +107,17 @@
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
-                                                                        onAction="#onEditParticipant" text="%button_edit">
+                                                                <Button fx:id="buttonParticipantEdit" disable="true"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#onEditParticipant"
+                                                                        text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
+                                                                <Button fx:id="buttonParticipantRemove" disable="true"
+                                                                        mnemonicParsing="false"
                                                                         onAction="#onRemoveParticipant"
                                                                         text="%button_remove">
                                                                     <VBox.margin>
@@ -150,14 +153,17 @@
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
-                                                                        onAction="#onEditAgendaItem" text="%button_edit">
+                                                                <Button fx:id="buttonAgendaItemEdit" disable="true"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#onEditAgendaItem"
+                                                                        text="%button_edit">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0" left="5.0" right="5.0"
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
+                                                                <Button fx:id="buttonAgendaItemRemove" disable="true"
+                                                                        mnemonicParsing="false"
                                                                         onAction="#onRemoveAgendaItem"
                                                                         text="%button_remove">
                                                                     <VBox.margin>
@@ -165,14 +171,16 @@
                                                                                 top="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
+                                                                <Button fx:id="buttonAgendaItemMoveUp" disable="true"
+                                                                        mnemonicParsing="false"
                                                                         onAction="#onMoveAgendaItemUp"
                                                                         text="%button_moveUp">
                                                                     <VBox.margin>
                                                                         <Insets bottom="5.0"/>
                                                                     </VBox.margin>
                                                                 </Button>
-                                                                <Button mnemonicParsing="false"
+                                                                <Button fx:id="buttonAgendaItemMoveDown" disable="true"
+                                                                        mnemonicParsing="false"
                                                                         onAction="#onMoveAgendaItemDown"
                                                                         text="%button_moveDown">
                                                                     <VBox.margin>
@@ -209,31 +217,9 @@
                                                           prefWidth="1180.0"/>
                                                 <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                     <children>
-                                                        <VBox prefHeight="399.0" prefWidth="224.0">
-                                                            <children>
-                                                                <Label text="%label_chosenAgendaItem">
-                                                                    <VBox.margin>
-                                                                        <Insets bottom="30.0"/>
-                                                                    </VBox.margin>
-                                                                </Label>
-                                                                <Label text="%label_id">
-                                                                    <VBox.margin>
-                                                                        <Insets bottom="30.0"/>
-                                                                    </VBox.margin>
-                                                                </Label>
-                                                                <Label text="%label_sort">
-                                                                    <VBox.margin>
-                                                                        <Insets bottom="5.0"/>
-                                                                    </VBox.margin>
-                                                                </Label>
-                                                            </children>
-                                                            <padding>
-                                                                <Insets bottom="10.0" left="10.0" right="10.0"
-                                                                        top="10.0"/>
-                                                            </padding>
-                                                        </VBox>
-                                                        <TextArea fx:id="inputAgendaItemContent" prefHeight="200.0"
-                                                                  prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                                                        <TextArea fx:id="inputAgendaItemContent" disable="true"
+                                                                  prefHeight="200.0" prefWidth="200.0"
+                                                                  HBox.hgrow="ALWAYS"/>
                                                     </children>
                                                     <padding>
                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
