@@ -41,8 +41,8 @@ public class Controller implements ViewController {
      * @throws IOException TODO
      */
     private void initializeView() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
-        fxmlLoader.setResources(getBundle());
+        ResourceBundle bundle = getBundle();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN), bundle);
         Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
         View view = fxmlLoader.getController();
@@ -51,8 +51,7 @@ public class Controller implements ViewController {
 
         primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
 
-        view.setTitle(Constants.VIEW_TITLE); //TODO @Barbara: mit label_viewTitleMain ersetzen, das geht im..
-        //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
+        view.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_MAIN.name()));
         view.setScene(primaryScene);
         view.sizeToScene();
         view.show();

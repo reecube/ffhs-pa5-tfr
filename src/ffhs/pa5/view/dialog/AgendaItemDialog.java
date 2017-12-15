@@ -3,6 +3,7 @@ package ffhs.pa5.view.dialog;
 import ffhs.pa5.Constants;
 import ffhs.pa5.controller.Controller;
 import ffhs.pa5.model.AgendaItem;
+import ffhs.pa5.model.LanguageKey;
 import ffhs.pa5.util.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,8 +73,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
             Window window = dialogPane.getScene().getWindow();
             window.setOnCloseRequest(event -> instance.hide());
 
-            instance.setTitle(Constants.VIEW_TITLE); //TODO @Barbara: mit label_viewTitleAgendaItem ersetzen, das geht im..
-            //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
+            instance.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_AGENDAITEM.name()));
 
             primaryScene.getStylesheets().add(AgendaItemDialog.class.getResource(Constants.CSS_MAIN).toExternalForm());
 
