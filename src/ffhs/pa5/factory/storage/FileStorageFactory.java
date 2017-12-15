@@ -4,7 +4,6 @@ import ffhs.pa5.Constants;
 import ffhs.pa5.factory.archive.ArchiveFactory;
 import ffhs.pa5.model.*;
 import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
-import ffhs.pa5.util.CustomExclusionStrategy;
 import ffhs.pa5.util.FileUtil;
 import ffhs.pa5.util.JsonUtil;
 import ffhs.pa5.util.Logger;
@@ -199,11 +198,22 @@ public class FileStorageFactory {
      * @return TODO
      */
     public FileStorageFactoryResult save(String path) {
+        return save(path, false);
+    }
+
+    /**
+     * TODO
+     *
+     * @param path       TODO
+     * @param ignoreLock TODO
+     * @return TODO
+     */
+    public FileStorageFactoryResult save(String path, boolean ignoreLock) {
         if (!isInitialized()) {
             return FileStorageFactoryResult.ERROR_UNINITIALIZED;
         }
 
-        if (isLocked(path)) {
+        if (!ignoreLock && isLocked(path)) {
             return FileStorageFactoryResult.ERROR_FILE_LOCKED;
         }
 
@@ -247,7 +257,7 @@ public class FileStorageFactory {
         }
 
         if (save) {
-            FileStorageFactoryResult saveResult = save(path);
+            FileStorageFactoryResult saveResult = save(path, true);
 
             if (saveResult != FileStorageFactoryResult.SUCCESS) {
                 return saveResult;
