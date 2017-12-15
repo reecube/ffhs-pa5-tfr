@@ -81,7 +81,7 @@ public class View extends Stage implements Observer, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)
-                -> onTabPaneSelectionChange(oldValue, newValue));
+                -> onTabPaneSelectionChange(newValue));
 
         addChangeListener(outputParticipants, (observable, oldValue, newValue)
                 -> onParticipantsSelectionChange(oldValue, newValue));
@@ -217,12 +217,31 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * TODO
      *
-     * @param oldValue TODO
      * @param newValue TODO
      */
-    private void onTabPaneSelectionChange(Tab oldValue, Tab newValue) {
-        System.out.println(oldValue);
-        System.out.println(newValue);
+    private void onTabPaneSelectionChange(Tab newValue) {
+        State newState;
+
+        if (newValue.equals(tabPreparation)) {
+            newState = State.PREPARATION;
+        } else if (newValue.equals(tabMeeting)) {
+            newState = State.MEETING;
+        } else if (newValue.equals(tabEnding)) {
+            newState = State.ENDING;
+        } else {
+            Logger logger = Logger.getInstance();
+            logger.handleException(new Exception("Unexpected behavior!"));
+            return;
+        }
+
+        boolean result = controller.changeState(newState);
+
+        if (result) {
+            return;
+        }
+
+        Logger logger = Logger.getInstance();
+        logger.handleException(new Exception("Unexpected behavior!"));
     }
 
     /**

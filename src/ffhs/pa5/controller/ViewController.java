@@ -2,6 +2,7 @@ package ffhs.pa5.controller;
 
 import ffhs.pa5.model.AgendaItem;
 import ffhs.pa5.model.Participant;
+import ffhs.pa5.model.State;
 
 /**
  * TODO
@@ -68,4 +69,12 @@ public interface ViewController {
      * TODO
      */
     void closeMeeting();
+
+    /**
+     * TODO
+     *
+     * @param newState TODO
+     * @return TODO
+     */
+    boolean changeState(State newState);
 }

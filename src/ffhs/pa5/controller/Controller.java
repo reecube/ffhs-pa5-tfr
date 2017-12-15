@@ -102,6 +102,23 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
+    public boolean changeState(State newState) {
+        final Meeting meeting = fileStorageFactory.getFile().getMeeting();
+        final State oldState = meeting.getState();
+
+        if (oldState == State.CLOSED || oldState == newState) {
+            return false;
+        }
+
+        meeting.setState(newState);
+
+        return true;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public boolean addAgendaItem(AgendaItem agendaItem) {
         return fileStorageFactory.getFile().getMeeting().addAgendaItem(agendaItem);
     }
@@ -159,7 +176,7 @@ public class Controller implements ViewController {
      */
     @Override
     public void closeMeeting() {
-        fileStorageFactory.getFile().getMeeting().setState(State.CLOSED);
+        changeState(State.CLOSED);
     }
 
     /**
