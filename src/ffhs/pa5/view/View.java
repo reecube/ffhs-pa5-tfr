@@ -92,12 +92,6 @@ public class View extends Stage implements Observer, Initializable {
     @FXML
     private TextArea inputAgendaItemContent;
 
-    @FXML
-    private Label labelSelectedAgendaItemTitle;
-
-    @FXML
-    private Label labelSelectedAgendaItemId;
-
 
     // Tab ending
 
@@ -179,7 +173,7 @@ public class View extends Stage implements Observer, Initializable {
      * @param meeting TODO
      * @return TODO
      */
-    private boolean isMeetingReadyToContinue(Meeting meeting) {
+    private boolean isMeetingReadyToStart(Meeting meeting) {
         return meeting.getAgendaItems().length != 0 && !meeting.getTitle().equals("");
 
     }
@@ -200,7 +194,7 @@ public class View extends Stage implements Observer, Initializable {
             case PREPARATION:
                 selectionModel.select(tabPreparation);
                 tabPreparation.setDisable(false);
-                tabMeeting.setDisable(!isMeetingReadyToContinue(meeting));
+                tabMeeting.setDisable(!isMeetingReadyToStart(meeting));
                 tabEnding.setDisable(true);
                 break;
             case MEETING:
