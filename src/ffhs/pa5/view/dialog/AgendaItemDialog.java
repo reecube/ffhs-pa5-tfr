@@ -120,17 +120,15 @@ public class AgendaItemDialog extends Dialog<AgendaItem> {
         inputTitle.setText(agendaItem.getTitle());
     }
 
-    public void disableInputId() {
+    private void disableInputId() {
         inputId.setDisable(true);
     }
 
     /**
      * TODO
-     *
-     * @param event TODO
      */
     @FXML
-    private void handleButtonSaveAction(ActionEvent event) {
+    private void handleButtonSaveAction() {
         // TODO: Check if the id is not empty!
 
         agendaItem.setId(inputId.getText());
