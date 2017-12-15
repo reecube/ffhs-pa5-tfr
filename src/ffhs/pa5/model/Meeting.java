@@ -1,6 +1,7 @@
 package ffhs.pa5.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Observer;
 
@@ -185,15 +186,34 @@ public class Meeting extends ViewObservable {
     }
 
     /**
-     * TODOF
+     * TODO
      *
      * @param agendaItem TODO
-     * @param value      TODO
+     * @param moveUp     TODO
      * @return TODO
      */
-    public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
-        // TODO: implement this
+    public boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp) {
+        final int currentIndex = agendaItems.indexOf(agendaItem);
+        if (currentIndex < 0) {
+            return false;
+        }
 
-        return false;
+        int newIndex = currentIndex + (moveUp ? -1 : 1);
+
+        if (newIndex < 0) {
+            newIndex = agendaItems.size() + newIndex;
+        } else {
+            newIndex = newIndex % agendaItems.size();
+        }
+
+        Collections.swap(agendaItems, currentIndex, newIndex);
+
+        final boolean result = agendaItems.indexOf(agendaItem) == newIndex;
+
+        if (result) {
+            updateView();
+        }
+
+        return result;
     }
 }

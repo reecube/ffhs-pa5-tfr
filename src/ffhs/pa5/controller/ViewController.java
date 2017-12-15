@@ -38,10 +38,10 @@ public interface ViewController {
      * TODO
      *
      * @param agendaItem TODO
-     * @param value TODO
+     * @param moveUp     TODO
      * @return TODO
      */
-    boolean moveAgendaItem(AgendaItem agendaItem, int value);
+    boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp);
 
     /**
      * TODO

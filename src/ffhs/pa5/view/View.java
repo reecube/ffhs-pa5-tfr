@@ -398,7 +398,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        if (controller.moveAgendaItem(agendaItem, -1)) {
+        if (controller.moveAgendaItem(agendaItem, true)) {
             return;
         }
 
@@ -416,7 +416,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        if (controller.moveAgendaItem(agendaItem, 1)) {
+        if (controller.moveAgendaItem(agendaItem, false)) {
             return;
         }
 

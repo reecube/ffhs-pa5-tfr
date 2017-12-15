@@ -123,8 +123,8 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
-    public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
-        return fileStorageFactory.getFile().getMeeting().moveAgendaItem(agendaItem, value);
+    public boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp) {
+        return fileStorageFactory.getFile().getMeeting().moveAgendaItem(agendaItem, moveUp);
     }
 
     /**
