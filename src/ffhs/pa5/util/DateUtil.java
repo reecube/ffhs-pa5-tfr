@@ -22,21 +22,24 @@ public abstract class DateUtil {
      * @return TODO
      */
     public static LocalDate toLocalDate(Date date) {
-        return toLocalDate(date, null);
+        if (date == null) {
+            return null;
+        }
+
+        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
     /**
      * TODO
      *
-     * @param date         TODO
-     * @param defaultValue TODO
+     * @param date TODO
      * @return TODO
      */
-    public static LocalDate toLocalDate(Date date, LocalDate defaultValue) {
+    public static Date fromLocalDate(LocalDate date) {
         if (date == null) {
-            return defaultValue;
+            return null;
         }
 
-        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+        return Date.from(date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
     }
 }
