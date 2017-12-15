@@ -157,8 +157,6 @@ public class Controller implements ViewController {
     @Override
     public void closeMeeting() {
         fileStorageFactory.getFile().getMeeting().setState(State.CLOSED);
-
-        // TODO: save the file or not?
     }
 
     /**
