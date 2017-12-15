@@ -99,6 +99,9 @@ public class View extends Stage implements Observer, Initializable {
     @FXML
     private TextArea inputAgendaItemContent;
 
+    @FXML
+    private Button buttonAgendaItemContentSave;
+
 
     // Tab ending
 
@@ -555,11 +558,24 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
+            return;
+        }
+
+        buttonAgendaItemContentSave.setDisable(newValue.equals(agendaItem.getContent()));
+    }
+
+    /**
+     * TODDO
+     */
+    public void onSaveAgendaItemContent() {
+        AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
+
+        if (agendaItem == null) {
             AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
             return;
         }
 
-        agendaItem.setContent(newValue);
+        agendaItem.setContent(inputAgendaItemContent.getText());
 
         if (controller.editAgendaItem(agendaItem)) {
             return;
