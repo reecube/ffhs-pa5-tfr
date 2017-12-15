@@ -1,7 +1,8 @@
 package ffhs.pa5.view;
 
+import ffhs.pa5.model.DataFile;
+
 import java.util.Observable;
-import java.util.Observer;
 
 /**
  * This is the Observable class with custom functions.
@@ -11,9 +12,19 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public abstract class ViewObservable extends Observable {
+public class ViewObservable extends Observable {
 
-    public abstract void addObserverRecursive(Observer observer);
+    private DataFile file;
+
+    public ViewObservable(DataFile file) {
+        this.file = file;
+
+        file.setObservableRecursive(this);
+    }
+
+    public DataFile getFile() {
+        return file;
+    }
 
     /**
      * Notify the observers for changes

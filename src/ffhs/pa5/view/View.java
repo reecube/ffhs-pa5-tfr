@@ -282,12 +282,9 @@ public class View extends Stage implements Observer, Initializable {
      */
     @Override
     public void update(Observable o, Object arg) {
-        if (o instanceof DataFile) {
-            updateDataFile((DataFile) o);
-        } else if (o instanceof Metadata) {
-            updateMetadata((Metadata) o);
-        } else if (o instanceof Meeting) {
-            updateMeeting((Meeting) o);
+        if (o instanceof ViewObservable) {
+            ViewObservable observable = (ViewObservable) o;
+            updateDataFile(observable.getFile());
         } else {
             final Logger logger = Logger.getInstance();
             logger.handleException(new Exception("Could not handle the observable with the class `" + o.getClass() + "`!"));

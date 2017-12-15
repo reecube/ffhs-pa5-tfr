@@ -1,10 +1,8 @@
 package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
-import ffhs.pa5.view.ViewObservable;
 
 import java.util.ArrayList;
-import java.util.Observer;
 
 /**
  * This class handles the data of the participants of a meeting.
@@ -14,7 +12,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Participant extends ViewObservable {
+public class Participant {
 
     @Expose
     private String firstname = "";
@@ -33,14 +31,6 @@ public class Participant extends ViewObservable {
 
     @Expose
     private String notes = "";
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void addObserverRecursive(Observer observer) {
-        addObserver(observer);
-    }
 
     /**
      * {@inheritDoc}
@@ -78,8 +68,6 @@ public class Participant extends ViewObservable {
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
-
-        updateView();
     }
 
     public String getLastname() {
@@ -88,8 +76,6 @@ public class Participant extends ViewObservable {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-
-        updateView();
     }
 
     public String getEmail() {
@@ -98,8 +84,6 @@ public class Participant extends ViewObservable {
 
     public void setEmail(String email) {
         this.email = email;
-
-        updateView();
     }
 
     public String getPhone() {
@@ -108,8 +92,6 @@ public class Participant extends ViewObservable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-
-        updateView();
     }
 
     public String getRole() {
@@ -118,8 +100,6 @@ public class Participant extends ViewObservable {
 
     public void setRole(String role) {
         this.role = role;
-
-        updateView();
     }
 
     public String getNotes() {
@@ -128,7 +108,5 @@ public class Participant extends ViewObservable {
 
     public void setNotes(String notes) {
         this.notes = notes;
-
-        updateView();
     }
 }

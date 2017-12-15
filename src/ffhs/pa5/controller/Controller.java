@@ -7,6 +7,7 @@ import ffhs.pa5.model.*;
 import ffhs.pa5.model.type.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.view.View;
+import ffhs.pa5.view.ViewObservable;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
@@ -25,6 +26,7 @@ import java.util.*;
 public class Controller implements ViewController {
 
     private Observer viewObserver;
+    private ViewObservable viewObservable;
 
     private static ResourceBundle bundle;
 
@@ -90,7 +92,8 @@ public class Controller implements ViewController {
         }
 
         DataFile file = fileStorageFactory.getFile();
-        file.addObserverRecursive(viewObserver);
+        this.viewObservable = new ViewObservable(file);
+        viewObservable.addObserver(viewObserver);
         file.updateView();
     }
 

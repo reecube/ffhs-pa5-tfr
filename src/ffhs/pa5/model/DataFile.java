@@ -2,9 +2,9 @@ package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
 import ffhs.pa5.view.ViewObservable;
+import ffhs.pa5.view.ViewObservableReference;
 
 import java.util.ArrayList;
-import java.util.Observer;
 
 /**
  * This class handles the data of a meeting protocol.
@@ -14,7 +14,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public class DataFile extends ViewObservable {
+public class DataFile extends ViewObservableReference {
 
     @Expose
     private Metadata metadata;
@@ -40,10 +40,10 @@ public class DataFile extends ViewObservable {
      * {@inheritDoc}
      */
     @Override
-    public void addObserverRecursive(Observer observer) {
-        metadata.addObserverRecursive(observer);
-        meeting.addObserverRecursive(observer);
-        addObserver(observer);
+    public void setObservableRecursive(ViewObservable observable) {
+        metadata.setObservableRecursive(observable);
+        meeting.setObservableRecursive(observable);
+        setObservable(observable);
     }
 
     public Metadata getMetadata() {

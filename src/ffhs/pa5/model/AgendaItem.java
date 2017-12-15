@@ -1,9 +1,6 @@
 package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
-import ffhs.pa5.view.ViewObservable;
-
-import java.util.Observer;
 
 /**
  * This class handles the data of agenda items within a meeting protocol.
@@ -13,7 +10,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public class AgendaItem extends ViewObservable {
+public class AgendaItem {
 
     @Expose
     private String id = "";
@@ -31,14 +28,6 @@ public class AgendaItem extends ViewObservable {
      * {@inheritDoc}
      */
     @Override
-    public void addObserverRecursive(Observer observer) {
-        addObserver(observer);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public String toString() {
         return "[" + id + "] " + title;
     }
@@ -49,8 +38,6 @@ public class AgendaItem extends ViewObservable {
 
     public void setId(String id) {
         this.id = id;
-
-        updateView();
     }
 
     public String getTitle() {
@@ -59,8 +46,6 @@ public class AgendaItem extends ViewObservable {
 
     public void setTitle(String title) {
         this.title = title;
-
-        updateView();
     }
 
     public String getContent() {
@@ -69,8 +54,6 @@ public class AgendaItem extends ViewObservable {
 
     public void setContent(String content) {
         this.content = content;
-
-        updateView();
     }
 
     public boolean isDeleted() {
@@ -79,7 +62,5 @@ public class AgendaItem extends ViewObservable {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
-
-        updateView();
     }
 }

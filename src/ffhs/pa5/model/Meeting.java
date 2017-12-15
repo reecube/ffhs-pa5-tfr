@@ -3,11 +3,11 @@ package ffhs.pa5.model;
 import com.google.gson.annotations.Expose;
 import ffhs.pa5.model.type.State;
 import ffhs.pa5.view.ViewObservable;
+import ffhs.pa5.view.ViewObservableReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Observer;
 
 /**
  * This class handles the data of a meeting.
@@ -17,7 +17,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Meeting extends ViewObservable {
+public class Meeting extends ViewObservableReference {
 
     @Expose
     private String title = "";
@@ -44,8 +44,8 @@ public class Meeting extends ViewObservable {
      * {@inheritDoc}
      */
     @Override
-    public void addObserverRecursive(Observer observer) {
-        addObserver(observer);
+    public void setObservableRecursive(ViewObservable observable) {
+        setObservable(observable);
     }
 
     public String getTitle() {

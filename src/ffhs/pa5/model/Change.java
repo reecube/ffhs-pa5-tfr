@@ -1,10 +1,8 @@
 package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
-import ffhs.pa5.view.ViewObservable;
 
 import java.util.Date;
-import java.util.Observer;
 
 /**
  * This class handles the data of changes made in a meeting protocol.
@@ -14,7 +12,7 @@ import java.util.Observer;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Change extends ViewObservable {
+public class Change {
 
     @Expose
     private Date date;
@@ -28,8 +26,8 @@ public class Change extends ViewObservable {
     /**
      * TODO
      *
-     * @param date TODO
-     * @param user TODO
+     * @param date   TODO
+     * @param user   TODO
      * @param change TODO
      */
     public Change(Date date, String user, String change) {
@@ -38,22 +36,12 @@ public class Change extends ViewObservable {
         this.change = change;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void addObserverRecursive(Observer observer) {
-        addObserver(observer);
-    }
-
     public Date getDate() {
         return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
-
-        updateView();
     }
 
     public String getUser() {
@@ -62,8 +50,6 @@ public class Change extends ViewObservable {
 
     public void setUser(String user) {
         this.user = user;
-
-        updateView();
     }
 
     public String getChange() {
@@ -72,7 +58,5 @@ public class Change extends ViewObservable {
 
     public void setChange(String change) {
         this.change = change;
-
-        updateView();
     }
 }

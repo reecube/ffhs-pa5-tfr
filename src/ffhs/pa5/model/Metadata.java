@@ -3,9 +3,9 @@ package ffhs.pa5.model;
 import com.google.gson.annotations.Expose;
 import ffhs.pa5.Constants;
 import ffhs.pa5.view.ViewObservable;
+import ffhs.pa5.view.ViewObservableReference;
 
 import java.util.Date;
-import java.util.Observer;
 import java.util.UUID;
 
 /**
@@ -16,7 +16,7 @@ import java.util.UUID;
  * @author Yves Riedener
  * @version 1.0
  */
-public class Metadata extends ViewObservable {
+public class Metadata extends ViewObservableReference {
 
     @Expose
     private int appVersion = Constants.APP_VERSION;
@@ -43,8 +43,8 @@ public class Metadata extends ViewObservable {
      * {@inheritDoc}
      */
     @Override
-    public void addObserverRecursive(Observer observer) {
-        addObserver(observer);
+    public void setObservableRecursive(ViewObservable observable) {
+        setObservable(observable);
     }
 
     /**
