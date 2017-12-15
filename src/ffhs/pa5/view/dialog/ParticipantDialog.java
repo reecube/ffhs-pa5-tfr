@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
@@ -65,8 +66,9 @@ public class ParticipantDialog extends Dialog<Participant> {
      */
     public static ParticipantDialog getNewInstance(Participant participant) {
         try {
-            ResourceBundle bundle = Controller.defineResourceBundle();
-            FXMLLoader fxmlLoader = new FXMLLoader(ParticipantDialog.class.getResource(Constants.FXML_DIALOG_PARTICIPANT), bundle);
+            ResourceBundle bundle = Controller.getBundle();
+            URL location = ParticipantDialog.class.getResource(Constants.FXML_DIALOG_PARTICIPANT);
+            FXMLLoader fxmlLoader = new FXMLLoader(location, bundle);
 
             Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 

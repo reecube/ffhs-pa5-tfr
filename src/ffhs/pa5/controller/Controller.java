@@ -42,7 +42,7 @@ public class Controller implements ViewController {
      */
     private void initializeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.FXML_MAIN));
-        fxmlLoader.setResources(defineResourceBundle());
+        fxmlLoader.setResources(getBundle());
         Scene primaryScene = new Scene(fxmlLoader.load(), Constants.VIEW_WIDTH, Constants.VIEW_HEIGHT);
 
         View view = fxmlLoader.getController();
@@ -78,10 +78,8 @@ public class Controller implements ViewController {
      * @throws IOException TODO
      */
     public Controller() throws IOException {
-
         initializeView();
         initializeFileStorageFactory();
-        bundle = defineResourceBundle();
     }
 
     /**
@@ -89,10 +87,16 @@ public class Controller implements ViewController {
      *
      * @return TODO
      */
-    public static ResourceBundle defineResourceBundle() {
+    public static ResourceBundle getBundle() {
+        if (bundle != null) {
+            return bundle;
+        }
+
         String userLanguage = defineUserLanguage();
         Locale locale = new Locale(userLanguage);
-        return ResourceBundle.getBundle(Constants.PACKAGE_TRANSLATION, locale);
+        bundle = ResourceBundle.getBundle(Constants.PACKAGE_TRANSLATION, locale);
+
+        return bundle;
     }
 
     /**
@@ -172,9 +176,5 @@ public class Controller implements ViewController {
         }
 
         return Constants.DEFAULT_LANGUAGE;
-    }
-
-    public static ResourceBundle getBundle() {
-        return bundle;
     }
 }
