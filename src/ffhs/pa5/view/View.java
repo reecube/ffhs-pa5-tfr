@@ -594,7 +594,7 @@ public class View extends Stage implements Observer, Initializable {
                 inputMeetingTitle.getText(), extension);
         File file = FileChooserHelper.showSaveDialog(initialFileName, this);
 
-        if (file == null || !file.exists() || !file.isFile()) {
+        if (file == null) {
             return;
         }
 
