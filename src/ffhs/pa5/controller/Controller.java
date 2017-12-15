@@ -52,7 +52,7 @@ public class Controller implements ViewController {
         primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
 
         view.setTitle(Constants.VIEW_TITLE); //TODO @Barbara: mit label_viewTitleMain ersetzen, das geht im..
-                //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
+        //TODO @Barbara ..Moment aber nicht, darauf warten, dass der Singleton gemacht ist
         view.setScene(primaryScene);
         view.sizeToScene();
         view.show();
@@ -108,9 +108,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean editAgendaItem(AgendaItem agendaItem) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().editAgendaItem(agendaItem);
     }
 
     /**
@@ -126,9 +124,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().moveAgendaItem(agendaItem, value);
     }
 
     /**
@@ -144,9 +140,7 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean editParticipant(Participant participant) {
-        // TODO: implement this
-
-        return false;
+        return fileStorageFactory.getFile().getMeeting().editParticipant(participant);
     }
 
     /**

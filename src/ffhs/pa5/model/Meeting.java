@@ -106,6 +106,22 @@ public class Meeting extends ViewObservable {
      * @param participant TODO
      * @return TODO
      */
+    public boolean editParticipant(Participant participant) {
+        if (!participants.contains(participant)) {
+            return false;
+        }
+
+        updateView();
+
+        return true;
+    }
+
+    /**
+     * TODO
+     *
+     * @param participant TODO
+     * @return TODO
+     */
     public boolean removeParticipant(Participant participant) {
         boolean result = participants.remove(participant);
 
@@ -142,6 +158,22 @@ public class Meeting extends ViewObservable {
      * @param agendaItem TODO
      * @return TODO
      */
+    public boolean editAgendaItem(AgendaItem agendaItem) {
+        if (!agendaItems.contains(agendaItem)) {
+            return false;
+        }
+
+        updateView();
+
+        return true;
+    }
+
+    /**
+     * TODO
+     *
+     * @param agendaItem TODO
+     * @return TODO
+     */
     public boolean removeAgendaItem(AgendaItem agendaItem) {
         boolean result = agendaItems.remove(agendaItem);
 
@@ -150,5 +182,18 @@ public class Meeting extends ViewObservable {
         }
 
         return result;
+    }
+
+    /**
+     * TODOF
+     *
+     * @param agendaItem TODO
+     * @param value      TODO
+     * @return TODO
+     */
+    public boolean moveAgendaItem(AgendaItem agendaItem, int value) {
+        // TODO: implement this
+
+        return false;
     }
 }
