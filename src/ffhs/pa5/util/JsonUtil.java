@@ -23,7 +23,9 @@ public abstract class JsonUtil {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateSerializer());
         gsonBuilder.registerTypeAdapter(Date.class, new CustomDateDeserializer());
-        gsonBuilder.addDeserializationExclusionStrategy(new CustomExclusionStrategy());
+        CustomExclusionStrategy exclusionStrategy = new CustomExclusionStrategy();
+        gsonBuilder.addSerializationExclusionStrategy(exclusionStrategy);
+        gsonBuilder.addDeserializationExclusionStrategy(exclusionStrategy);
         return gsonBuilder.create();
     }
 
