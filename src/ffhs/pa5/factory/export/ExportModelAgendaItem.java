@@ -31,11 +31,15 @@ public class ExportModelAgendaItem {
         this.content = agendaItem.getContent();
     }
 
-    public String toString() {
-        return "[" + id + "] " + title + "{" + content + "}";
+    public String getId() {
+        return id;
     }
 
-    public String getId() { //TODO @Yves: braucht es das wirklich?
-        return id;
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
     }
 }

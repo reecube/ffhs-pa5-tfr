@@ -34,7 +34,7 @@ public class ExportModel {
      *
      * @param dataFile TODO
      */
-    public ExportModel(DataFile dataFile) {
+    public ExportModel(DataFile dataFile, Date creationDate, Date lastEditionDate) {
         Meeting meeting = dataFile.getMeeting();
 
         this.title = meeting.getTitle();
@@ -63,9 +63,9 @@ public class ExportModel {
             }
             this.agendaItems.add(exportModelAgendaItem);
         }
-        // this.creationDate TODO
-        // this.lastEditionDate TODO
-        this.exportDate = Calendar.getInstance().getTime();
+        this.creationDate = creationDate;
+        this.lastEditionDate = lastEditionDate;
+        this.exportDate = new Date();
     }
 
     public String getTitle() {

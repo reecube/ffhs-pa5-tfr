@@ -35,37 +35,27 @@ public class ExportModelParticipant {
         this.notes = participant.getNotes();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String toString() {
-        ArrayList<String> result = new ArrayList<>();
+    public String getFirstname() {
+        return firstname;
+    }
 
-        if (firstname != null && firstname.length() > 0) {
-            result.add(firstname);
-        }
+    public String getLastname() {
+        return lastname;
+    }
 
-        if (lastname != null && lastname.length() > 0) {
-            result.add(lastname);
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        if (role != null && role.length() > 0) {
-            result.add("(" + role + ")");
-        }
+    public String getPhone() {
+        return phone;
+    }
 
-        if (email != null && email.length() > 0) {
-            result.add("<" + email + ">");
-        }
+    public String getRole() {
+        return role;
+    }
 
-        if (phone != null && phone.length() > 0) {
-            result.add("[" + phone + "]");
-        }
-
-        if (notes != null && notes.length() > 0) {
-            result.add("{" + notes + "}");
-        }
-
-        return String.join(" ", result);
+    public String getNotes() {
+        return notes;
     }
 }

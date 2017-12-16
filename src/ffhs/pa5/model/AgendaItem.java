@@ -28,7 +28,7 @@ public class AgendaItem {
      * {@inheritDoc}
      */
     @Override
-    public String toString() { //TODO @Yves: Ich brauche die Funktion in ExportModelAgendaItem, nicht hier
+    public String toString() {
         return "[" + id + "] " + title;
     }
 

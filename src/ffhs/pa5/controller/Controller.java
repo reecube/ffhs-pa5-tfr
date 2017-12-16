@@ -9,12 +9,16 @@ import ffhs.pa5.factory.storage.FileStorageFactoryResult;
 import ffhs.pa5.model.*;
 import ffhs.pa5.model.type.*;
 import ffhs.pa5.util.DateUtil;
+import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.View;
 import ffhs.pa5.view.ViewObservable;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -57,7 +61,26 @@ public class Controller implements ViewController {
      */
     @Override
     public boolean export(ExportOutputHandler handler, String path) {
-        ExportModel model = new ExportModel(fileStorageFactory.getFile());
+        Date creationDate;
+        Date lastEditionDate;
+        if (lastSavePath != null) {
+            try {
+                BasicFileAttributes attr = Files.readAttributes(Paths.get(lastSavePath), BasicFileAttributes.class);
+                creationDate = new Date(attr.creationTime().toMillis());
+                lastEditionDate = new Date(attr.lastModifiedTime().toMillis());
+            } catch (IOException ex) {
+                final Logger logger = Logger.getInstance();
+                logger.handleException(ex);
+
+                creationDate = null;
+                lastEditionDate = null;
+            }
+        } else {
+            creationDate = new Date();
+            lastEditionDate = new Date();
+        }
+
+        ExportModel model = new ExportModel(fileStorageFactory.getFile(), creationDate, lastEditionDate);
         ExportFactory factory = new ExportFactory(model, handler);
         return factory.export(path);
     }
