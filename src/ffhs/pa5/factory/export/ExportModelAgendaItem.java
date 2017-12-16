@@ -41,5 +41,7 @@ public class ExportModelAgendaItem {
 
     public String getContent() {
         return content;
+    public String getId() { //TODO @Yves: braucht es das wirklich?
+        return id;
     }
 }

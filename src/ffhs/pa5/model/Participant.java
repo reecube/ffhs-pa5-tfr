@@ -36,7 +36,7 @@ public class Participant {
      * {@inheritDoc}
      */
     @Override
-    public String toString() {
+    public String toString() { //TODO: @Yves: Diese Methode brauche ich in ExportModelParticipant und nicht hier. Gibt es noch eine andere Verwendung?
         ArrayList<String> result = new ArrayList<>();
 
         if (firstname != null && firstname.length() > 0) {
