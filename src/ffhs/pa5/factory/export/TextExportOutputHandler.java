@@ -6,6 +6,10 @@ import ffhs.pa5.model.type.LanguageKey;
 import ffhs.pa5.util.ResourceUtil;
 import javafx.stage.FileChooser;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * TODO
  *
@@ -39,8 +43,19 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
 
     private void addLabelContent(LanguageKey label, String theContent) {
         String labelContent = ResourceUtil.getLangString(Controller.getBundle(), label);
+        if (theContent != null && theContent.length() > 0) {
+            addLine(labelContent + Constants.CHAR_TAB + theContent);
+        } else {
+            addLine(labelContent);
+        }
+    }
 
-        addLine(labelContent + Constants.CHAR_TAB + theContent);
+    private String formatDate(Date date) {
+        if (date != null && date.toString().length() > 0) {
+            DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+            return dateFormat.format(date);
+        }
+        return "";
     }
 
     /**
@@ -51,10 +66,23 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
         this.lineSeparator = System.getProperty(Constants.JAVA_LINE_SEPARATOR);
         this.content = "";
 
-        addLabelContent(LanguageKey.ERROR_TITLE, model.getTitle());
-        addLine(null);
-
-        // TODO: @barbara implement the rest
+        addLabelContent(LanguageKey.EXPORT_TITLE, null);
+        addLine();
+        addLine(model.getTitle());
+        addLabelContent(LanguageKey.EXPORT_MEETING_DATE, formatDate(model.getDate()));
+        addLine(model.getLocation());
+        addLine();
+        addLabelContent(LanguageKey.EXPORT_PARTICIPANTS_LIST, null);
+        for (ExportModelParticipant participant : model.getParticipants()) {
+            addLine(participant.toString());
+        }
+        addLine();
+        addLabelContent(LanguageKey.EXPORT_AGENDA_ITEMS, null);
+        for (ExportModelAgendaItem agendaItem : model.getAgendaItems()) {
+            addLine(agendaItem.toString());
+        }
+        addLine();
+        addLabelContent(LanguageKey.EXPORT_NEXT_MEETING, formatDate(model.getNextMeeting()));
 
         return content.getBytes();
     }

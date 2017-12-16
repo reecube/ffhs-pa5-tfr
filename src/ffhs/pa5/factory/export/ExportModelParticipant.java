@@ -2,6 +2,8 @@ package ffhs.pa5.factory.export;
 
 import ffhs.pa5.model.Participant;
 
+import java.util.ArrayList;
+
 /**
  * TODO
  *
@@ -24,7 +26,7 @@ public class ExportModelParticipant {
      *
      * @param participant TODO
      */
-    public ExportModelParticipant(Participant participant) {
+    ExportModelParticipant(Participant participant) {
         this.firstname = participant.getFirstname();
         this.lastname = participant.getLastname();
         this.email = participant.getEmail();
@@ -33,27 +35,37 @@ public class ExportModelParticipant {
         this.notes = participant.getNotes();
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        ArrayList<String> result = new ArrayList<>();
 
-    public String getLastname() {
-        return lastname;
-    }
+        if (firstname != null && firstname.length() > 0) {
+            result.add(firstname);
+        }
 
-    public String getEmail() {
-        return email;
-    }
+        if (lastname != null && lastname.length() > 0) {
+            result.add(lastname);
+        }
 
-    public String getPhone() {
-        return phone;
-    }
+        if (role != null && role.length() > 0) {
+            result.add("(" + role + ")");
+        }
 
-    public String getRole() {
-        return role;
-    }
+        if (email != null && email.length() > 0) {
+            result.add("<" + email + ">");
+        }
 
-    public String getNotes() {
-        return notes;
+        if (phone != null && phone.length() > 0) {
+            result.add("[" + phone + "]");
+        }
+
+        if (notes != null && notes.length() > 0) {
+            result.add("{" + notes + "}");
+        }
+
+        return String.join(" ", result);
     }
 }
