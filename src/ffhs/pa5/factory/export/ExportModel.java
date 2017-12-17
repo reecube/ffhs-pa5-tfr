@@ -67,11 +67,11 @@ public class ExportModel {
         this.exportDate = new Date();
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    String getLocation() {
+    public String getLocation() {
         return location;
     }
 
@@ -79,7 +79,7 @@ public class ExportModel {
         return date;
     }
 
-    ArrayList<ExportModelParticipant> getParticipants() {
+    public ArrayList<ExportModelParticipant> getParticipants() {
         return participants;
     }
 
@@ -87,23 +87,23 @@ public class ExportModel {
         return state;
     }
 
-    Date getNextMeeting() {
+    public Date getNextMeeting() {
         return nextMeeting;
     }
 
-    ArrayList<ExportModelAgendaItem> getAgendaItems() {
+    public ArrayList<ExportModelAgendaItem> getAgendaItems() {
         return agendaItems;
     }
 
-    Date getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    Date getLastEditionDate() {
+    public Date getLastEditionDate() {
         return lastEditionDate;
     }
 
-    Date getExportDate() {
+    public Date getExportDate() {
         return exportDate;
     }
 }
