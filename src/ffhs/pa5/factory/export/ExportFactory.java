@@ -19,7 +19,6 @@ import java.util.zip.ZipEntry;
  */
 
 public class ExportFactory {
-    //TODO: @barbara: tests, sonst alles erledigt
 
     private ExportModel exportModel;
     private ExportOutputHandler exportOutputHandler;

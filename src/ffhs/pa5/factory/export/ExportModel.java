@@ -5,7 +5,6 @@ import ffhs.pa5.model.type.State;
 import ffhs.pa5.util.Logger;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -68,11 +67,11 @@ public class ExportModel {
         this.exportDate = new Date();
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
-    public String getLocation() {
+    String getLocation() {
         return location;
     }
 
@@ -80,7 +79,7 @@ public class ExportModel {
         return date;
     }
 
-    public ArrayList<ExportModelParticipant> getParticipants() {
+    ArrayList<ExportModelParticipant> getParticipants() {
         return participants;
     }
 
@@ -88,23 +87,23 @@ public class ExportModel {
         return state;
     }
 
-    public Date getNextMeeting() {
+    Date getNextMeeting() {
         return nextMeeting;
     }
 
-    public ArrayList<ExportModelAgendaItem> getAgendaItems() {
+    ArrayList<ExportModelAgendaItem> getAgendaItems() {
         return agendaItems;
     }
 
-    public Date getCreationDate() {
+    Date getCreationDate() {
         return creationDate;
     }
 
-    public Date getLastEditionDate() {
+    Date getLastEditionDate() {
         return lastEditionDate;
     }
 
-    public Date getExportDate() {
+    Date getExportDate() {
         return exportDate;
     }
 }
