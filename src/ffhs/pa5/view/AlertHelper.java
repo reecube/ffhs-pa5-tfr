@@ -19,16 +19,17 @@ abstract class AlertHelper {
      * See the specific error with that alert
      *
      * @param contentText TODO
+     * @param additionalInfo If you want to add some more information to the occured error, use this String. If not, use null.
      */
-    static void showError(LanguageKey contentText, String parameter) {
+    static void showError(LanguageKey contentText, String additionalInfo) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_TITLE));
         alert.setHeaderText(null);
-        if (parameter == null) {
+        if (additionalInfo == null) {
             alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
         } else {
             alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText) + ": " +
-                    parameter);
+                    additionalInfo);
         }
         alert.showAndWait();
     }
