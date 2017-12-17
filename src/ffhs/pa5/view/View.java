@@ -401,7 +401,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_ADD);
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_ADD, null);
     }
 
     /**
@@ -411,7 +411,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL, null);
             return;
         }
 
@@ -429,7 +429,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_EDIT);
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_EDIT, null);
     }
 
     /**
@@ -439,7 +439,7 @@ public class View extends Stage implements Observer, Initializable {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
 
         if (participant == null) {
-            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_NULL, null);
             return;
         }
 
@@ -447,7 +447,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_REMOVE);
+        AlertHelper.showError(LanguageKey.ERROR_PARTICIPANT_REMOVE, null);
     }
 
     /**
@@ -464,7 +464,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_ADD);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_ADD, null);
     }
 
     /**
@@ -474,7 +474,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL, null);
             return;
         }
 
@@ -492,7 +492,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT, null);
     }
 
     /**
@@ -502,7 +502,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL, null);
             return;
         }
 
@@ -510,7 +510,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_REMOVE);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_REMOVE, null);
     }
 
     /**
@@ -520,7 +520,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL, null);
             return;
         }
 
@@ -528,7 +528,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE, null);
     }
 
     /**
@@ -538,7 +538,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL, null);
             return;
         }
 
@@ -546,7 +546,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_MOVE, null);
     }
 
     /**
@@ -571,7 +571,7 @@ public class View extends Stage implements Observer, Initializable {
         AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
 
         if (agendaItem == null) {
-            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL);
+            AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_NULL, null);
             return;
         }
 
@@ -581,7 +581,7 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT);
+        AlertHelper.showError(LanguageKey.ERROR_AGENDAITEM_EDIT, null);
     }
 
     /**
@@ -591,7 +591,7 @@ public class View extends Stage implements Observer, Initializable {
         ExportOutputHandler handler = inputExport.getValue();
 
         if (handler == null) {
-            // TODO: @barbara show error?
+            AlertHelper.showError(LanguageKey.ERROR_HANDLER_NULL, null);
             return;
         }
 
@@ -618,8 +618,8 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: @barbara show export error
-        System.err.println("TODO: export");
+        System.err.println("TODO: export"); //TODO: Löschen?
+        AlertHelper.showError(LanguageKey.ERROR_EXPORT, null);
     }
 
     /**
@@ -639,9 +639,9 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        // TODO: @barbara show usefull error message depending on FileStorageFactoryResult
+        AlertHelper.showError(LanguageKey.ERROR_STORAGE, result.toString());
         System.err.println(result);
-        AlertHelper.showError(LanguageKey.ERROR_TITLE);
+        AlertHelper.showError(LanguageKey.ERROR_TITLE, null); //TODO: löschen?
     }
 
     /**

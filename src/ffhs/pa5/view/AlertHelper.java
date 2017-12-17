@@ -20,11 +20,16 @@ abstract class AlertHelper {
      *
      * @param contentText TODO
      */
-    static void showError(LanguageKey contentText) {
+    static void showError(LanguageKey contentText, String parameter) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_TITLE));
         alert.setHeaderText(null);
-        alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
+        if (parameter == null) {
+            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
+        } else {
+            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText) + ": " +
+                    parameter);
+        }
         alert.showAndWait();
     }
 }
