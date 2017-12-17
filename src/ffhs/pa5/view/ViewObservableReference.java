@@ -1,7 +1,7 @@
 package ffhs.pa5.view;
 
 /**
- * TODO
+ * Observe the Reference
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
- * TODO
+ * Defines the text style
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -31,7 +31,7 @@ enum TextStyle {
 }
 
 /**
- * TODO
+ * This class defines the text export output handler
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -54,7 +54,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     }
 
     /**
-     * TODO
+     * This method adds a line
      *
      * @param line TODO
      */
@@ -86,7 +86,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     }
 
     /**
-     * TODO
+     * This method adds a line
      *
      * @param style   TODO
      * @param content TODO
@@ -151,7 +151,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     }
 
     /**
-     * TODO
+     * This method parse the date to a specific format
      *
      * @param date    TODO
      * @param andTime TODO
@@ -167,7 +167,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     }
 
     /**
-     * TODO
+     * This method parse the participant
      *
      * @param participant TODO
      * @return TODO
@@ -200,7 +200,7 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
 
 
     /**
-     * TODO
+     * This method parse the agenda item
      *
      * @param agendaItem TODO
      * @return TODO

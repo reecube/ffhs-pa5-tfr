@@ -1,7 +1,7 @@
 package ffhs.pa5.factory.storage;
 
 /**
- * TODO
+ * Collection with file storage factory results
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

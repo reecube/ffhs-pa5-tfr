@@ -31,7 +31,7 @@ public class Metadata extends ViewObservableReference {
     private String password;
 
     /**
-     * TODO
+     * Commit a password for meta data
      *
      * @param password TODO
      */
@@ -48,7 +48,7 @@ public class Metadata extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Generate a new ID
      *
      * @return TODO
      */

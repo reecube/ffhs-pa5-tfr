@@ -5,7 +5,7 @@ import com.google.gson.FieldAttributes;
 import ffhs.pa5.model.DataFile;
 
 /**
- * TODO
+ * The custom strategy for exclusion
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

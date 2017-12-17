@@ -24,7 +24,7 @@ public class Change {
     private String change;
 
     /**
-     * TODO
+     * Handling with the date
      *
      * @param date   TODO
      * @param user   TODO

@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * TODO
+ * This class defines the file storage factory
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -26,7 +26,7 @@ public class FileStorageFactory {
     private DataFile file;
 
     /**
-     * TODO
+     * Set the file storage factor to null
      */
     public FileStorageFactory() {
         this.files = null;
@@ -34,7 +34,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * If files and file are not null, then it is initialized
      *
      * @return TODO
      */
@@ -43,7 +43,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Lock file and get the path
      *
      * @param path TODO
      * @return TODO
@@ -53,7 +53,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * This method locks the path
      *
      * @param path TODO
      * @return TODO
@@ -63,7 +63,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Set the status as locked.
      *
      * @param path           TODO
      * @param newStateLocked TODO
@@ -89,7 +89,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Open the file storage factory result
      *
      * @return TODO
      */
@@ -101,7 +101,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Get the archive factory entry map and return result
      *
      * @param entries TODO
      * @return TODO
@@ -117,7 +117,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Checks the Version of the application
      *
      * @return TODO
      */
@@ -134,7 +134,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Parse the archive factory entries to file
      *
      * @param entryArray TODO
      * @return TODO
@@ -159,7 +159,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Open the file storage factory result
      *
      * @param path TODO
      * @return TODO
@@ -192,7 +192,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Save the file storage factory result
      *
      * @param path TODO
      * @return TODO
@@ -202,7 +202,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Error handling if file ist lockes with messages
      *
      * @param path       TODO
      * @param ignoreLock TODO
@@ -245,7 +245,7 @@ public class FileStorageFactory {
     }
 
     /**
-     * TODO
+     * Close file storage factory result
      *
      * @param path TODO
      * @param save TODO

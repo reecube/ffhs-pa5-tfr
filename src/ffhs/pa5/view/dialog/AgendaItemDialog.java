@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * TODO
+ * Define the agenda item dialog
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -49,7 +49,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     // ********************************************************************************
 
     /**
-     * TODO
+     * Get a new instance from agenda item dialog
      *
      * @return TODO
      */
@@ -58,7 +58,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     }
 
     /**
-     * TODO
+     * Return a news instance from agenda item dialog if agenda item is true
      *
      * @param agendaItem TODO
      * @return TODO
@@ -68,7 +68,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     }
 
     /**
-     * TODO
+     * Handling with agenda item dialog
      *
      * @param agendaItem TODO
      * @return TODO
@@ -123,14 +123,14 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     }
 
     /**
-     * TODO
+     * Refresh the spv-view
      */
     private void refreshView() {
         buttonSave.setDisable(inputId.getText().length() == 0 || inputTitle.getText().length() == 0);
     }
 
     /**
-     * TODO
+     * Load agenda item
      *
      * @param agendaItem TODO
      */
@@ -142,14 +142,14 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     }
 
     /**
-     * TODO
+     * Disable input ID
      */
     private void disableInputId() {
         inputId.setDisable(true);
     }
 
     /**
-     * TODO
+     * Handling the save button and that action
      */
     @FXML
     private void handleButtonSaveAction() {
@@ -161,7 +161,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     }
 
     /**
-     * TODO
+     * Handling the cancel button and that action
      *
      * @param event TODO
      */

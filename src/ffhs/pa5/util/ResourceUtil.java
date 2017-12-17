@@ -7,7 +7,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
- * TODO
+ * Util the exist Ressources
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class ResourceUtil {
 
     /**
-     * TODO
+     * Get the language string
      *
      * @param resourceBundle TODO
      * @param key            TODO

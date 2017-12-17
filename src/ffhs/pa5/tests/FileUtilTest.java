@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class FileUtilTest extends TestingBase {
 
     /**
-     * TODO
+     * Test the file lifecycle
      *
      * @throws IOException TODO
      */

@@ -1,7 +1,7 @@
 package ffhs.pa5.util;
 
 /**
- * TODO
+ * Define the logger instance
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -31,7 +31,7 @@ public class Logger {
     }
 
     /**
-     * TODO
+     * Handling the exception
      *
      * @param ex TODO
      */

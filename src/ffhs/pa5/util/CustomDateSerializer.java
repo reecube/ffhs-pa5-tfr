@@ -9,7 +9,7 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 /**
- * TODO
+ * Serialize the custom date
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

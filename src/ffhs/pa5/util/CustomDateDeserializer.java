@@ -8,7 +8,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 
 /**
- * TODO
+ * Deserialize the custom date
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

@@ -16,7 +16,7 @@ import java.util.Date;
 public abstract class DateUtil {
 
     /**
-     * TODO
+     * Util the local date
      *
      * @param date TODO
      * @return TODO
@@ -30,7 +30,7 @@ public abstract class DateUtil {
     }
 
     /**
-     * TODO
+     * The Date from local
      *
      * @param date TODO
      * @return TODO

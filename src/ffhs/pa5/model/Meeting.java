@@ -104,7 +104,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Add a participant
      *
      * @param participant TODO
      * @return TODO
@@ -120,7 +120,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Edit a existing participant
      *
      * @param participant TODO
      * @return TODO
@@ -136,7 +136,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Remove a existing participant
      *
      * @param participant TODO
      * @return TODO
@@ -156,7 +156,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Add a agenda item
      *
      * @param agendaItem TODO
      * @return TODO
@@ -187,7 +187,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Edit a agenda item
      *
      * @param agendaItem TODO
      * @return TODO
@@ -203,7 +203,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Remove a existing agenda item
      *
      * @param agendaItem TODO
      * @return TODO
@@ -219,7 +219,7 @@ public class Meeting extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Move a agenda item
      *
      * @param agendaItem TODO
      * @param moveUp     TODO

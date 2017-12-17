@@ -6,7 +6,7 @@ import ffhs.pa5.util.ResourceUtil;
 import javafx.scene.control.Alert;
 
 /**
- * TODO
+ * Handling the alerts
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -16,7 +16,7 @@ import javafx.scene.control.Alert;
 abstract class AlertHelper {
 
     /**
-     * TODO
+     * See the specific error with that alert
      *
      * @param contentText TODO
      */

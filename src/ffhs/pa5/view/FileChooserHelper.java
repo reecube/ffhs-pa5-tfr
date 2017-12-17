@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.ResourceBundle;
 
 /**
- * TODO
+ * Helper for choosing file
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public abstract class FileChooserHelper {
 
     /**
-     * TODO
+     * Get the filename from meeting title
      *
      * @param meetingTitle TODO
      * @return TODO
@@ -34,7 +34,7 @@ public abstract class FileChooserHelper {
     }
 
     /**
-     * TODO
+     * Get the file chooser
      *
      * @return TODO
      */
@@ -60,7 +60,7 @@ public abstract class FileChooserHelper {
     }
 
     /**
-     * TODO
+     * Show the open dialog
      *
      * @param ownerWindow TODO
      */
@@ -71,7 +71,7 @@ public abstract class FileChooserHelper {
     }
 
     /**
-     * TODO
+     * Show save dialog
      *
      * @param ownerWindow TODO
      */
@@ -82,7 +82,7 @@ public abstract class FileChooserHelper {
     }
 
     /**
-     * TODO
+     * Show export dialog
      *
      * @param initialDirectory TODO
      * @param fileExtensions   TODO

@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class JsonUtilTest extends TestingBase {
 
     /**
-     * TODO
+     * Testing JSon
      */
     private class TestObject {
 
@@ -39,7 +39,7 @@ public class JsonUtilTest extends TestingBase {
         Date valDate;
 
         /**
-         * TODO
+         * Testing objects
          *
          * @param valString  TODO
          * @param valBoolean TODO
@@ -75,7 +75,7 @@ public class JsonUtilTest extends TestingBase {
     }
 
     /**
-     * TODO
+     * Test String is any parse lifecycle
      */
     @Test
     public void testStringifyAndParseLifecycle() {

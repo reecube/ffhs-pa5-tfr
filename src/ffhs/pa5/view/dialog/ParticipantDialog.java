@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * TODO
+ * The participant dialog for add and edit more informations
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -61,7 +61,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     // ********************************************************************************
 
     /**
-     * TODO
+     * Handling the participant dialog by getting a new instance and returns null
      *
      * @return TODO
      */
@@ -70,7 +70,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     }
 
     /**
-     * TODO
+     * Handling the participant dialog by getting a new instance
      *
      * @param participant TODO
      * @return TODO
@@ -125,7 +125,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     }
 
     /**
-     * TODO
+     * Refresh the view aftes save informations from participant
      */
     private void refreshView() {
         buttonSave.setDisable(inputFirstname.getText().length() == 0
@@ -137,7 +137,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     }
 
     /**
-     * TODO
+     * Load informations about participant
      *
      * @param participant TODO
      */
@@ -153,7 +153,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     }
 
     /**
-     * TODO
+     * Handling the save button and that action
      */
     @FXML
     private void handleButtonSaveAction() {
@@ -169,7 +169,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     }
 
     /**
-     * TODO
+     * Handling the cancel button and that action
      *
      * @param event TODO
      */

@@ -5,7 +5,7 @@ import com.google.gson.*;
 import java.util.Date;
 
 /**
- * TODO
+ * Util Json
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -17,7 +17,7 @@ public class JsonUtil {
     private Gson gson;
 
     /**
-     * TODO
+     * Initialize the exclusion strategy
      *
      * @param exclusionStrategy TODO
      */
@@ -35,14 +35,14 @@ public class JsonUtil {
     }
 
     /**
-     * TODO
+     * Initialize Json util
      */
     public JsonUtil() {
         initialize(new CustomExclusionStrategy());
     }
 
     /**
-     * TODO
+     * Initializer Json util by exclusion strategy
      *
      * @param exclusionStrategy TODO
      */
@@ -51,7 +51,7 @@ public class JsonUtil {
     }
 
     /**
-     * TODO
+     * Parse Json syntax exception
      *
      * @param json     TODO
      * @param classOfT TODO
@@ -64,7 +64,7 @@ public class JsonUtil {
     }
 
     /**
-     * TODO
+     * Convert object to string
      *
      * @param src TODO
      * @return TODO

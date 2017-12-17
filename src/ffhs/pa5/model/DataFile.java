@@ -26,7 +26,7 @@ public class DataFile extends ViewObservableReference {
     private ArrayList<Change> changes;
 
     /**
-     * TODO
+     * Commit a password for datafile
      *
      * @param password TODO
      */
@@ -55,7 +55,7 @@ public class DataFile extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Get the changed informations
      *
      * @return TODO
      */
@@ -64,7 +64,7 @@ public class DataFile extends ViewObservableReference {
     }
 
     /**
-     * TODO
+     * Add a new change
      *
      * @param change TODO
      * @return TODO

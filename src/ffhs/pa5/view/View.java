@@ -124,7 +124,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Add change listener
      *
      * @param listView TODO
      * @param listener TODO
@@ -135,7 +135,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Initialize the export
      */
     private void initializeExport() {
         ExportOutputHandler[] exportOutputHandlers = ExportFactory.getAvailableHandlers();
@@ -186,7 +186,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update the metadata
      *
      * @param metadata TODO
      */
@@ -195,7 +195,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update agenda items
      *
      * @param agendaItems TODO
      */
@@ -220,7 +220,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update the participants
      *
      * @param participants TODO
      */
@@ -236,7 +236,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Check if the meeting ist ready to start
      *
      * @param meeting TODO
      * @return TODO
@@ -247,7 +247,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update the informations for meeting
      *
      * @param meeting TODO
      */
@@ -296,7 +296,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update changes
      *
      * @param changes TODO
      */
@@ -305,7 +305,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Update the data file
      *
      * @param dataFile TODO
      */
@@ -330,7 +330,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Definition the pane selection and changing
      *
      * @param newValue TODO
      */
@@ -353,7 +353,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Change on select the participant
      *
      * @param newValue TODO
      */
@@ -364,7 +364,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handle the agenda buttons by edit, remove, moveup and movedown
      *
      * @param newValue TODO
      */
@@ -377,7 +377,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Input a new content by selection agenda item
      *
      * @param newValue TODO
      */
@@ -388,7 +388,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The participant on add
      */
     public void onAddParticipant() {
         ParticipantDialog participantDialog = ParticipantDialog.getNewInstance();
@@ -405,7 +405,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The participant on edit
      */
     public void onEditParticipant() {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
@@ -433,7 +433,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The participant on remove
      */
     public void onRemoveParticipant() {
         Participant participant = outputParticipants.getSelectionModel().getSelectedItem();
@@ -451,7 +451,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on add
      */
     public void onAddAgendaItem() {
         AgendaItemDialog agendaItemDialog = AgendaItemDialog.getNewInstance();
@@ -468,7 +468,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on edit
      */
     public void onEditAgendaItem() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
@@ -496,7 +496,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on remove
      */
     public void onRemoveAgendaItem() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
@@ -514,7 +514,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on move up
      */
     public void onMoveAgendaItemUp() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
@@ -532,7 +532,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on move down
      */
     public void onMoveAgendaItemDown() {
         AgendaItem agendaItem = outputAgendaItemsPreparation.getSelectionModel().getSelectedItem();
@@ -550,7 +550,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * The agenda item on change content
      *
      * @param newValue TODO
      */
@@ -565,7 +565,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODDO
+     * The agenda item on save content
      */
     public void onSaveAgendaItemContent() {
         AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
@@ -585,7 +585,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handling on export meeting
      */
     public void onExportMeeting() {
         ExportOutputHandler handler = inputExport.getValue();
@@ -623,14 +623,14 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Close the meeting on close meeting
      */
     public void onCloseMeeting() {
         controller.closeMeeting();
     }
 
     /**
-     * TODO
+     * Handling the file storage factory result
      *
      * @param result TODO
      */
@@ -645,7 +645,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Get the initial directory
      *
      * @return TODO
      */
@@ -662,7 +662,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Get the initial filename
      *
      * @return TODO
      */
@@ -683,14 +683,14 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handling on new menu
      */
     public void onMenuNew() {
         handleMenuOpen(null);
     }
 
     /**
-     * TODO
+     * Handling on open menu
      */
     public void onMenuOpen() {
         String initialDirectory = getInitialDirectory();
@@ -705,7 +705,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handling on save menu
      */
     private void handleMenuSave() {
         String initialDirectory = getInitialDirectory();
@@ -720,7 +720,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handling on save menu by getting the last save path
      */
     public void onMenuSave() {
         String lastSavedPath = controller.getLastSavePath();
@@ -734,7 +734,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * TODO
+     * Handling on save as menu
      */
     public void onMenuSaveAs() {
         handleMenuSave();
