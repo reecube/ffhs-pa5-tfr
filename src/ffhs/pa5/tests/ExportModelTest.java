@@ -3,7 +3,10 @@ package ffhs.pa5.tests;
 import ffhs.pa5.factory.export.ExportModelAgendaItem;
 import ffhs.pa5.factory.export.ExportModelParticipant;
 import ffhs.pa5.model.AgendaItem;
+import ffhs.pa5.model.DataFile;
+import ffhs.pa5.model.Meeting;
 import ffhs.pa5.model.Participant;
+import ffhs.pa5.model.type.State;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -23,7 +26,9 @@ public class ExportModelTest extends TestingBase {
 
     // General variables
     private ExportModelAgendaItem exportModelAgendaItem;
+    private AgendaItem agendaItem = new AgendaItem();
     private ExportModelParticipant exportModelParticipant;
+    private Participant participant = new Participant();
 
     /**
      * Test the ExportModelAgendaItem class
@@ -37,9 +42,6 @@ public class ExportModelTest extends TestingBase {
         final String expectedContent = "content ABC 123 öäü";
         final boolean NotDeleted = false;
         final boolean deleted = true;
-
-        // Variable declaration
-        AgendaItem agendaItem = new AgendaItem();
 
         logTestCase("create existing ExportModelAgendaItem");
         agendaItem.setId(expectedId);
@@ -70,9 +72,6 @@ public class ExportModelTest extends TestingBase {
         final String expectedRole = "content ABC 123 öäü";
         final String expectedNotes = "content ABC 123 öäü";
 
-        // Variable declaration
-        Participant participant = new Participant();
-
         logTestCase("create existing ExportModelAgendaItem");
         participant.setFirstname(expectedFirstname);
         participant.setLastname(expectedLastname);
@@ -100,7 +99,7 @@ public class ExportModelTest extends TestingBase {
         final String expectedTitle = "content ABC 123 öäü";
         final String expectedLocation = "content ABC 123 öäü";
         final Date expectedDate = new Date(System.currentTimeMillis());
-        final String expectedState = "content ABC 123 öäü";
+        final State expectedState = State.PREPARATION;
         final Date expectedNextMeeting = new Date(System.currentTimeMillis());
         final Date expectedCreationDate = new Date(System.currentTimeMillis());
         final Date expectedLastEditionDate = new Date(System.currentTimeMillis());
@@ -112,8 +111,19 @@ public class ExportModelTest extends TestingBase {
 
 
         // Variable declaration
-        //TODO @Barbara: hier müsste ich irgendwie ein Dataset generieren?!
+        DataFile dataFile = new DataFile("MeinPasswortäüö23");
+        Meeting meeting = dataFile.getMeeting();
+        meeting.setTitle(expectedTitle);
+        meeting.setLocation(expectedLocation);
+        meeting.setDate(expectedDate);
+        meeting.setState(expectedState);
+        meeting.setNextMeeting(expectedNextMeeting);
+        //TODO: @Barbara Wie kann ich die anderen Daten hinzufügen?
+        meeting.addParticipant(participant);
+        meeting.addAgendaItem(agendaItem);
 
+
+        //TODO @Barbara: Wie kann ich das meeting vom DataFile selber bearbeiten?
     }
 
 }
