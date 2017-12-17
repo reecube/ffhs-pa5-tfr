@@ -24,7 +24,7 @@ public class ArchiveFactory {
     private String path;
 
     /**
-     * TODO
+     * The path for archive factory
      *
      * @param path TODO
      */
@@ -33,7 +33,7 @@ public class ArchiveFactory {
     }
 
     /**
-     * TODO
+     * Archive factory for generating the zip file
      *
      * @return TODO
      */
@@ -84,7 +84,7 @@ public class ArchiveFactory {
     }
 
     /**
-     * TODO
+     * Write the information in file
      *
      * @param entries TODO
      * @return true on success, false on error

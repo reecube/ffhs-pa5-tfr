@@ -5,7 +5,7 @@ import ffhs.pa5.model.Participant;
 import java.util.ArrayList;
 
 /**
- * TODO
+ * Export information concerning participant
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -22,7 +22,7 @@ public class ExportModelParticipant {
     private String notes;
 
     /**
-     * TODO
+     * Export all concerning participant fields
      *
      * @param participant TODO
      */

@@ -3,7 +3,7 @@ package ffhs.pa5.factory.export;
 import ffhs.pa5.model.AgendaItem;
 
 /**
- * TODO
+ * Exporting the agenda item informations
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -17,7 +17,7 @@ public class ExportModelAgendaItem {
     private String content;
 
     /**
-     * TODO
+     * This method export the agenda item if it's not deleted
      *
      * @param agendaItem TODO
      */

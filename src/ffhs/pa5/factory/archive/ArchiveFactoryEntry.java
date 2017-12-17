@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.zip.ZipEntry;
 
 /**
- * TODO
+ * The Archive factory entry defines the entry, path and content
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -37,7 +37,7 @@ public class ArchiveFactoryEntry {
     }
 
     /**
-     * TODO
+     * The factory entry for archive
      *
      * @param directory TODO
      * @param file TODO
@@ -50,7 +50,7 @@ public class ArchiveFactoryEntry {
     }
 
     /**
-     * TODO
+     * Returns the path by file
      *
      * @return TODO
      */

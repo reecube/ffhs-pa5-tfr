@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
- * TODO
+ * Define the file export output handler
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -23,7 +23,7 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
     private String path;
 
     /**
-     * TODO
+     * Declare file export output handler
      */
     FileExportOutputHandler() {
         this.path = null;
@@ -34,7 +34,7 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
     }
 
     /**
-     * TODO
+     * Choose the file for get file extension
      *
      * @return TODO
      */
@@ -62,7 +62,7 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
     }
 
     /**
-     * TODO
+     * Getting Content by export model
      *
      * @return TODO
      */

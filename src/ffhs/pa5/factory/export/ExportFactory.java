@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 
 /**
- * TODO
+ * Export factory defines the model an the handler
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -24,7 +24,7 @@ public class ExportFactory {
     private ExportOutputHandler exportOutputHandler;
 
     /**
-     * TODO
+     * Defines the export model
      *
      * @param exportModel         TODO
      * @param exportOutputHandler TODO
@@ -35,7 +35,7 @@ public class ExportFactory {
     }
 
     /**
-     * TODO
+     * Choose the export output handler
      *
      * @return TODO
      */
@@ -46,7 +46,7 @@ public class ExportFactory {
     }
 
     /**
-     * TODO
+     * Exporting the SPV-file
      *
      * @return true on success, false on error
      */

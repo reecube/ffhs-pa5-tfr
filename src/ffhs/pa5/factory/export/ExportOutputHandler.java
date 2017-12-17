@@ -1,7 +1,7 @@
 package ffhs.pa5.factory.export;
 
 /**
- * TODO
+ * Define Export output handler
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -12,7 +12,7 @@ package ffhs.pa5.factory.export;
 public interface ExportOutputHandler {
 
     /**
-     * TODO
+     * Declare export variable
      *
      * @param exportModel TODO
      */

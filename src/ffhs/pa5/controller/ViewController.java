@@ -9,7 +9,7 @@ import ffhs.pa5.model.type.State;
 import java.time.LocalDate;
 
 /**
- * TODO
+ * The ViewController contains the possible actions in SPV
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -19,28 +19,28 @@ import java.time.LocalDate;
 public interface ViewController {
 
     /**
-     * TODO
+     * Add the agenda item
      *
      * @param agendaItem TODO
      */
     boolean addAgendaItem(AgendaItem agendaItem);
 
     /**
-     * TODO
+     * Edit the exist agenda item
      *
      * @param agendaItem TODO
      */
     boolean editAgendaItem(AgendaItem agendaItem);
 
     /**
-     * TODO
+     * Remove the exist agenda item
      *
      * @param agendaItem TODO
      */
     boolean removeAgendaItem(AgendaItem agendaItem);
 
     /**
-     * TODO
+     * Moving the agenda item up or down
      *
      * @param agendaItem TODO
      * @param moveUp     TODO
@@ -49,33 +49,33 @@ public interface ViewController {
     boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp);
 
     /**
-     * TODO
+     * Add a participant
      *
      * @param participant TODO
      */
     boolean addParticipant(Participant participant);
 
     /**
-     * TODO
+     * Edit the exist participant
      *
      * @param participant TODO
      */
     boolean editParticipant(Participant participant);
 
     /**
-     * TODO
+     * Remove the exist participant
      *
      * @param participant TODO
      */
     boolean removeParticipant(Participant participant);
 
     /**
-     * TODO
+     * Close the meeting
      */
     void closeMeeting();
 
     /**
-     * TODO
+     * Change the state
      *
      * @param newState TODO
      * @return TODO
@@ -83,28 +83,28 @@ public interface ViewController {
     boolean changeState(State newState);
 
     /**
-     * TODO
+     * Change the exist meeting title with a new
      *
      * @param newValue TODO
      */
     void changeMeetingTitle(String newValue);
 
     /**
-     * TODO
+     * Change the meeting date
      *
      * @param newValue TODO
      */
     void changeMeetingDate(LocalDate newValue);
 
     /**
-     * TODO
+     * Change meeting location
      *
      * @param newValue TODO
      */
     void changeMeetingLocation(String newValue);
 
     /**
-     * TODO
+     * Open a new exist file from browser
      *
      * @param path TODO
      * @return TODO
@@ -112,7 +112,7 @@ public interface ViewController {
     FileStorageFactoryResult openFile(String path);
 
     /**
-     * TODO
+     * Save the SPV-file
      *
      * @param path TODO
      * @return TODO
@@ -120,21 +120,21 @@ public interface ViewController {
     FileStorageFactoryResult saveFile(String path);
 
     /**
-     * TODO
+     * Get the last save path
      *
      * @return TODO
      */
     String getLastSavePath();
 
     /**
-     * TODO
+     * Change the next meeting date
      *
      * @param newValue TODO
      */
     void changeMeetingNextMeeting(LocalDate newValue);
 
     /**
-     * TODO
+     * Export SPV-informations to TXT / PDF
      *
      * @param handler TODO
      * @param path    TODO

@@ -86,9 +86,10 @@ public class Controller implements ViewController {
     }
 
     /**
-     * TODO
+     * This method initialize the View.
      *
-     * @throws IOException TODO
+     *
+     * @throws IOException
      */
     private void initializeView() throws IOException {
         ResourceBundle bundle = getBundle();
@@ -115,7 +116,8 @@ public class Controller implements ViewController {
     }
 
     /**
-     * TODO
+     * This method initialize the file storage factory
+     *
      */
     private void initializeFileStorageFactory(String path) {
         this.fileStorageFactory = new FileStorageFactory();
@@ -141,9 +143,9 @@ public class Controller implements ViewController {
     }
 
     /**
-     * TODO
+     * The class controller initialize the view and the files storage factory (path)
      *
-     * @throws IOException TODO
+     * @throws IOException
      */
     public Controller(String path) throws IOException {
         initializeView();
@@ -151,9 +153,9 @@ public class Controller implements ViewController {
     }
 
     /**
-     * TODO
+     * This method defines the user language and return as bundle
      *
-     * @return TODO
+     * @return bundle
      */
     public static ResourceBundle getBundle() {
         if (bundle != null) {
@@ -307,9 +309,9 @@ public class Controller implements ViewController {
     }
 
     /**
-     * TODO
+     * Define the user language and return that as language
      *
-     * @return TODO
+     * @return language
      */
     private static String defineUserLanguage() {
         String language = Locale.getDefault().getLanguage();

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * TODO
+ * Export model contains the important fields
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -29,7 +29,7 @@ public class ExportModel {
     private Date exportDate;
 
     /**
-     * TODO
+     * The method get the filled out information and export that
      *
      * @param dataFile TODO
      */
