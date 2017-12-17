@@ -1,6 +1,7 @@
 package ffhs.pa5.view;
 
 import ffhs.pa5.Constants;
+import ffhs.pa5.controller.Controller;
 import ffhs.pa5.controller.ViewController;
 import ffhs.pa5.factory.export.ExportFactory;
 import ffhs.pa5.factory.export.ExportOutputHandler;
@@ -10,6 +11,7 @@ import ffhs.pa5.model.*;
 import ffhs.pa5.model.type.*;
 import ffhs.pa5.util.DateUtil;
 import ffhs.pa5.util.Logger;
+import ffhs.pa5.util.ResourceUtil;
 import ffhs.pa5.view.dialog.AgendaItemDialog;
 import ffhs.pa5.view.dialog.ParticipantDialog;
 import javafx.beans.value.ChangeListener;
@@ -639,9 +641,30 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        AlertHelper.showError(LanguageKey.ERROR_STORAGE, result.toString());
-        System.err.println(result);
-        AlertHelper.showError(LanguageKey.ERROR_TITLE, null); //TODO: löschen?
+        String errorMessage = "";
+        switch (result) {
+            case ERROR_UNKNOWN:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNKNOWN));
+            case ERROR_UNINITIALIZED:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNINITIALIZED));
+            case ERROR_UNEXPECTED_BEHAVIOR:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNEXPECTED_BEHAVIOR));
+            case ERROR_FILE_NOT_FOUND:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_NOT_FOUND));
+            case ERROR_FILE_INVALID:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_INVALID));
+            case ERROR_FILE_LOCKED:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_LOCKED));
+            case ERROR_FILE_VERSION_MISMATCH:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_VERSION_MISMATCH));
+            case ERROR_LOCKSTATE_FAILED:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_LOCKSTATE_FAILED));
+            case ERROR_BUILD_ARCHIVE:
+                errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_BUILD_ARCHIVE));
+        }
+
+        AlertHelper.showError(LanguageKey.ERROR_STORAGE, errorMessage);
+        System.err.println(result); //TODO @Yves: braucht es das noch?
     }
 
     /**
