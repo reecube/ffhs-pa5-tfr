@@ -6,9 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-            prefWidth="800.0" scaleShape="false" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ffhs.pa5.view.View">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" scaleShape="false" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ffhs.pa5.view.View">
     <center>
         <VBox BorderPane.alignment="CENTER">
             <children>
@@ -16,16 +14,15 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="%menu_file">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#onMenuNew" text="%menu_new"/>
-                                <MenuItem mnemonicParsing="false" onAction="#onMenuOpen" text="%menu_open"/>
-                                <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="%menu_save"/>
-                                <MenuItem mnemonicParsing="false" onAction="#onMenuSaveAs" text="%menu_saveAs"/>
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuNew" text="%menu_new" />
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuOpen" text="%menu_open" />
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="%menu_save" />
+                                <MenuItem mnemonicParsing="false" onAction="#onMenuSaveAs" text="%menu_saveAs" />
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
-                <TabPane fx:id="tabPane" prefHeight="146.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE"
-                         VBox.vgrow="ALWAYS">
+                <TabPane fx:id="tabPane" prefHeight="146.0" prefWidth="600.0" styleClass="test" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                     <tabs>
                         <Tab fx:id="tabPreparation" text="%label_preparation">
                             <content>
@@ -33,109 +30,93 @@
                                     <children>
                                         <VBox prefHeight="188.0" prefWidth="1190.0">
                                             <children>
-                                                <Label text="%label_title"/>
-                                                <TextField fx:id="inputMeetingTitle" maxWidth="-Infinity"
-                                                           prefHeight="27.0" prefWidth="600.0"
-                                                           promptText="%label_title"/>
+                                                <Label styleClass="title" text="%label_title">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin></Label>
+                                                <TextField fx:id="inputMeetingTitle" maxWidth="-Infinity" prefHeight="19.0" prefWidth="750.0" promptText="%label_title" styleClass="title">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin></TextField>
                                                 <GridPane prefHeight="130.0" prefWidth="1170.0" VBox.vgrow="ALWAYS">
                                                     <columnConstraints>
-                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
-                                                                           prefWidth="100.0"/>
-                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0"
-                                                                           minWidth="10.0" prefWidth="380.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="380.0" />
                                                     </columnConstraints>
                                                     <rowConstraints>
-                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
-                                                                        vgrow="SOMETIMES"/>
-                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
-                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
                                                     </rowConstraints>
                                                     <children>
                                                         <Label text="%label_date">
                                                         </Label>
                                                         <Label text="%label_place" GridPane.columnIndex="1">
                                                         </Label>
-                                                        <TextArea fx:id="inputMeetingLocation" prefHeight="200.0"
-                                                                  prefWidth="200.0" promptText="%label_place"
-                                                                  GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                        <TextArea fx:id="inputMeetingLocation" prefHeight="200.0" prefWidth="200.0" promptText="%label_place" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                         </TextArea>
-                                                        <DatePicker fx:id="inputMeetingDate" prefHeight="27.0"
-                                                                    prefWidth="384.0" GridPane.halignment="LEFT"
-                                                                    GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                                        </DatePicker>
+                                                        <DatePicker fx:id="inputMeetingDate" prefHeight="27.0" prefWidth="384.0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin></DatePicker>
                                                     </children>
                                                 </GridPane>
                                             </children>
                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </padding>
                                         </VBox>
                                         <VBox prefHeight="200.0" prefWidth="901.0">
                                             <children>
-                                                <Label text="%label_participants"/>
+                                                <Label text="%label_participants" />
                                                 <HBox prefHeight="163.0" prefWidth="770.0" VBox.vgrow="ALWAYS">
                                                     <children>
                                                         <VBox prefHeight="163.0" prefWidth="165.0">
                                                             <children>
-                                                                <Button mnemonicParsing="false"
-                                                                        onAction="#onAddParticipant" text="%button_add">
-                                                                </Button>
-                                                                <Button fx:id="buttonParticipantEdit" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onEditParticipant"
-                                                                        text="%button_edit">
-                                                                </Button>
-                                                                <Button fx:id="buttonParticipantRemove" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onRemoveParticipant"
-                                                                        text="%button_remove">
+                                                                <Button mnemonicParsing="false" onAction="#onAddParticipant" text="%button_add">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonParticipantEdit" disable="true" mnemonicParsing="false" onAction="#onEditParticipant" text="%button_edit">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonParticipantRemove" disable="true" mnemonicParsing="false" onAction="#onRemoveParticipant" text="%button_remove">
                                                                 </Button>
                                                             </children>
                                                         </VBox>
-                                                        <ListView fx:id="outputParticipants" maxHeight="-Infinity"
-                                                                  maxWidth="-Infinity" prefHeight="200.0"
-                                                                  prefWidth="600.0" HBox.hgrow="ALWAYS"/>
+                                                        <ListView fx:id="outputParticipants" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" HBox.hgrow="ALWAYS" />
                                                     </children>
                                                 </HBox>
                                             </children>
                                         </VBox>
                                         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                             <children>
-                                                <Label text="%label_agendaItems"/>
+                                                <Label text="%label_agendaItems" />
                                                 <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                     <children>
                                                         <VBox prefHeight="271.0" prefWidth="165.0">
                                                             <children>
-                                                                <Button mnemonicParsing="false"
-                                                                        onAction="#onAddAgendaItem" text="%button_add">
-                                                                </Button>
-                                                                <Button fx:id="buttonAgendaItemEdit" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onEditAgendaItem"
-                                                                        text="%button_edit">
-                                                                </Button>
-                                                                <Button fx:id="buttonAgendaItemRemove"
-                                                                        alignment="CENTER" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onRemoveAgendaItem"
-                                                                        text="%button_remove">
-                                                                </Button>
-                                                                <Button fx:id="buttonAgendaItemMoveUp" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onMoveAgendaItemUp"
-                                                                        text="%button_moveUp">
-                                                                </Button>
-                                                                <Button fx:id="buttonAgendaItemMoveDown" disable="true"
-                                                                        mnemonicParsing="false"
-                                                                        onAction="#onMoveAgendaItemDown"
-                                                                        text="%button_moveDown">
+                                                                <Button mnemonicParsing="false" onAction="#onAddAgendaItem" text="%button_add">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonAgendaItemEdit" disable="true" mnemonicParsing="false" onAction="#onEditAgendaItem" text="%button_edit">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonAgendaItemRemove" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onRemoveAgendaItem" text="%button_remove">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonAgendaItemMoveUp" disable="true" mnemonicParsing="false" onAction="#onMoveAgendaItemUp" text="%button_moveUp">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin></Button>
+                                                                <Button fx:id="buttonAgendaItemMoveDown" disable="true" mnemonicParsing="false" onAction="#onMoveAgendaItemDown" text="%button_moveDown">
                                                                 </Button>
                                                             </children>
                                                         </VBox>
-                                                        <ListView fx:id="outputAgendaItemsPreparation"
-                                                                  maxHeight="-Infinity" maxWidth="-Infinity"
-                                                                  prefHeight="200.0" prefWidth="600.0"
-                                                                  HBox.hgrow="ALWAYS"/>
+                                                        <ListView fx:id="outputAgendaItemsPreparation" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" HBox.hgrow="ALWAYS" />
                                                     </children>
                                                 </HBox>
                                             </children>
@@ -146,24 +127,25 @@
                         </Tab>
                         <Tab fx:id="tabMeeting" text="%label_meeting">
                             <content>
-                                <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="tab-content-meeting" VBox.vgrow="ALWAYS">
                                     <children>
-                                        <Label text="%label_agendaItems"/>
+                                        <Label text="%label_agendaItems" />
                                         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                             <children>
-                                                <ListView fx:id="outputAgendaItemsMeeting" prefHeight="300.0"
-                                                          prefWidth="1180.0"/>
+                                                <ListView fx:id="outputAgendaItemsMeeting" prefHeight="300.0" prefWidth="1180.0" />
                                                 <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                     <children>
-                                                        <TextArea fx:id="inputAgendaItemContent" disable="true"
-                                                                  prefHeight="200.0" prefWidth="200.0"
-                                                                  HBox.hgrow="ALWAYS"/>
-                                                        <Button fx:id="buttonAgendaItemContentSave"
-                                                                mnemonicParsing="false"
-                                                                onAction="#onSaveAgendaItemContent" text="%button_save">
+                                                        <TextArea fx:id="inputAgendaItemContent" disable="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets top="5.0" />
+                                             </HBox.margin></TextArea>
+                                                        <Button fx:id="buttonAgendaItemContentSave" mnemonicParsing="false" onAction="#onSaveAgendaItemContent" text="%button_save">
                                                             <opaqueInsets>
-                                                                <Insets/>
+                                                                <Insets />
                                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="5.0" />
+                                             </HBox.margin>
                                                         </Button>
                                                     </children>
                                                 </HBox>
@@ -175,19 +157,26 @@
                         </Tab>
                         <Tab fx:id="tabEnding" text="%label_ending">
                             <content>
-                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="tab-content-ending">
                                     <children>
                                         <Label text="%label_nextMeeting">
-                                        </Label>
-                                        <DatePicker fx:id="inputMeetingNextMeeting">
-                                        </DatePicker>
-                                        <ChoiceBox fx:id="inputExport" prefWidth="150.0">
-                                        </ChoiceBox>
-                                        <Button fx:id="buttonExport" mnemonicParsing="false" onAction="#onExportMeeting"
-                                                text="%button_export">
-                                        </Button>
-                                        <Button mnemonicParsing="false" onAction="#onCloseMeeting"
-                                                text="%button_closeMeeting"/>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin></Label>
+                                        <DatePicker fx:id="inputMeetingNextMeeting" styleClass="button-specific">
+                                 <VBox.margin>
+                                    <Insets bottom="25.0" />
+                                 </VBox.margin></DatePicker>
+                                        <ChoiceBox fx:id="inputExport" prefWidth="150.0" styleClass="button-specific">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></ChoiceBox>
+                                        <Button fx:id="buttonExport" mnemonicParsing="false" onAction="#onExportMeeting" styleClass="button-specific" text="%button_export">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Button>
+                                        <Button mnemonicParsing="false" onAction="#onCloseMeeting" styleClass="button-specific" text="%button_closeMeeting" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
                                     </children>
                                 </VBox>
                             </content>

@@ -1,3 +1,20 @@
 .tab-content {
-    -fx-padding: 10px;
+    -fx-padding: 15px;
+}
+
+.button{
+    -fx-padding: 8px;
+    -fx-pref-width: 150px;
+}
+
+.tab-content-meeting {
+    -fx-padding: 15px;
+}
+
+.tab-content-ending{
+    -fx-padding: 15px;
+}
+
+.button-specific {
+    -fx-pref-width: 220px;
 }
