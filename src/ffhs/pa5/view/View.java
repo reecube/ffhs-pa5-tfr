@@ -313,7 +313,6 @@ public class View extends Stage implements Observer, Initializable {
      */
     private void updateDataFile(DataFile dataFile) {
         updateMeeting(dataFile.getMeeting());
-        updateChanges(dataFile.getChanges());
     }
 
     /**
