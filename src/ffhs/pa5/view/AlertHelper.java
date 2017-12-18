@@ -33,4 +33,23 @@ abstract class AlertHelper {
         }
         alert.showAndWait();
     }
+
+    /**
+     * See the specific warning with that alert
+     *
+     * @param contentText TODO
+     * @param additionalInfo If you want to add some more information to the occured warning, use this String. If not, use null.
+     */
+    static void showWarning(LanguageKey contentText, String additionalInfo) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.WARNING_TITLE));
+        alert.setHeaderText(null);
+        if (additionalInfo == null) {
+            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
+        } else {
+            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText) + ": " +
+                    additionalInfo);
+        }
+        alert.showAndWait();
+    }
 }

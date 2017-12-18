@@ -83,6 +83,13 @@ public interface ViewController {
     boolean changeState(State newState);
 
     /**
+     * Get the actual state
+     *
+     * @return The actual state
+     */
+    State getState();
+
+    /**
      * Change the exist meeting title with a new
      *
      * @param newValue newValue

@@ -171,6 +171,15 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
+    public State getState() {
+        final Meeting meeting = fileStorageFactory.getFile().getMeeting();
+        return meeting.getState();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public boolean changeState(State newState) {
         final Meeting meeting = fileStorageFactory.getFile().getMeeting();
         final State oldState = meeting.getState();

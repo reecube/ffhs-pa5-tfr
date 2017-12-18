@@ -34,6 +34,10 @@ public enum LanguageKey {
     ERROR_LOCKSTATE_FAILED,
     ERROR_BUILD_ARCHIVE,
 
+    // Warnings
+    WARNING_TITLE,
+    WARNING_CHANGE_TAB_REVERSE,
+
     // View
     VIEW_TITLE_MAIN,
     VIEW_TITLE_PARTICIPANT,
