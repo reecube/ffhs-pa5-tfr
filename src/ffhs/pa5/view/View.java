@@ -683,6 +683,7 @@ public class View extends Stage implements Observer, Initializable {
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_INVALID));
                 break;
             case ERROR_FILE_LOCKED:
+                // TODO: show username
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_LOCKED));
                 break;
             case ERROR_FILE_VERSION_MISMATCH:
@@ -699,7 +700,6 @@ public class View extends Stage implements Observer, Initializable {
         }
 
         AlertHelper.showError(LanguageKey.ERROR_STORAGE, errorMessage);
-        System.err.println(result); //TODO @Yves: braucht es das noch?
     }
 
     /**
