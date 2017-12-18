@@ -102,6 +102,7 @@ public class Controller implements ViewController {
         view.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_MAIN.name()));
         view.setScene(primaryScene);
         view.sizeToScene();
+        view.setResizable(false);
         view.show();
     }
 
