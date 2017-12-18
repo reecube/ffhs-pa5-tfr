@@ -645,22 +645,33 @@ public class View extends Stage implements Observer, Initializable {
         switch (result) {
             case ERROR_UNKNOWN:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNKNOWN));
+                break;
             case ERROR_UNINITIALIZED:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNINITIALIZED));
+                break;
             case ERROR_UNEXPECTED_BEHAVIOR:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_UNEXPECTED_BEHAVIOR));
+                break;
             case ERROR_FILE_NOT_FOUND:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_NOT_FOUND));
+                break;
             case ERROR_FILE_INVALID:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_INVALID));
+                break;
             case ERROR_FILE_LOCKED:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_LOCKED));
+                break;
             case ERROR_FILE_VERSION_MISMATCH:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_FILE_VERSION_MISMATCH));
+                break;
             case ERROR_LOCKSTATE_FAILED:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_LOCKSTATE_FAILED));
+                break;
             case ERROR_BUILD_ARCHIVE:
                 errorMessage = (ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.ERROR_BUILD_ARCHIVE));
+                break;
+            default:
+                break;
         }
 
         AlertHelper.showError(LanguageKey.ERROR_STORAGE, errorMessage);
