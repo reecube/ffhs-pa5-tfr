@@ -38,9 +38,6 @@ public abstract class Constants {
     };
     public static final String DEFAULT_LANGUAGE = Locale.ENGLISH.getLanguage();
 
-    // css
-    public static final String CSS_MAIN = PATH_RESOURCES + "/application.css";
-
     // view
     public static final int VIEW_WIDTH = 1200;
     public static final int VIEW_HEIGHT = 800;

@@ -99,8 +99,6 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
 
             instance.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_AGENDAITEM.name()));
 
-            primaryScene.getStylesheets().add(AgendaItemDialog.class.getResource(Constants.CSS_MAIN).toExternalForm());
-
             dialogPane.setContent(primaryScene.getRoot());
 
             return instance;

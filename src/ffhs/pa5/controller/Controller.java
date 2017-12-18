@@ -99,8 +99,6 @@ public class Controller implements ViewController {
         view.setController(this);
         this.viewObserver = view;
 
-        primaryScene.getStylesheets().add(getClass().getResource(Constants.CSS_MAIN).toExternalForm());
-
         view.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_MAIN.name()));
         view.setScene(primaryScene);
         view.sizeToScene();

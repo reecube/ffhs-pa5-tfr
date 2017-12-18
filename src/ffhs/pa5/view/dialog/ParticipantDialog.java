@@ -98,8 +98,6 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
 
             instance.setTitle(bundle.getString(LanguageKey.VIEW_TITLE_PARTICIPANT.name()));
 
-            primaryScene.getStylesheets().add(ParticipantDialog.class.getResource(Constants.CSS_MAIN).toExternalForm());
-
             dialogPane.setContent(primaryScene.getRoot());
 
             return instance;
