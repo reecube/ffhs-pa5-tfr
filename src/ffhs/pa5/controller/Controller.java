@@ -88,7 +88,6 @@ public class Controller implements ViewController {
     /**
      * This method initialize the View.
      *
-     *
      * @throws IOException
      */
     private void initializeView() throws IOException {
@@ -117,7 +116,6 @@ public class Controller implements ViewController {
 
     /**
      * This method initialize the file storage factory
-     *
      */
     private void initializeFileStorageFactory(String path) {
         this.fileStorageFactory = new FileStorageFactory();

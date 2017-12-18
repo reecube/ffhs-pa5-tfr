@@ -238,7 +238,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * Check if the meeting ist ready to start
+     * Check if the meeting is ready to start
      *
      * @param meeting meeting
      * @return meeting
@@ -249,7 +249,7 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * Check if the meeting ist ready to end
+     * Check if the meeting is ready to end
      *
      * @param meeting TODO
      * @return TODO
