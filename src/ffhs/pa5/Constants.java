@@ -39,8 +39,8 @@ public abstract class Constants {
     public static final String DEFAULT_LANGUAGE = Locale.ENGLISH.getLanguage();
 
     // view
-    public static final int VIEW_WIDTH = 1200;
-    public static final int VIEW_HEIGHT = 800;
+    public static final int VIEW_WIDTH = 800;
+    public static final int VIEW_HEIGHT = 600;
 
     // ResourceUtil
     public static final String INDICATOR_MISSING_RESOURCE = "Error: missing resource";
