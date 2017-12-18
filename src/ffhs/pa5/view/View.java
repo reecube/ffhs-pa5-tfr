@@ -249,6 +249,24 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
+     * Check if the meeting ist ready to end
+     *
+     * @param meeting TODO
+     * @return TODO
+     */
+    private boolean isMeetingReadyToEnd(Meeting meeting) {
+        boolean readyToEnd = true;
+        AgendaItem[] agendaItems = meeting.getAgendaItems();
+        for (AgendaItem agendaItem : agendaItems) {
+            if (agendaItem.getContent().length() == 0) {
+                readyToEnd = false;
+                break;
+            }
+        }
+        return readyToEnd;
+    }
+
+    /**
      * Update the informations for meeting
      *
      * @param meeting meeting
@@ -271,7 +289,7 @@ public class View extends Stage implements Observer, Initializable {
                 selectionModel.select(tabMeeting);
                 tabPreparation.setDisable(false);
                 tabMeeting.setDisable(false);
-                tabEnding.setDisable(false);
+                tabEnding.setDisable(!isMeetingReadyToEnd(meeting));
                 break;
             case ENDING:
                 selectionModel.select(tabEnding);
