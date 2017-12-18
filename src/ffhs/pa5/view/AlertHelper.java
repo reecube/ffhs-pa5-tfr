@@ -37,7 +37,7 @@ abstract class AlertHelper {
     /**
      * See the specific warning with that alert
      *
-     * @param contentText TODO
+     * @param contentText the context text
      * @param additionalInfo If you want to add some more information to the occured warning, use this String. If not, use null.
      */
     static void showWarning(LanguageKey contentText, String additionalInfo) {

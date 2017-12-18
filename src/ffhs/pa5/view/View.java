@@ -188,15 +188,6 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * Update the metadata
-     *
-     * @param metadata metadata
-     */
-    private void updateMetadata(Metadata metadata) {
-        // TODO: implement this
-    }
-
-    /**
      * Update agenda items
      *
      * @param agendaItems agendaItems
@@ -251,8 +242,8 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Check if the meeting is ready to end
      *
-     * @param meeting TODO
-     * @return TODO
+     * @param meeting the meeting
+     * @return true on success
      */
     private boolean isMeetingReadyToEnd(Meeting meeting) {
         boolean readyToEnd = true;
@@ -316,21 +307,11 @@ public class View extends Stage implements Observer, Initializable {
     }
 
     /**
-     * Update changes
-     *
-     * @param changes changes
-     */
-    private void updateChanges(Change[] changes) {
-        // TODO: this will be implemented in a future version
-    }
-
-    /**
      * Update the data file
      *
      * @param dataFile dataFile
      */
     private void updateDataFile(DataFile dataFile) {
-        updateMetadata(dataFile.getMetadata());
         updateMeeting(dataFile.getMeeting());
         updateChanges(dataFile.getChanges());
     }
@@ -644,7 +625,6 @@ public class View extends Stage implements Observer, Initializable {
             return;
         }
 
-        System.err.println("TODO: export"); //TODO: Löschen?
         AlertHelper.showError(LanguageKey.ERROR_EXPORT, null);
     }
 

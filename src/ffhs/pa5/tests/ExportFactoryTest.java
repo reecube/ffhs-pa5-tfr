@@ -31,7 +31,7 @@ public class ExportFactoryTest extends TestingBase {
      * Test the ExportFactoryTest class
      */
     @Test
-    public void testExportModel() throws Exception {
+    public void testExportModel() {
 
         // Config variables AgendaItem
         final String expectedId = "contentABC123öäü";
