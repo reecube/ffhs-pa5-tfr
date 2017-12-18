@@ -22,7 +22,7 @@ public class FileUtilTest extends TestingBase {
     /**
      * Test the file lifecycle
      *
-     * @throws IOException TODO
+     * @throws IOException IOException
      */
     @Test
     public void testFileLifecycle() throws IOException {

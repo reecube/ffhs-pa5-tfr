@@ -33,7 +33,7 @@ public class Metadata extends ViewObservableReference {
     /**
      * Commit a password for meta data
      *
-     * @param password TODO
+     * @param password password
      */
     Metadata(String password) {
         this.password = password;
@@ -50,7 +50,7 @@ public class Metadata extends ViewObservableReference {
     /**
      * Generate a new ID
      *
-     * @return TODO
+     * @return UUID
      */
     public static String generateId() {
         return UUID.randomUUID().toString();

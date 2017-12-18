@@ -18,8 +18,8 @@ public abstract class DateUtil {
     /**
      * Util the local date
      *
-     * @param date TODO
-     * @return TODO
+     * @param date date
+     * @return Instant.ofEpochMilli
      */
     public static LocalDate toLocalDate(Date date) {
         if (date == null) {
@@ -32,8 +32,8 @@ public abstract class DateUtil {
     /**
      * The Date from local
      *
-     * @param date TODO
-     * @return TODO
+     * @param date date
+     * @return Date
      */
     public static Date fromLocalDate(LocalDate date) {
         if (date == null) {

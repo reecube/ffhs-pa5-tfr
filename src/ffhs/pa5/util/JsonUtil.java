@@ -19,7 +19,7 @@ public class JsonUtil {
     /**
      * Initialize the exclusion strategy
      *
-     * @param exclusionStrategy TODO
+     * @param exclusionStrategy exclusionStrategy
      */
     private void initialize(ExclusionStrategy exclusionStrategy) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -44,7 +44,7 @@ public class JsonUtil {
     /**
      * Initializer Json util by exclusion strategy
      *
-     * @param exclusionStrategy TODO
+     * @param exclusionStrategy exclusionStrategy
      */
     public JsonUtil(ExclusionStrategy exclusionStrategy) {
         initialize(exclusionStrategy);
@@ -53,11 +53,11 @@ public class JsonUtil {
     /**
      * Parse Json syntax exception
      *
-     * @param json     TODO
-     * @param classOfT TODO
-     * @param <T>      TODO
-     * @return TODO
-     * @throws JsonSyntaxException TODO
+     * @param json     json
+     * @param classOfT classOfT
+     * @param <T>      classOfT
+     * @return fromJson
+     * @throws JsonSyntaxException JsonSyntaxException
      */
     public <T> T parse(String json, Class<T> classOfT) throws JsonSyntaxException {
         return gson.fromJson(json, classOfT);
@@ -66,8 +66,8 @@ public class JsonUtil {
     /**
      * Convert object to string
      *
-     * @param src TODO
-     * @return TODO
+     * @param src src
+     * @return src
      */
     public String stringify(Object src) {
         return gson.toJson(src);

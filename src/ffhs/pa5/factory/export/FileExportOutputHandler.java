@@ -36,7 +36,7 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
     /**
      * Choose the file for get file extension
      *
-     * @return TODO
+     * @return ExtensionFilter
      */
     public abstract FileChooser.ExtensionFilter[] getFileExtension();
 
@@ -64,7 +64,7 @@ public abstract class FileExportOutputHandler implements ExportOutputHandler {
     /**
      * Getting Content by export model
      *
-     * @return TODO
+     * @return model
      */
     protected abstract byte[] getContent(ExportModel model);
 }

@@ -18,9 +18,9 @@ public enum State {
     private final int value;
 
     /**
-     * TODO
+     * Define the state with the returned value
      *
-     * @param value TODO
+     * @param value value
      */
     State(int value) {
         this.value = value;

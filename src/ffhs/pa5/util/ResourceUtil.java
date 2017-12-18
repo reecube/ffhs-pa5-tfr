@@ -19,9 +19,9 @@ public class ResourceUtil {
     /**
      * Get the language string
      *
-     * @param resourceBundle TODO
-     * @param key            TODO
-     * @return TODO
+     * @param resourceBundle resourceBundle
+     * @param key            key
+     * @return Constants
      */
     public static String getLangString(final ResourceBundle resourceBundle, final LanguageKey key) {
         if (resourceBundle == null) {

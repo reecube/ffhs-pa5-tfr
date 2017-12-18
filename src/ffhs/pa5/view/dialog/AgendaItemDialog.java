@@ -51,7 +51,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     /**
      * Get a new instance from agenda item dialog
      *
-     * @return TODO
+     * @return getNewInstance
      */
     public static AgendaItemDialog getNewInstance() {
         return getNewInstance(null, false);
@@ -60,8 +60,8 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     /**
      * Return a news instance from agenda item dialog if agenda item is true
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return getNewInstance
      */
     public static AgendaItemDialog getNewInstance(AgendaItem agendaItem) {
         return getNewInstance(agendaItem, true);
@@ -70,8 +70,8 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     /**
      * Handling with agenda item dialog
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return instance
      */
     private static AgendaItemDialog getNewInstance(AgendaItem agendaItem, boolean disableId) {
         try {
@@ -132,7 +132,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     /**
      * Load agenda item
      *
-     * @param agendaItem TODO
+     * @param agendaItem agendaItem
      */
     private void loadAgendaItem(AgendaItem agendaItem) {
         this.agendaItem = agendaItem;
@@ -163,7 +163,7 @@ public class AgendaItemDialog extends Dialog<AgendaItem> implements Initializabl
     /**
      * Handling the cancel button and that action
      *
-     * @param event TODO
+     * @param event event
      */
     @FXML
     private void handleButtonCancelAction(ActionEvent event) {

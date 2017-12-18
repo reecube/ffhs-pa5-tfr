@@ -31,7 +31,7 @@ public class ExportModel {
     /**
      * The method get the filled out information and export that
      *
-     * @param dataFile TODO
+     * @param dataFile dataFile
      */
     public ExportModel(DataFile dataFile, Date creationDate, Date lastEditionDate) {
         Meeting meeting = dataFile.getMeeting();

@@ -12,7 +12,7 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
 /**
- * TODO
+ * The Archive factory define the path
  *
  * @author Murat Tokmak
  * @author Barbara Fauth
@@ -26,7 +26,7 @@ public class ArchiveFactory {
     /**
      * The path for archive factory
      *
-     * @param path TODO
+     * @param path path
      */
     public ArchiveFactory(String path) {
         this.path = path;
@@ -35,7 +35,7 @@ public class ArchiveFactory {
     /**
      * Archive factory for generating the zip file
      *
-     * @return TODO
+     * @return ArchiveFactoryEntry
      */
     public ArchiveFactoryEntry[] read() {
         ZipFile zipFile = null;
@@ -86,7 +86,7 @@ public class ArchiveFactory {
     /**
      * Write the information in file
      *
-     * @param entries TODO
+     * @param entries entries
      * @return true on success, false on error
      */
     public boolean write(ArchiveFactoryEntry[] entries) {

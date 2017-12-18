@@ -56,18 +56,18 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     /**
      * This method adds a line
      *
-     * @param line TODO
+     * @param line line
      */
     private void addLine(String line) {
         this.content = content + (line == null ? "" : line) + lineSeparator;
     }
 
     /**
-     * TODO
+     * This method parse the multiline content
      *
-     * @param content TODO
-     * @param level   TODO
-     * @return TODO
+     * @param content content
+     * @param level   level
+     * @return result
      */
     private String parseMultilineContent(String content, int level) {
         StringBuilder result = new StringBuilder();
@@ -88,8 +88,8 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     /**
      * This method adds a line
      *
-     * @param style   TODO
-     * @param content TODO
+     * @param style   style
+     * @param content content
      */
     private void addLine(TextStyle style, String... content) {
         if (style == null || content.length == 0) {
@@ -153,9 +153,9 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     /**
      * This method parse the date to a specific format
      *
-     * @param date    TODO
-     * @param andTime TODO
-     * @return TODO
+     * @param date    date
+     * @param andTime andTime
+     * @return ""
      */
     private static String parseDate(Date date, boolean andTime) {
         if (date == null || date.toString().length() == 0) {
@@ -169,8 +169,8 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     /**
      * This method parse the participant
      *
-     * @param participant TODO
-     * @return TODO
+     * @param participant participant
+     * @return " ", result
      */
     private static String parseParticipant(ExportModelParticipant participant) {
         ArrayList<String> result = new ArrayList<>();
@@ -202,8 +202,8 @@ public class TextExportOutputHandler extends FileExportOutputHandler {
     /**
      * This method parse the agenda item
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return agendaItem ID + Title
      */
     private static String parseAgendaItemTitle(ExportModelAgendaItem agendaItem) {
         return "[" + agendaItem.getId() + "] " + agendaItem.getTitle();

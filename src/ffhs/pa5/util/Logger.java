@@ -33,7 +33,7 @@ public class Logger {
     /**
      * Handling the exception
      *
-     * @param ex TODO
+     * @param ex ex
      */
     public void handleException(Exception ex) {
         ex.printStackTrace();

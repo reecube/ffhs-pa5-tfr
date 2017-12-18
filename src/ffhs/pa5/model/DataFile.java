@@ -28,7 +28,7 @@ public class DataFile extends ViewObservableReference {
     /**
      * Commit a password for datafile
      *
-     * @param password TODO
+     * @param password password
      */
     public DataFile(String password) {
         this.metadata = new Metadata(password);
@@ -57,7 +57,7 @@ public class DataFile extends ViewObservableReference {
     /**
      * Get the changed informations
      *
-     * @return TODO
+     * @return changes
      */
     public Change[] getChanges() {
         return changes.toArray(new Change[0]);
@@ -66,8 +66,8 @@ public class DataFile extends ViewObservableReference {
     /**
      * Add a new change
      *
-     * @param change TODO
-     * @return TODO
+     * @param change change
+     * @return result
      */
     public boolean addChange(Change change) {
         boolean result = changes.add(change);

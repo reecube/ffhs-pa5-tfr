@@ -19,7 +19,7 @@ public class ExportModelAgendaItem {
     /**
      * This method export the agenda item if it's not deleted
      *
-     * @param agendaItem TODO
+     * @param agendaItem agendaItem
      */
     public ExportModelAgendaItem(AgendaItem agendaItem) throws Exception {
         if (agendaItem.isDeleted()) {

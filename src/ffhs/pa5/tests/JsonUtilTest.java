@@ -41,11 +41,11 @@ public class JsonUtilTest extends TestingBase {
         /**
          * Testing objects
          *
-         * @param valString  TODO
-         * @param valBoolean TODO
-         * @param valInteger TODO
-         * @param valDouble  TODO
-         * @param valDate    TODO
+         * @param valString  valString
+         * @param valBoolean valBoolean
+         * @param valInteger valInteger
+         * @param valDouble  valDouble
+         * @param valDate    valDate
          */
         TestObject(String valString, boolean valBoolean, int valInteger, double valDouble, Date valDate) {
             this.valString = valString;

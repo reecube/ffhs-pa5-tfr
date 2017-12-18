@@ -21,51 +21,51 @@ public interface ViewController {
     /**
      * Add the agenda item
      *
-     * @param agendaItem TODO
+     * @param agendaItem agendaItem
      */
     boolean addAgendaItem(AgendaItem agendaItem);
 
     /**
      * Edit the exist agenda item
      *
-     * @param agendaItem TODO
+     * @param agendaItem agendaItem
      */
     boolean editAgendaItem(AgendaItem agendaItem);
 
     /**
      * Remove the exist agenda item
      *
-     * @param agendaItem TODO
+     * @param agendaItem agendaItem
      */
     boolean removeAgendaItem(AgendaItem agendaItem);
 
     /**
      * Moving the agenda item up or down
      *
-     * @param agendaItem TODO
-     * @param moveUp     TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @param moveUp     moveUp
+     * @return agendaItem, moveUp
      */
     boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp);
 
     /**
      * Add a participant
      *
-     * @param participant TODO
+     * @param participant participant
      */
     boolean addParticipant(Participant participant);
 
     /**
      * Edit the exist participant
      *
-     * @param participant TODO
+     * @param participant participant
      */
     boolean editParticipant(Participant participant);
 
     /**
      * Remove the exist participant
      *
-     * @param participant TODO
+     * @param participant participant
      */
     boolean removeParticipant(Participant participant);
 
@@ -77,68 +77,68 @@ public interface ViewController {
     /**
      * Change the state
      *
-     * @param newState TODO
-     * @return TODO
+     * @param newState newState
+     * @return newState
      */
     boolean changeState(State newState);
 
     /**
      * Change the exist meeting title with a new
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     void changeMeetingTitle(String newValue);
 
     /**
      * Change the meeting date
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     void changeMeetingDate(LocalDate newValue);
 
     /**
      * Change meeting location
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     void changeMeetingLocation(String newValue);
 
     /**
      * Open a new exist file from browser
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return path
      */
     FileStorageFactoryResult openFile(String path);
 
     /**
      * Save the SPV-file
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return path
      */
     FileStorageFactoryResult saveFile(String path);
 
     /**
      * Get the last save path
      *
-     * @return TODO
+     * @return getLastSavePath
      */
     String getLastSavePath();
 
     /**
      * Change the next meeting date
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     void changeMeetingNextMeeting(LocalDate newValue);
 
     /**
      * Export SPV-informations to TXT / PDF
      *
-     * @param handler TODO
-     * @param path    TODO
-     * @return TODO
+     * @param handler handler
+     * @param path    path
+     * @return handler, path
      */
     boolean export(ExportOutputHandler handler, String path);
 }

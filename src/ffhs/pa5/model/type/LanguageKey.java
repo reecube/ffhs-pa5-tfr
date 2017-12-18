@@ -1,7 +1,7 @@
 package ffhs.pa5.model.type;
 
 /**
- * TODO
+ * Declare the language key
  *
  * @author Murat Tokmak
  * @author Barbara Fauth

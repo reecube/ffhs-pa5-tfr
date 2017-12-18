@@ -26,8 +26,8 @@ public class ExportFactory {
     /**
      * Defines the export model
      *
-     * @param exportModel         TODO
-     * @param exportOutputHandler TODO
+     * @param exportModel         exportModel
+     * @param exportOutputHandler exportOutputHandler
      */
     public ExportFactory(ExportModel exportModel, ExportOutputHandler exportOutputHandler) {
         this.exportModel = exportModel;
@@ -37,7 +37,7 @@ public class ExportFactory {
     /**
      * Choose the export output handler
      *
-     * @return TODO
+     * @return ExportOutputHandler
      */
     public static ExportOutputHandler[] getAvailableHandlers() {
         return new ExportOutputHandler[]{

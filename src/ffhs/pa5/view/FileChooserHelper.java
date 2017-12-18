@@ -24,8 +24,8 @@ public abstract class FileChooserHelper {
     /**
      * Get the filename from meeting title
      *
-     * @param meetingTitle TODO
-     * @return TODO
+     * @param meetingTitle meetingTitle
+     * @return meetingTitle
      */
     public static String getFileNameFromMeetingTitle(String meetingTitle, String extension) {
         meetingTitle = meetingTitle.replaceAll("[\\s]", "_");
@@ -36,7 +36,7 @@ public abstract class FileChooserHelper {
     /**
      * Get the file chooser
      *
-     * @return TODO
+     * @return fileChooser
      */
     private static FileChooser getFileChooser(final String initialDirectory, final String initialFileName) {
         ResourceBundle bundle = Controller.getBundle();
@@ -62,7 +62,7 @@ public abstract class FileChooserHelper {
     /**
      * Show the open dialog
      *
-     * @param ownerWindow TODO
+     * @param ownerWindow ownerWindow
      */
     static File showOpenDialog(final String initialDirectory, final Window ownerWindow) {
         FileChooser fileChooser = getFileChooser(initialDirectory, null);
@@ -73,7 +73,7 @@ public abstract class FileChooserHelper {
     /**
      * Show save dialog
      *
-     * @param ownerWindow TODO
+     * @param ownerWindow ownerWindow
      */
     static File showSaveDialog(final String initialDirectory, final String initialFileName, final Window ownerWindow) {
         FileChooser fileChooser = getFileChooser(initialDirectory, initialFileName);
@@ -84,8 +84,8 @@ public abstract class FileChooserHelper {
     /**
      * Show export dialog
      *
-     * @param initialDirectory TODO
-     * @param fileExtensions   TODO
+     * @param initialDirectory initialDirectory
+     * @param fileExtensions   fileExtensions
      */
     public static File showExportDialog(
             final String initialDirectory,

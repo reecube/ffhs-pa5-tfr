@@ -18,7 +18,7 @@ abstract class AlertHelper {
     /**
      * See the specific error with that alert
      *
-     * @param contentText TODO
+     * @param contentText contentText
      * @param additionalInfo If you want to add some more information to the occured error, use this String. If not, use null.
      */
     static void showError(LanguageKey contentText, String additionalInfo) {

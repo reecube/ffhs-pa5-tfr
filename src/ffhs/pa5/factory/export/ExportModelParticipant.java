@@ -24,7 +24,7 @@ public class ExportModelParticipant {
     /**
      * Export all concerning participant fields
      *
-     * @param participant TODO
+     * @param participant participant
      */
     public ExportModelParticipant(Participant participant) {
         this.firstname = participant.getFirstname();

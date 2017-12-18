@@ -36,7 +36,7 @@ public class FileStorageFactory {
     /**
      * If files and file are not null, then it is initialized
      *
-     * @return TODO
+     * @return files
      */
     private boolean isInitialized() {
         return files != null && file != null;
@@ -45,8 +45,8 @@ public class FileStorageFactory {
     /**
      * Lock file and get the path
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return path + Constants
      */
     private String getLockFilePath(String path) {
         return path + Constants.DATA_FILE_LOCK_EXTENSION;
@@ -55,8 +55,8 @@ public class FileStorageFactory {
     /**
      * This method locks the path
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return FileUtil.exists
      */
     private boolean isLocked(String path) {
         return FileUtil.exists(getLockFilePath(path));
@@ -65,9 +65,9 @@ public class FileStorageFactory {
     /**
      * Set the status as locked.
      *
-     * @param path           TODO
-     * @param newStateLocked TODO
-     * @return TODO
+     * @param path           path
+     * @param newStateLocked newStateLocked
+     * @return FileUtil.write
      */
     private boolean setLocked(String path, boolean newStateLocked) {
         final String lockFilePath = getLockFilePath(path);
@@ -91,7 +91,7 @@ public class FileStorageFactory {
     /**
      * Open the file storage factory result
      *
-     * @return TODO
+     * @return FileStorageFactoryResult
      */
     public FileStorageFactoryResult open() {
         this.file = new DataFile("");
@@ -103,8 +103,8 @@ public class FileStorageFactory {
     /**
      * Get the archive factory entry map and return result
      *
-     * @param entries TODO
-     * @return TODO
+     * @param entries entries
+     * @return result
      */
     private static HashMap<String, ArchiveFactoryEntry> getArchiveFactoryEntryMap(ArchiveFactoryEntry[] entries) {
         HashMap<String, ArchiveFactoryEntry> result = new HashMap<>();
@@ -119,7 +119,7 @@ public class FileStorageFactory {
     /**
      * Checks the Version of the application
      *
-     * @return TODO
+     * @return FileStorageFactoryResult
      */
     private FileStorageFactoryResult checkApplicationVersion() {
         if (file == null) {
@@ -136,8 +136,8 @@ public class FileStorageFactory {
     /**
      * Parse the archive factory entries to file
      *
-     * @param entryArray TODO
-     * @return TODO
+     * @param entryArray entryArray
+     * @return checkApplicationVersion
      */
     private FileStorageFactoryResult parseArchiveFactoryEntriesToFile(ArchiveFactoryEntry[] entryArray) {
         HashMap<String, ArchiveFactoryEntry> entries = getArchiveFactoryEntryMap(entryArray);
@@ -161,8 +161,8 @@ public class FileStorageFactory {
     /**
      * Open the file storage factory result
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return FileStorageFactoryResult
      */
     public FileStorageFactoryResult open(String path) {
         if (!FileUtil.exists(path)) {
@@ -194,8 +194,8 @@ public class FileStorageFactory {
     /**
      * Save the file storage factory result
      *
-     * @param path TODO
-     * @return TODO
+     * @param path path
+     * @return save
      */
     public FileStorageFactoryResult save(String path) {
         return save(path, false);
@@ -204,9 +204,9 @@ public class FileStorageFactory {
     /**
      * Error handling if file ist lockes with messages
      *
-     * @param path       TODO
-     * @param ignoreLock TODO
-     * @return TODO
+     * @param path       path
+     * @param ignoreLock ignoreLock
+     * @return FileStorageFactoryResult
      */
     public FileStorageFactoryResult save(String path, boolean ignoreLock) {
         if (!isInitialized()) {
@@ -247,9 +247,9 @@ public class FileStorageFactory {
     /**
      * Close file storage factory result
      *
-     * @param path TODO
-     * @param save TODO
-     * @return TODO
+     * @param path path
+     * @param save save
+     * @return FileStorageFactoryResult
      */
     public FileStorageFactoryResult close(String path, boolean save) {
         if (!isInitialized()) {

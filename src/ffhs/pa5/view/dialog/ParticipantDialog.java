@@ -63,7 +63,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     /**
      * Handling the participant dialog by getting a new instance and returns null
      *
-     * @return TODO
+     * @return getNewInstance
      */
     public static ParticipantDialog getNewInstance() {
         return getNewInstance(null);
@@ -72,8 +72,8 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     /**
      * Handling the participant dialog by getting a new instance
      *
-     * @param participant TODO
-     * @return TODO
+     * @param participant participant
+     * @return instance
      */
     public static ParticipantDialog getNewInstance(Participant participant) {
         try {
@@ -139,7 +139,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     /**
      * Load informations about participant
      *
-     * @param participant TODO
+     * @param participant participant
      */
     private void loadParticipant(Participant participant) {
         this.participant = participant;
@@ -171,7 +171,7 @@ public class ParticipantDialog extends Dialog<Participant> implements Initializa
     /**
      * Handling the cancel button and that action
      *
-     * @param event TODO
+     * @param event event
      */
     @FXML
     private void handleButtonCancelAction(ActionEvent event) {

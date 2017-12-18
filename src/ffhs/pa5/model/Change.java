@@ -26,9 +26,9 @@ public class Change {
     /**
      * Handling with the date
      *
-     * @param date   TODO
-     * @param user   TODO
-     * @param change TODO
+     * @param date   date
+     * @param user   user
+     * @param change change
      */
     public Change(Date date, String user, String change) {
         this.date = date;

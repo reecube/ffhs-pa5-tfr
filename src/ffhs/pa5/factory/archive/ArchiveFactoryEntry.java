@@ -18,10 +18,10 @@ public class ArchiveFactoryEntry {
     private String content;
 
     /**
-     * TODO
+     * Define the archive factory entry
      *
-     * @param entry TODO
-     * @param content TODO
+     * @param entry entry
+     * @param content content
      */
     public ArchiveFactoryEntry(ZipEntry entry, String content) {
         final String path = entry.getName();
@@ -39,9 +39,9 @@ public class ArchiveFactoryEntry {
     /**
      * The factory entry for archive
      *
-     * @param directory TODO
-     * @param file TODO
-     * @param content TODO
+     * @param directory directory
+     * @param file file
+     * @param content content
      */
     public ArchiveFactoryEntry(String directory, String file, String content) {
         this.directory = directory;
@@ -52,7 +52,7 @@ public class ArchiveFactoryEntry {
     /**
      * Returns the path by file
      *
-     * @return TODO
+     * @return file
      */
     public String getPath() {
         if (directory == null) {

@@ -126,9 +126,9 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Add change listener
      *
-     * @param listView TODO
-     * @param listener TODO
-     * @param <T>      TODO
+     * @param listView listView
+     * @param listener listener
+     * @param <T>      listener
      */
     private static <T> void addChangeListener(ListView<T> listView, ChangeListener<T> listener) {
         listView.getSelectionModel().selectedItemProperty().addListener(listener);
@@ -188,7 +188,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update the metadata
      *
-     * @param metadata TODO
+     * @param metadata metadata
      */
     private void updateMetadata(Metadata metadata) {
         // TODO: implement this
@@ -197,7 +197,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update agenda items
      *
-     * @param agendaItems TODO
+     * @param agendaItems agendaItems
      */
     private void updateAgendaItems(AgendaItem[] agendaItems) {
         SelectionModel<AgendaItem> selectionModelPreparation = outputAgendaItemsPreparation.getSelectionModel();
@@ -222,7 +222,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update the participants
      *
-     * @param participants TODO
+     * @param participants participants
      */
     private void updateParticipants(Participant[] participants) {
         SelectionModel<Participant> selectionModel = outputParticipants.getSelectionModel();
@@ -238,8 +238,8 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Check if the meeting ist ready to start
      *
-     * @param meeting TODO
-     * @return TODO
+     * @param meeting meeting
+     * @return meeting
      */
     private boolean isMeetingReadyToStart(Meeting meeting) {
         return meeting.getAgendaItems().length != 0 && !meeting.getTitle().equals("");
@@ -249,7 +249,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update the informations for meeting
      *
-     * @param meeting TODO
+     * @param meeting meeting
      */
     private void updateMeeting(Meeting meeting) {
         inputMeetingTitle.setText(meeting.getTitle());
@@ -298,7 +298,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update changes
      *
-     * @param changes TODO
+     * @param changes changes
      */
     private void updateChanges(Change[] changes) {
         // TODO: this will be implemented in a future version
@@ -307,7 +307,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Update the data file
      *
-     * @param dataFile TODO
+     * @param dataFile dataFile
      */
     private void updateDataFile(DataFile dataFile) {
         updateMetadata(dataFile.getMetadata());
@@ -332,7 +332,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Definition the pane selection and changing
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     private void onTabPaneSelectionChange(Tab newValue) {
         State newState;
@@ -355,7 +355,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Change on select the participant
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     private void onParticipantsSelectionChange(Participant newValue) {
         boolean disabledBecauseOfSelection = newValue == null;
@@ -366,7 +366,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Handle the agenda buttons by edit, remove, moveup and movedown
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     private void onAgendaItemsPreparationSelectionChange(AgendaItem newValue) {
         boolean disabledBecauseOfSelection = newValue == null;
@@ -379,7 +379,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Input a new content by selection agenda item
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     private void onAgendaItemsMeetingSelectionChange(AgendaItem newValue) {
         boolean disabledBecauseOfSelection = newValue == null;
@@ -552,7 +552,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * The agenda item on change content
      *
-     * @param newValue TODO
+     * @param newValue newValue
      */
     private void onChangeAgendaItemContent(String newValue) {
         AgendaItem agendaItem = outputAgendaItemsMeeting.getSelectionModel().getSelectedItem();
@@ -632,7 +632,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Handling the file storage factory result
      *
-     * @param result TODO
+     * @param result result
      */
     private void handleFileStorageFactoryResult(FileStorageFactoryResult result) {
         if (result == FileStorageFactoryResult.SUCCESS) {
@@ -647,7 +647,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Get the initial directory
      *
-     * @return TODO
+     * @return lastSavedFile
      */
     private String getInitialDirectory() {
         String lastSavedPath = controller.getLastSavePath();
@@ -664,7 +664,7 @@ public class View extends Stage implements Observer, Initializable {
     /**
      * Get the initial filename
      *
-     * @return TODO
+     * @return FileChooserHelper
      */
     private String getInitialFilename(String extension) {
         String lastSavedPath = controller.getLastSavePath();

@@ -106,8 +106,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Add a participant
      *
-     * @param participant TODO
-     * @return TODO
+     * @param participant participant
+     * @return result
      */
     public boolean addParticipant(Participant participant) {
         boolean result = participants.add(participant);
@@ -122,8 +122,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Edit a existing participant
      *
-     * @param participant TODO
-     * @return TODO
+     * @param participant participant
+     * @return participant
      */
     public boolean editParticipant(Participant participant) {
         if (!participants.contains(participant)) {
@@ -138,8 +138,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Remove a existing participant
      *
-     * @param participant TODO
-     * @return TODO
+     * @param participant participant
+     * @return result
      */
     public boolean removeParticipant(Participant participant) {
         boolean result = participants.remove(participant);
@@ -158,8 +158,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Add a agenda item
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return result
      */
     public boolean addAgendaItem(AgendaItem agendaItem) {
         boolean duplicateId = false;
@@ -189,8 +189,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Edit a agenda item
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return agendaItem
      */
     public boolean editAgendaItem(AgendaItem agendaItem) {
         if (!agendaItems.contains(agendaItem)) {
@@ -205,8 +205,8 @@ public class Meeting extends ViewObservableReference {
     /**
      * Remove a existing agenda item
      *
-     * @param agendaItem TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @return result
      */
     public boolean removeAgendaItem(AgendaItem agendaItem) {
         boolean result = agendaItems.remove(agendaItem);
@@ -221,9 +221,9 @@ public class Meeting extends ViewObservableReference {
     /**
      * Move a agenda item
      *
-     * @param agendaItem TODO
-     * @param moveUp     TODO
-     * @return TODO
+     * @param agendaItem agendaItem
+     * @param moveUp     moveUp
+     * @return result
      */
     public boolean moveAgendaItem(AgendaItem agendaItem, boolean moveUp) {
         final int currentIndex = agendaItems.indexOf(agendaItem);
