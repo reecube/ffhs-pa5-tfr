@@ -88,7 +88,7 @@ public class Controller implements ViewController {
     /**
      * This method initialize the View.
      *
-     * @throws IOException
+     * @throws IOException the exception
      */
     private void initializeView() throws IOException {
         ResourceBundle bundle = getBundle();
@@ -141,7 +141,7 @@ public class Controller implements ViewController {
     /**
      * The class controller initialize the view and the files storage factory (path)
      *
-     * @throws IOException
+     * @throws IOException the exception
      */
     public Controller(String path) throws IOException {
         initializeView();
