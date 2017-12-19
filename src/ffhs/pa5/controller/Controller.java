@@ -106,6 +106,9 @@ public class Controller implements ViewController {
         view.show();
     }
 
+    /**
+     * This method updates the view
+     */
     private void updateView() {
         DataFile file = fileStorageFactory.getFile();
         ViewObservable viewObservable = new ViewObservable(file);
@@ -179,17 +182,16 @@ public class Controller implements ViewController {
      * {@inheritDoc}
      */
     @Override
-    public boolean changeState(State newState) {
+    public void changeState(State newState) {
         final Meeting meeting = fileStorageFactory.getFile().getMeeting();
         final State oldState = meeting.getState();
 
         if (oldState == State.CLOSED || oldState == newState) {
-            return false;
+            return;
         }
 
         meeting.setState(newState);
 
-        return true;
     }
 
     /**

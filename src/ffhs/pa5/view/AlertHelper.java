@@ -18,7 +18,7 @@ abstract class AlertHelper {
     /**
      * See the specific error with that alert
      *
-     * @param contentText contentText
+     * @param contentText    contentText
      * @param additionalInfo If you want to add some more information to the occured error, use this String. If not, use null.
      */
     static void showError(LanguageKey contentText, String additionalInfo) {
@@ -38,18 +38,12 @@ abstract class AlertHelper {
      * See the specific warning with that alert
      *
      * @param contentText the context text
-     * @param additionalInfo If you want to add some more information to the occured warning, use this String. If not, use null.
      */
-    static void showWarning(LanguageKey contentText, String additionalInfo) {
+    static void showWarning(LanguageKey contentText) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(ResourceUtil.getLangString(Controller.getBundle(), LanguageKey.WARNING_TITLE));
         alert.setHeaderText(null);
-        if (additionalInfo == null) {
-            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
-        } else {
-            alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText) + ": " +
-                    additionalInfo);
-        }
+        alert.setContentText(ResourceUtil.getLangString(Controller.getBundle(), contentText));
         alert.showAndWait();
     }
 }

@@ -18,14 +18,23 @@ import java.util.Date;
 public class ExportModel {
 
     private String title;
+
     private String location;
+
     private Date date;
+
     private ArrayList<ExportModelParticipant> participants;
+
     private State state;
+
     private Date nextMeeting;
+
     private ArrayList<ExportModelAgendaItem> agendaItems;
+
     private Date creationDate;
+
     private Date lastEditionDate;
+
     private Date exportDate;
 
     /**

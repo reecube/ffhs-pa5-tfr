@@ -78,9 +78,8 @@ public interface ViewController {
      * Change the state
      *
      * @param newState newState
-     * @return newState
      */
-    boolean changeState(State newState);
+    void changeState(State newState);
 
     /**
      * Get the actual state

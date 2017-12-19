@@ -14,13 +14,15 @@ import java.util.zip.ZipEntry;
 public class ArchiveFactoryEntry {
 
     private String directory;
+
     private String file;
+
     private String content;
 
     /**
      * Define the archive factory entry
      *
-     * @param entry entry
+     * @param entry   entry
      * @param content content
      */
     public ArchiveFactoryEntry(ZipEntry entry, String content) {
@@ -40,8 +42,8 @@ public class ArchiveFactoryEntry {
      * The factory entry for archive
      *
      * @param directory directory
-     * @param file file
-     * @param content content
+     * @param file      file
+     * @param content   content
      */
     public ArchiveFactoryEntry(String directory, String file, String content) {
         this.directory = directory;

@@ -79,6 +79,7 @@ public class JsonUtilTest extends TestingBase {
      */
     @Test
     public void testStringifyAndParseLifecycle() {
+
         // Config variables
         final String expectedString = "string";
         final boolean expectedBoolean = true;

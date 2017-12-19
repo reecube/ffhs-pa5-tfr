@@ -28,6 +28,7 @@ public class FileStorageFactoryTest extends TestingBase {
      */
     @Test
     public void testLifecycle() throws Exception {
+
         // Config variables
         final String storageFile = "test.spv";
         final String storageLockFile = storageFile + Constants.DATA_FILE_LOCK_EXTENSION;

@@ -5,9 +5,7 @@ import javafx.stage.FileChooser;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 /**
  * Define the file export output handler
@@ -17,7 +15,6 @@ import java.util.ArrayList;
  * @author Yves Riedener
  * @version 1.0
  */
-
 public abstract class FileExportOutputHandler implements ExportOutputHandler {
 
     private String path;

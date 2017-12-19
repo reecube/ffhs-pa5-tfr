@@ -52,10 +52,12 @@ public class Change {
         this.user = user;
     }
 
+    @SuppressWarnings("unused")
     public String getChange() {
         return change;
     }
 
+    @SuppressWarnings("unused")
     public void setChange(String change) {
         this.change = change;
     }

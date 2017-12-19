@@ -20,6 +20,7 @@ public class MetadataTest extends TestingBase {
      */
     @Test
     public void testGenerateId() {
+
         // Config variables
         final int amountOfIds = 10;
 

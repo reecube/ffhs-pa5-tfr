@@ -2,7 +2,6 @@ package ffhs.pa5.model;
 
 import com.google.gson.annotations.Expose;
 import ffhs.pa5.model.type.State;
-import ffhs.pa5.util.Logger;
 import ffhs.pa5.view.ViewObservable;
 import ffhs.pa5.view.ViewObservableReference;
 
@@ -174,7 +173,7 @@ public class Meeting extends ViewObservableReference {
         }
 
         if (duplicateId) {
-            return  false;
+            return false;
         }
 
         boolean result = agendaItems.add(agendaItem);

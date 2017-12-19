@@ -1,14 +1,5 @@
 package ffhs.pa5.factory.export;
 
-import ffhs.pa5.factory.archive.ArchiveFactoryEntry;
-import ffhs.pa5.factory.storage.FileStorageFactory;
-import ffhs.pa5.model.DataFile;
-import ffhs.pa5.util.Logger;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.zip.ZipEntry;
-
 /**
  * Export factory defines the model an the handler
  *
@@ -21,6 +12,7 @@ import java.util.zip.ZipEntry;
 public class ExportFactory {
 
     private ExportModel exportModel;
+
     private ExportOutputHandler exportOutputHandler;
 
     /**

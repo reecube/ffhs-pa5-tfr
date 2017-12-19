@@ -41,6 +41,7 @@ enum TextStyle {
 public class TextExportOutputHandler extends FileExportOutputHandler {
 
     private String lineSeparator;
+
     private String content;
 
     /**

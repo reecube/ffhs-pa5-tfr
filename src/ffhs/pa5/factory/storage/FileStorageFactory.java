@@ -23,6 +23,7 @@ import java.util.HashMap;
 public class FileStorageFactory {
 
     private HashMap<String, ArchiveFactoryEntry> files;
+
     private DataFile file;
 
     /**

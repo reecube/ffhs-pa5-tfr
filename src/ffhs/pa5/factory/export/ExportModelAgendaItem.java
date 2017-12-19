@@ -13,7 +13,9 @@ import ffhs.pa5.model.AgendaItem;
 public class ExportModelAgendaItem {
 
     private String id;
+
     private String title;
+
     private String content;
 
     /**
@@ -21,7 +23,7 @@ public class ExportModelAgendaItem {
      *
      * @param agendaItem agendaItem
      */
-    public ExportModelAgendaItem(AgendaItem agendaItem) throws Exception {
+    ExportModelAgendaItem(AgendaItem agendaItem) throws Exception {
         if (agendaItem.isDeleted()) {
             throw new Exception("You must not export a deleted agenda item!");
         }

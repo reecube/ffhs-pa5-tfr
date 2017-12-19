@@ -59,6 +59,7 @@ public class DataFile extends ViewObservableReference {
      *
      * @return changes
      */
+    @SuppressWarnings("unused")
     public Change[] getChanges() {
         return changes.toArray(new Change[0]);
     }
@@ -69,6 +70,7 @@ public class DataFile extends ViewObservableReference {
      * @param change change
      * @return result
      */
+    @SuppressWarnings("unused")
     public boolean addChange(Change change) {
         boolean result = changes.add(change);
 

@@ -8,7 +8,6 @@ package ffhs.pa5.factory.export;
  * @author Yves Riedener
  * @version 1.0
  */
-
 public interface ExportOutputHandler {
 
     /**

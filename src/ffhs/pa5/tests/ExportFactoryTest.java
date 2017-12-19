@@ -25,6 +25,7 @@ import static org.junit.Assert.*;
 public class ExportFactoryTest extends TestingBase {
 
     private AgendaItem agendaItem = new AgendaItem();
+
     private Participant participant = new Participant();
 
     /**

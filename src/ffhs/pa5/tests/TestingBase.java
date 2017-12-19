@@ -13,7 +13,7 @@ abstract class TestingBase {
     /**
      * Shows the defined testing case in the console.
      *
-     * @param testingCase  the testing case description
+     * @param testingCase the testing case description
      */
     void logTestCase(String testingCase) {
 

@@ -2,8 +2,6 @@ package ffhs.pa5.factory.export;
 
 import ffhs.pa5.model.Participant;
 
-import java.util.ArrayList;
-
 /**
  * Export information concerning participant
  *
@@ -26,7 +24,7 @@ public class ExportModelParticipant {
      *
      * @param participant participant
      */
-    public ExportModelParticipant(Participant participant) {
+    ExportModelParticipant(Participant participant) {
         this.firstname = participant.getFirstname();
         this.lastname = participant.getLastname();
         this.email = participant.getEmail();

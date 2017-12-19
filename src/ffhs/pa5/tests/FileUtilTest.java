@@ -26,6 +26,7 @@ public class FileUtilTest extends TestingBase {
      */
     @Test
     public void testFileLifecycle() throws IOException {
+
         // Config variables
         final String fileName = "test.txt";
         final String expectedContent = "Lorem ipsum";

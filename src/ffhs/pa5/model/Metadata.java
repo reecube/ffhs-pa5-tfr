@@ -64,6 +64,7 @@ public class Metadata extends ViewObservableReference {
         return id;
     }
 
+    @SuppressWarnings("unused")
     public Date getSaveDate() {
         return saveDate;
     }
@@ -74,6 +75,7 @@ public class Metadata extends ViewObservableReference {
         updateView();
     }
 
+    @SuppressWarnings("unused")
     public String getPassword() {
         return password;
     }

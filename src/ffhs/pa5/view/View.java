@@ -339,12 +339,12 @@ public class View extends Stage implements Observer, Initializable {
 
         if (newValue.equals(tabPreparation)) {
             if (controller.getState().equals(State.MEETING)) {
-                AlertHelper.showWarning(LanguageKey.WARNING_CHANGE_TAB_REVERSE, null);
+                AlertHelper.showWarning(LanguageKey.WARNING_CHANGE_TAB_REVERSE);
             }
             newState = State.PREPARATION;
         } else if (newValue.equals(tabMeeting)) {
             if (controller.getState().equals(State.ENDING)) {
-                AlertHelper.showWarning(LanguageKey.WARNING_CHANGE_TAB_REVERSE, null);
+                AlertHelper.showWarning(LanguageKey.WARNING_CHANGE_TAB_REVERSE);
             }
             newState = State.MEETING;
         } else if (newValue.equals(tabEnding)) {
