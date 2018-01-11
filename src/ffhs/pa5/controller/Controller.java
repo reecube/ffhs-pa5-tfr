@@ -243,7 +243,8 @@ public class Controller implements ViewController {
      */
     @Override
     public FileStorageFactoryResult saveFile(String path) {
-        FileStorageFactoryResult result = fileStorageFactory.save(path, lastSavePath.equalsIgnoreCase(path));
+        boolean ignoreLock = lastSavePath != null && lastSavePath.equalsIgnoreCase(path);
+        FileStorageFactoryResult result = fileStorageFactory.save(path, ignoreLock);
 
         if (result == FileStorageFactoryResult.SUCCESS) {
             this.lastSavePath = path;
